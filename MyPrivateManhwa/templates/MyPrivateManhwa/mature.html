@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+    <title>My Private Manhwa</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/65/8d/70/658d70042f014f02a3cd0cd6bc29d7a0.jpg">
+</head>
+<body>    
+    <a href="page4.html">Back</a>
+<!--***************************************work space*****************************************************-->
+    <br><div style="text-align: center;">
+        <input type="text" id="name" name="name" list="names">
+        <datalist id="names"></datalist>
+        <button type="button" id="search" class="contentbut">search</button> <button type="button" id="clearname" class="contentbut">clear</button> | <button type="button" id="allname" class="contentbut">All</button></div>
+    </div>
+    <div id="what"></div>
+    <div class="darklist" id="picvdo">Loading...</div>
+    <div class="darklist" id="picvdoshow" style="font-size:0; width: 450px; text-align: center; margin-left: auto; margin-right: auto;"><br></div>
+    
+<!--**********************************************************************************************************-->
+    <script src="{% static 'MyPrivateManhwa/mature.js' %}"></script>
+</body>
+</html>

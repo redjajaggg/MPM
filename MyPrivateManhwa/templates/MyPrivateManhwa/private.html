@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+    <title>My Private Manhwa</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/65/8d/70/658d70042f014f02a3cd0cd6bc29d7a0.jpg">
+    <link rel="stylesheet" href="{% static 'MyPrivateManhwa/style.css' %}">
+</head>
+<body>    
+    <a href="index.html"><img class="homeicon" src="https://i.pinimg.com/564x/2b/05/8d/2b058d9e38670c731169bcdbf62652a6.jpg"></a>
+    <h2 id="contenth2">Dark content</h2>
+<!--***************************************work space*****************************************************-->
+<div id="website" style="width: 300px; display: none;">
+    <img src="https://i.pinimg.com/564x/5c/dc/93/5cdc93af868b501a52050321ac62a0f9.jpg" style="width: 295px; border: 3px solid; border-radius: 10px;">
+    My Private Manhwa's Page:<br>
+    <div>
+        <ul id="mainlist">
+            <li>Home <a href="index.html">here</a></li>
+            <li>Content <a href="page2.html">here</a></li>
+            <li>Portrayal <a href="page3.html">here</a></li>
+            <li>Off Content <a href="offtopic.html">here</a></li>
+            <li>off Portrayal <a href="offpic.html">here</a></li>
+            <li>Manhwa Manager(online) <a href="getdatacontrol.html">here</a></li>
+        </ul>
+    </div>
+</div>
+    <label style="text-align: center;">Page contains Adult content for each R19 Manhwa(Comics).</label>
+    <h2>For STABLE and Easy go to <a href="mature.html">Mature page version 2</a>.</h2>
+    <div class="darklist" id="privatemanhwa">
+        <h3 class="contentname">Content</h3>
+        <div id="fff">Loading...</div>
+    </div><br>
+    <h2 id="contenth2">Dark Picture <button type="button" id="reals">Show</button> <button id="clear1">clear All</button> <button type="button" id="edit">Edit</button></h2>
+    <div style="text-align: center;">
+        For clear view of below content(Manhwa only): <a href="adult.html">here</a></div>
+    <br><div style="text-align: center;"><label>Name : </label>
+        <input type="text" id="name" name="name" list="names" style="width: 120px; border: solid black 2px; border-radius: 10px; background-color: mediumblue" placeholder="eq. How to hide the emperor's child">
+        <datalist id="names"></datalist>
+        <button type="button" id="search" class="contentbut">search</button> <button type="button" id="clearname" class="contentbut">clear</button> | <button type="button" id="allname" class="contentbut">All</button></div>
+    </div>
+    <div class="darklist" id="picvdo">Loading...</div>
+    <div class="darklist" id="picvdoshow" style="font-size:0;"><br></div>
+    <div class="darklist" id="real" style="display: block;"></div>
+    <br><br><br>
+<!--**********************************************************************************************************-->
+    <br>
+    <a href="index.html"><img class="homeicon" src="https://i.pinimg.com/564x/2b/05/8d/2b058d9e38670c731169bcdbf62652a6.jpg"></a>
+    <a href="index.html"><img class="homeicon" src="https://i.pinimg.com/564x/8a/67/be/8a67befed4bb41837186774172c7bf30.jpg"></a>
+    contract: <a href="https://discordapp.com/users/1055326431804137504/"><img style="width: 30px; border-radius: 10px;" src="https://i.pinimg.com/564x/66/1e/cf/661ecf66bda49150b44d25e4440e2bb8.jpg"></a> Location: Bangkok, Thailand
+    <br>© 2022 My Private Manhwa. Website source reserves to My Private Manhwa, Contents credit to owner.
+    <h5 id="caption">"Attention! This website is my private collection not for Trading"</h5>
+    <script src="{% static 'MyPrivateManhwa/private.js' %}"></script>
+</body>
+</html>
