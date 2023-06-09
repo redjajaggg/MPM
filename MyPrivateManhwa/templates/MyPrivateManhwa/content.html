@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+    <title>My Private Manhwa</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/65/8d/70/658d70042f014f02a3cd0cd6bc29d7a0.jpg">
+    <link rel="stylesheet" href="{% static 'MyPrivateManhwa/style.css' %}">
+</head>
+<body>
+    <a href="{% url 'index' %}"><img class="homeicon" src="https://i.pinimg.com/564x/2b/05/8d/2b058d9e38670c731169bcdbf62652a6.jpg"></a>
+    <h2 id="contenth2">Content</h2>
+    <div id="head" style="position: fixed; border-bottom: 2px solid; top: 0px; width: 100%; background-color: rgb(224, 141, 141); height: 40px; padding: 5px;">
+        <div id="parent" id="left_head" style="float: left; overflow: hidden; float: left; width: 80%;"><span>
+            <img class="child" id="menu_down" src="https://i.pinimg.com/564x/65/8d/70/658d70042f014f02a3cd0cd6bc29d7a0.jpg" style="width: 40px; border-radius: 10px;" onclick="location.reload();">
+            <img id="content" class="child" src="https://i.pinimg.com/564x/ff/de/fb/ffdefb9c1ae2e4542b9be7cb1617285e.jpg" style="width: 240px; border-radius: 10px;">
+            <div id="pages" class="child">
+                <a href="{% url 'content'%}"><img id="content" class="child" src="https://i.pinimg.com/564x/7f/91/93/7f9193af1c9f47b9fa7988e660dc1bcc.jpg" style="width: 80px;"></a>
+                <a href="{% url 'portrayal'%}"><img id="portray" class="child" src="https://i.pinimg.com/564x/3c/9f/f0/3c9ff0f80c36e107102928fc550fe9fc.jpg" style="width: 80px;"></a>
+                <a href="{% url 'private'%}"><img id="private" class="child" src="https://i.pinimg.com/564x/1c/4c/ce/1c4cce12ccebc3cc84e0ad4fd5810eb6.jpg" style="width: 80px;"></a>
+            </div>
+        </div>
+        <div id="right_head" style="float: right; width: 20%;"><div id="check_head1">
+            <img class="child" src="https://i.pinimg.com/564x/20/84/d5/2084d52de67b409823d500f04f7f15c3.jpg" style="width: 40px; border-radius: 10px;">
+            <a href="https://drive.google.com/file/d/15xqdf8nmFWE1a3qkyMd5_DovhRjCAvRD/view?usp=sharing"><img class="child" id="menu_down" src="https://i.pinimg.com/564x/f7/25/ad/f725adcb71858375eeddbdcc123259cb.jpg" style="width: 40px; border-radius: 10px;"></a>
+            <a href="{% url 'manager'%}"><img class="child" src="https://i.pinimg.com/564x/68/b3/6d/68b36d7bab2ce5db6f27f1df36367d64.jpg" style="width: 40px; border-radius: 10px;"></a>
+            <a href="https://discordapp.com/users/1055326431804137504/"><img class="child" id="menu_down" src="https://i.pinimg.com/564x/66/1e/cf/661ecf66bda49150b44d25e4440e2bb8.jpg" style="width: 40px; border-radius: 10px;"></a>
+            </div><div id="check_head2">
+                <img class="child" onclick="myFunction();" id="menu_down" src="https://i.pinimg.com/564x/d3/86/cd/d386cdbd94fea2be7882d01c02b2cc11.jpg" style="width: 40px; border-radius: 10px;">
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="{% url 'content'%}">Content</a>
+                    <a href="{% url 'portrayal'%}">Portrayal</a>
+                    <a href="{% url 'private'%}">Private</a>
+                    <a href="{% url 'manager'%}">ManhwaManager</a>
+                    <a href="#">Search</a>
+                    <a href="https://discordapp.com/users/1055326431804137504/">Contract</a>
+                    <a href="https://drive.google.com/file/d/15xqdf8nmFWE1a3qkyMd5_DovhRjCAvRD/view?usp=sharing">Download</a>
+                  </div>
+            </div>
+        </div>
+    </div><br>
+    
+<!--*************************work space***********************************************************-->
+
+    <div id="update" style="text-align: center; margin-left: auto; margin-right: auto; width: 290px; background-color: chartreuse; padding: 10px; border-radius: 10px;">
+        <button id="searchopen" class="contentbut" onclick="minisearchopen()">Search here & Today's Update</button><br><br>
+        <label>Count: <label id="allnum">0</label>
+        <div id="searchpane" style="display: block;">
+            <br><label>Name : </label>
+            <input type="text" id="nameg" name="name" list="names" style="width: 200px; border: solid black 2px; border-radius: 10px; background-color: mediumblue" placeholder="eq. How to hide the emperor's child">
+            <datalist id="names"></datalist>
+            <br><label>Part : </label>
+            <input type="text" id="partg" name="part" list="parts" style="width: 200px; border: solid black 2px; border-radius: 10px; background-color: mediumblue" placeholder="eq. 5">
+            <datalist id="parts"></datalist>
+            <br><label>Website : </label>
+            <input type="text" id="haswebg" name="web" list="webs" style="width: 200px; border: solid black 2px; border-radius: 10px; background-color: mediumblue" placeholder="eq. yes / no">
+            <datalist id="webs"><option value="yes"></option><option value="no"></option></datalist><br>
+            <label>Status : </label>
+            <input type="text" id="statug" name="statu" list="statud" style="width: 200px; border: solid black 2px; border-radius: 10px; background-color: mediumblue" placeholder="eq. ongoing / end">
+            <datalist id="statud"><option value="ongoing"></option><option value="end"></option></datalist><br>
+            <label>Date : </label>
+            <input type="text" id="datedg" name="dated" list="dated" style="width: 200px; border: solid black 2px; border-radius: 10px; background-color: mediumblue" placeholder="eq. 1 (value 1-7)">
+            <datalist id="dated"><option value="1"></option><option value="2"></option><option value="3"></option><option value="4"></option><option value="5"></option><option value="6"></option><option value="7"></option><option value="n"></option></datalist><br>
+            <br><br>
+            <button type="submit" id="search" class="contentbut">search</button> <button type="button" id="cleartext1" class="contentbut">clear</button> <button type="button" id="spoil" class="contentbut">Spoil</button>
+            <br><div id="updates" style="text-align: left;">Today Update...</div><br>
+        </div>
+    </div><br>
+    <div id="control" style="position: sticky; top: 52px; background-color: bisque; margin-left: auto; margin-right: auto; padding: 10px; border-radius: 10px; text-align: center; width: 290px;">
+        <div id="changers">Page: <select name="page" id="page"></select><button type="button" id="prev" class="contentbut"> Prev </button><button type="button" id="next" class="contentbut"> Next </button> | <button type="button" id="gos" class="contentbut"> Go </button> <button type="button" id="alls" class="contentbut"> All </button></div>
+    </div><br>
+    <div id="main" style="width: 90%; text-align: left; background-color: yellow; border: 3px solid;">
+        Loading...
+    </div>
+        <div id="eachin" style="width: 300px; background-color: rgb(39, 255, 212); top: 70px; padding: 5px; border: 3px solid; border-radius: 7px; float: left; display: none;"></div>
+        <div id="each" style="width: 300px; background-color: rgb(184, 202, 255); margin-left: auto; padding: 5px; border: 3px solid; border-radius: 7px; margin-right: auto; display: none;"></div>
+        
+    </div>
+    
+<!--************************************************************************************-->
+    
+    <a href="{% url 'index' %}"><img class="homeicon" src="https://i.pinimg.com/564x/2b/05/8d/2b058d9e38670c731169bcdbf62652a6.jpg"></a>
+    <a href="{% url 'index' %}"><img class="homeicon" src="https://i.pinimg.com/564x/8a/67/be/8a67befed4bb41837186774172c7bf30.jpg"></a>
+    contract: <a href="https://discordapp.com/users/1055326431804137504/"><img style="width: 30px; border-radius: 10px;" src="https://i.pinimg.com/564x/66/1e/cf/661ecf66bda49150b44d25e4440e2bb8.jpg"></a> Location: Bangkok, Thailand
+    <br>© 2022 My Private Manhwa. Website source reserves to My Private Manhwa, Contents credit to owner.
+    <h5 id="caption">"Attention! This website is personal collection not for commercial"</h5>
+
+    <script src="{% static 'MyPrivateManhwa/content.js'%}">
+
+    </script>
+</body>
+</html>

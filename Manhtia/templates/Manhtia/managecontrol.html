@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+    <title>AdvanceManager</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/68/b3/6d/68b36d7bab2ce5db6f27f1df36367d64.jpg">
+    <link rel="stylesheet" href="{% static 'Manhtia/main.css' %}">
+    <link rel="stylesheet" href="{% static 'Manhtia/managecontrol.css' %}">
+</head>
+<body>
+    <div id="head">
+        <img id="icon" src="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg">
+        <label id="appname">Manhtia</label>
+        <div id="linker"><a class="linkeachpage" href="{% url 'content'%}">Content</a> <a class="linkeachpage" href="{% url 'portrayal'%}">Portrayal</a> <a class="linkeachpage" href="{% url 'private'%}">Private</a> <a class="linkeachpage" href="{% url 'manager'%}">Manager</a></div>
+    </div><br>
+    
+    <div id="contrainer">
+        <img src="https://i.pinimg.com/564x/68/b3/6d/68b36d7bab2ce5db6f27f1df36367d64.jpg" style="width: 70px; border-radius: 5px;">
+        <div id="log">
+            <form id="loginform">
+                <h2>Please type Password for Manage data.</h2><br>
+                <label>Password: </label>
+                <input id="check" type="password"><br><br>
+                <button id="logbut" type="submit">Access</button>
+            </form>
+        </div><br>
+        <div id="choose">
+            <h2>Manage Option</h2>
+            <button id="manhwa">Manhwa Story Maindata</button>
+            <button id="chapter">Manhwa Story Chapter</button>
+            <button id="portrayal">Manhwa Story Portrayal</button>
+            <button id="mature">Manhwa Story Mature</button>
+            <button id="change">Change Data</button>
+            <h2>Database</h2>
+            <button id="maindata">Main data</button>
+            <button id="moredata">More data</button>
+            <button id="eachpage">Each Story All Link</button>
+            <button id="drive">Each Story Drive Sheet Link</button>
+            <button id="eachma">Each Story Mature All Link</button>
+            <button id="eachmadrive">Each Story Mature Drive Sheet Link</button>
+            <h3>Help</h3>
+            <a href="https://redjajaggg.github.io/My-Private-Manhwa/provision.html">Provision</a>
+        </div>
+        <div id="show">
+            <iframe id="iframe">
+
+            </iframe>
+        </div><br>
+        This website exists for adding updating deleting managing data in My Private Manhwa and Manhtia.
+        <br>
+        © 2022 My Private Manhwa. Website source reserves to My Private Manhwa.  
+    </div>    
+</body>
+<script src="{% static 'Manhtia/managecontrol.js'%}"></script>
+</html>

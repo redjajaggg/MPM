@@ -1,0 +1,74 @@
+#console{
+    text-align: center;
+    background-color: bisque;
+    border-radius: 20px;
+    padding: 2px;
+    width: 99%;
+    position: sticky;
+    top: 10px;
+}
+#notificate{
+    animation-name: changeclour;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    padding: 5px;
+    border-radius: 10px;
+}
+#content{
+    text-align: center;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px 10px;
+}
+#search{
+    width: 20px;
+    border-radius: 50%;
+}
+#pro{
+    background: conic-gradient(gold 360deg, white 0deg);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pro::before{
+    content: "";
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: white;
+}
+#value{
+    position: relative;
+    font-size: 12px;
+    color: black;
+}
+#searchdiv{
+    display: none;
+}
+select{
+    background: none;
+    border: none;
+}
+input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid black;
+}
+.coverimg{
+    -webkit-transition: -webkit-transform 0.1s;
+    transition: transform 0.1s;
+}
+.coverimg:hover{
+    -webkit-transform: scale(2.0) rotate(0.00deg);
+    transform: scale(1.2) rotate(0.00deg);
+}
+@keyframes changeclour {
+    from {background-color: red;}
+    to {background-color: ivory;}
+}

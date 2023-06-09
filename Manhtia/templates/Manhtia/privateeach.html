@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+    <title>Manhtia</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg">
+</head>
+<body>
+    <div id="head">
+        If Some link might be not able to Open. Use other version to Open. Check in Homepage.
+        <label id="name">{{ name }}</label>
+        
+    <div id="content" style="border: solid black;">
+        Please choose the part to show.<input id="partget" list="parts" type="text"><datalist id="parts"></datalist> <button id="search">Search</button><input type="radio" id="choose" name="a" value="one">Link1<input type="radio" id="choose" name="a" value="two">Link2<br>
+    </div>
+    <div id="butshow">Choose</div>
+    <div id="show" style="width: 310px; font-size:0; margin-left: auto; margin-right: auto;"></div>
+    <div id="bottom">
+        <br>© 2023 Manhtia. Website source reserves to Manhtia, Contents credit to owner.<br>
+    </div>
+</body>
+<script src="{% static 'Manhtia/privateeach.js'%}"></script>
+</html>

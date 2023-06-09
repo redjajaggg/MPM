@@ -1,0 +1,42 @@
+h2{
+    background-color: aliceblue;
+    padding: 7px;
+    border-radius: 22px;
+    text-align: center;
+}
+#content{
+    overflow: hidden;
+    width: 99%;
+    height: fit-content;
+}
+#info{
+    background-color: bisque;
+    padding: 7px;
+    border-radius: 22px;
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#chapter{
+    background-color:whitesmoke;
+    padding: 7px;
+    border-radius: 22px;
+    text-align: left;
+    width: 300px;
+    overflow: auto;
+    height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#picture{
+    background-color: darkkhaki;
+    padding: 7px;
+    border-radius: 22px;
+    text-align: center;
+    width: 99%;
+}
+#cover{
+    width: 300px;
+    border-radius: 5px;
+}
