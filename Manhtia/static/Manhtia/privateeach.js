@@ -4,9 +4,10 @@ fetch(data_csv_mature).then(result=>result.text()).then(function (csvtext){retur
 function mature(data){
 
     var name = document.getElementById("name").innerText;
+    document.getElementById("nameget").value = name;
     for(var i = 0; i < data.length; i++){
 
-        if(data[i].Name == name){
+        if(data[i].Name == document.getElementById("nameget").value){
 
             var partPop = [];
             var data_get = data[i].Link;
@@ -66,11 +67,12 @@ function create(data, part){
             var img = document.createElement("img");
             if(document.querySelector('input[name = a]:checked').value == "one"){
                 img.setAttribute("src", data[i].Link1);
-                console.log(document.getElementById("choose").value);
             }
             if(document.querySelector('input[name = a]:checked').value == "two"){
                 img.setAttribute("src", data[i].Link2);
-                console.log("gg");
+            }
+            if(document.querySelector('input[name = a]:checked').value == "three"){
+                img.setAttribute("src", data[i].Link3);
             }
             img.style.width = "300px";
             document.getElementById("show").appendChild(img);
