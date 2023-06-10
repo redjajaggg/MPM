@@ -118,7 +118,7 @@ function create(data, i){
     if(data[i].Rawweb != "n"){link1 = "<a class='modernlink' href='" + data[i].Rawweb + "'>RawM</a>"}
     if(data[i].Newtoki != "n"){link2 = "<a class='modernlink' href='" + newnewtokilink + "'>RawL</a>"}
     if(data[i].Translate != "n"){link3 = "<a class='modernlink' href='" + data[i].Translate + "'>English</a>"}
-    if(data[i].Otherweb != "n"){link4 = "<a class='modernlink' href='" + data[i].Rawweb + "'>Other</a>"}
+    if(data[i].Otherweb != "n"){link4 = "<a class='modernlink' href='" + data[i].Otherweb + "'>Other</a>"}
     data_div.innerHTML = "Part: " + data[i].Part + "<br>Date: " + convert_date(data[i].Date) + " " + status + "<br>Number: " + data[i].Number + "<br>" + link1 + link2 + link3 + link4;
     data_div.style.width = "150px";
     data_div.style.float = "left";
