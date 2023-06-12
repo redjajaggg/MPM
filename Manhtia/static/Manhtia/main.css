@@ -136,6 +136,15 @@ a:hover, a:active {
     padding: 7px;
     border-radius: 30px;
 }
+#exchange{
+    width: 400px;
+}
+#exshow{
+    width: 390px;
+    height: 320px;
+    border: none;
+    border-radius: 22px;
+}
 @keyframes headwidthin {
     from {width: 20%;}
     to {width: 99%;}
