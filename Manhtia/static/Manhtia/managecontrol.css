@@ -38,4 +38,5 @@ iframe{
     height: 1200px;
     border-radius: 7px;
     display: none;
+    border: none;
 }
