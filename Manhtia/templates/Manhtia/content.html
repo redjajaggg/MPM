@@ -20,11 +20,28 @@
     <label class="moderndiv" id="notificate" style="display: none; width: 99%;"></label><br>
     If Some link might be not able to Open. Use other version to Open. Check in Homepage.
     <div id="searchdiv" class="moderndiv" style="width: 99%; margin-right: auto; margin-left: auto;">
-        <iframe src="{% url 'search'%}" style="width: 99%; border-radius: 25px; height: 400px;">
+        <iframe src="https://redjajaggg.github.io/My-Private-Manhwa/ModernManhwaWeb/currency.html" style="width: 99%; border-radius: 25px; height: 400px;">
 
         </iframe>
     </div><br>
-    <div id="console" class="moderndiv"><button type="button" id="opensearch"><img id="search" src="https://i.pinimg.com/564x/20/84/d5/2084d52de67b409823d500f04f7f15c3.jpg"></button> Page: <select name="page" id="page" onchange="clicks()"></select> <button type="button" id="prev">Prev</button><button type="button" id="next">Next</button>|<button id="go" type="submit">Go</button><button id="uptodays">Up</button></div>
+    <div id="console" class="moderndiv"><button type="button" id="opensearch"><img id="search" src="https://i.pinimg.com/564x/20/84/d5/2084d52de67b409823d500f04f7f15c3.jpg"></button> Page: <select name="page" id="page" onchange="clicks()"></select> <button type="button" id="prev">Prev</button><button type="button" id="next">Next</button>|<button id="go" type="submit">Go</button>
+        Filter:<select id="filter">
+            <option value="none">-</option>
+            <option value="yes">Has website</option>
+            <option value="no">Has no website</option>
+            <option value="ongoing">Ongoing</option>
+            <option value="end">End</option>
+            <option value="uptoday">Update today</option>
+            <option value="upyesterday">Check Translate</option>
+            <option value="n">Unknown</option>
+            <option value="1">Mon-Tue</option>
+            <option value="2">Tue-Wed</option>
+            <option value="3">Wed-Thu</option>
+            <option value="4">Thu-Fri</option>
+            <option value="5">Fri-Sat</option>
+            <option value="6">Sat-Sun</option>
+            <option value="7">Sun-Mon</option>
+        </select></div>
     <div id="content">
 
     </div><br>
