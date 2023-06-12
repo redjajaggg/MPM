@@ -21,3 +21,12 @@
     -webkit-transform: scale(2.0) rotate(0.00deg);
     transform: scale(1.1) rotate(0.00deg);
 }
+.exbig{
+    width: 99%;
+}
+.exbigiframe{
+    width: 99%;
+    height: 230px;
+    border: none;
+    border-radius: 22px;
+}
