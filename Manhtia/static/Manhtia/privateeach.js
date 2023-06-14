@@ -4,10 +4,9 @@ fetch(data_csv_mature).then(result=>result.text()).then(function (csvtext){retur
 function mature(data){
 
     var name = document.getElementById("name").innerText;
-    document.getElementById("nameget").value = name;
     for(var i = 0; i < data.length; i++){
 
-        if(data[i].Name == document.getElementById("nameget").value){
+        if(data[i].Name == name){
 
             var partPop = [];
             var data_get = data[i].Link;
@@ -18,13 +17,24 @@ function mature(data){
                         partPop.push(csv[j].Part);
                     }
                 }
-                var datalist = document.getElementById("parts");
+                var datalist = document.getElementById("part");
                 for(const names of partPop){
                     const option = document.createElement('option');
+                    option.text = names;
                     option.value = names;
                     datalist.appendChild(option);
                 }
-                document.getElementById("search").onclick = () => {
+                document.getElementById("part").onchange = () => {
+                    create_button(csv, partPop);
+                };
+                document.getElementById("next").onclick = () => {
+                    const se = document.querySelector('#part');
+                    se.value = document.getElementById("part").options[document.getElementById("part").selectedIndex + 1].text;
+                    create_button(csv, partPop);
+                };
+                document.getElementById("prev").onclick = () => {
+                    const se = document.querySelector('#part');
+                    se.value = document.getElementById("part").options[document.getElementById("part").selectedIndex - 1].text;
                     create_button(csv, partPop);
                 };
                 
@@ -39,9 +49,9 @@ function mature(data){
 function create_button(data, partPop){
 
 
-    for(var i = 0; i < partPop.length; i++){
+    /*for(var i = 0; i < partPop.length; i++){
 
-        if(partPop[i] == document.getElementById("partget").value){
+        if(partPop[i] == document.getElementById("part").value){
 
             var button = document.createElement("button");
             button.innerHTML = partPop[i];
@@ -51,6 +61,15 @@ function create_button(data, partPop){
             };
             document.getElementById("butshow").innerHTML = "";
             document.getElementById("butshow").appendChild(button);
+        }
+
+    }*/
+    for(var i = 0; i < partPop.length; i++){
+
+        if(partPop[i] == document.getElementById("part").value){
+
+            document.getElementById("show").innerHTML = "";
+            create(data, document.getElementById("part").value);
 
         }
 
@@ -74,7 +93,7 @@ function create(data, part){
             if(document.querySelector('input[name = a]:checked').value == "three"){
                 img.setAttribute("src", data[i].Link3);
             }
-            img.style.width = "300px";
+            img.style.width = "320px";
             document.getElementById("show").appendChild(img);
 
         }
