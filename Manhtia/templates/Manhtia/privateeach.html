@@ -11,13 +11,12 @@
 </head>
 <body>
     <div id="head">
-        If Some link might be not able to Open. Use other version to Open. Check in Homepage.
-        <label id="name">{{ name }}</label><input type="text" id="nameget">
+        If Some link might be not able to Open. Use other version to Open. Check in Homepage.<br>
+        <label id="name">{{ name }}</label> | If name has ' it might error, Please copy name and paste on searchpane of your browser.
         
-    <div id="content" style="border: solid black;">
-        Please choose the part to show.<input id="partget" list="parts" type="text"><datalist id="parts"></datalist> <button id="search">Search</button><input type="radio" id="choose" name="a" value="one">Link1<input type="radio" id="choose" name="a" value="two">Link2<input type="radio" id="choose" name="a" value="three">Link3<br>
-    </div>Choose link2 is recommend**
-    <div id="butshow">Choose</div> 
+    <div id="content" style="border: solid black; position: sticky; top: 0px; background-color: white;">
+        Choose the part.<select id="part"><option>None</option></select><button id="prev">Prev</button><button id="next">Next</button><button id="searcht">Search</button><input type="radio" id="choose" name="a" value="one">Link1<input type="radio" id="choose" name="a" value="two">Link2<input type="radio" id="choose" name="a" value="three">Link3<br>
+    </div>link1 is Hard load Link2 is Normal load(Recommend) Link3 is fast load.**
     <div id="show" style="width: 310px; font-size:0; margin-left: auto; margin-right: auto;"></div>
     <div id="bottom">
         <br>© 2023 Manhtia. Website source reserves to Manhtia, Contents credit to owner.<br>
