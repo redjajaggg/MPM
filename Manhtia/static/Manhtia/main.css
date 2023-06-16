@@ -66,6 +66,10 @@ button{
 button:hover{
     background-color:lawngreen
 }
+select{
+    background: none;
+    border: none;
+}
 a{
     text-decoration: none;
     padding: 5px;
