@@ -13,15 +13,32 @@ function main(data){
         }
 
     }
-    var datalist = document.getElementById("list");
+    var datalist = document.getElementById("namest");
     for(const names of namepop){
         const option = document.createElement('option');
+        option.text = names;
         option.value = names;
         datalist.appendChild(option);
     }
+    document.getElementById("namest").onchange = () => {
+        document.getElementById("content").innerHTML = "";
+        var name = document.getElementById("namest").value;
+        var filter = "";
+        if(document.getElementById("filter").innerText == "Main"){filter = "n";}else{filter = "e";}
+        for(var i = 0; i < data.length; i++){
+
+            if(name == data[i].Name){
+
+                create(data, i, filter);
+
+            }
+
+        }
+    };
+
     document.getElementById("searchs").onclick = () => {
         document.getElementById("content").innerHTML = "";
-        var name = document.getElementById("picname").value;
+        var name = document.getElementById("namest").value;
         var filter = "";
         if(document.getElementById("filter").innerText == "Main"){filter = "n";}else{filter = "e";}
         for(var i = 0; i < data.length; i++){
@@ -44,10 +61,6 @@ function main(data){
         document.getElementById("searchs").click();
     };
 
-    document.getElementById("clearinput").onclick = () => {
-        document.getElementById("picname").value = "";
-    };
-
 }
 
 function create(data, i, filter){
@@ -55,7 +68,7 @@ function create(data, i, filter){
     var name = document.createElement("div");
     var img = document.createElement("img");
 
-    name.innerHTML = document.getElementById("picname").value;
+    name.innerHTML = document.getElementById("namest").value;
     img.setAttribute("src", data[i].Link);
     img.setAttribute("class", "eachpic");
 
