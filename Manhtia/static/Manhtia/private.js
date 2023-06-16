@@ -24,6 +24,8 @@ function mature(data){
 
 function main(data){
 
+    document.getElementById("others").style.display = "block";
+
     var name = [];
     for(var i = 0; i < eachMature.length; i++){
 
@@ -44,6 +46,15 @@ function main(data){
 
     }
 
+    var main_div = document.createElement("div");
+    var data_div = document.createElement("div");
+
+    var link = "<a href='https://docs.google.com/spreadsheets/d/1EAkjDyUGRAXYCdmOeYIfRYl9U0-Kw3Lwfr6Nfw7fcDQ/edit?usp=sharing'>DataBase</a>";
+    var view = "<a href='Other'>Explore</a>";
+    data_div.innerHTML = "<div id='name'>Other</div><br>" + view + "<br>" + link;
+    main_div.appendChild(main_div);
+    document.getElementById("content").appendChild(main_div);
+    
 }
 
 function create(data, eachMature, i, name){
