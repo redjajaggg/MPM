@@ -24,8 +24,6 @@ function mature(data){
 
 function main(data){
 
-    document.getElementById("others").style.display = "block";
-
     var name = [];
     for(var i = 0; i < eachMature.length; i++){
 
@@ -46,15 +44,6 @@ function main(data){
 
     }
 
-    var main_div = document.createElement("div");
-    var data_div = document.createElement("div");
-
-    var link = "<a href='https://docs.google.com/spreadsheets/d/1EAkjDyUGRAXYCdmOeYIfRYl9U0-Kw3Lwfr6Nfw7fcDQ/edit?usp=sharing'>DataBase</a>";
-    var view = "<a href='Other'>Explore</a>";
-    data_div.innerHTML = "<div id='name'>Other</div><br>" + view + "<br>" + link;
-    main_div.appendChild(main_div);
-    document.getElementById("content").appendChild(main_div);
-    
 }
 
 function create(data, eachMature, i, name){
@@ -72,9 +61,11 @@ function create(data, eachMature, i, name){
     name_div.style.fontWeight = "700";
     name_div.setAttribute("id", "name");
 
+    var status = "Ongoing";
+    if(eachMature[index].Status == "Finish"){status = "Finish";}
     var link = "<a href='" + eachMature[index].Link + "'>DataBase</a>";
     var view = "<a href='" + data[i].Name + "'>Explore</a>";
-    data_div.innerHTML = "View: " + view + "<br>Edit: " + link;
+    data_div.innerHTML = "View: " + view + "<br>Edit: " + link + "<br>Status: " + status;
     data_div.style.width = "120px";
     data_div.style.float = "left";
 
