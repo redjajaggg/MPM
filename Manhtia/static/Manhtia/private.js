@@ -24,6 +24,8 @@ function mature(data){
 
 function main(data){
 
+    document.getElementById("others").style.display = "block";
+
     var name = [];
     for(var i = 0; i < eachMature.length; i++){
 
