@@ -93,6 +93,12 @@ function normal(data){
     if(data[0].Status == "yes"){document.getElementById("notificate").style.display = "block"; document.getElementById("notificate").innerHTML = "Notification: " + data[0].Info;}
     for(var i = 0; i < data.length; i++){
 
+         if(data[1].Status == "no"){
+            var e = document.getElementsByTagName('html')[0];
+            e.removeChild(document.body);
+            e.innerHTML = "<h1 style='text-align: center;'>Manhtia is now fixing. Will open soon.</h1>";
+        }
+
         if(data[i].Status == "yes"){
 
             var a = document.createElement("div");
