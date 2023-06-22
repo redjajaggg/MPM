@@ -3,6 +3,7 @@ fetch(data_csv_mature).then(result=>result.text()).then(function (csvtext){retur
 
 function mature(data){
 
+    document.getElementById("cache").onclick = () => {location.reload(true);}
     var name = document.getElementById("name").innerText;
     for(var i = 0; i < data.length; i++){
 
@@ -93,11 +94,12 @@ function create(data, part){
             if(document.querySelector('input[name = a]:checked').value == "three"){
                 img.setAttribute("src", data[i].Link3);
             }
-            img.style.width = "320px";
+            img.style.width = "410px";
             document.getElementById("show").appendChild(img);
 
         }
 
     }
+
 
 }
