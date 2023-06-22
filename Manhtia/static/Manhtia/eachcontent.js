@@ -93,7 +93,18 @@ function appenddata(data){
         }
 
     fetch(datamore).then(resultsi=>resultsi.text()).then(function (csvtextsi){return csv().fromString(csvtextsi);}).then(function(csvsi){
-                
+             
+        if(csvsi[i].Spoil.includes("mark as mature")){
+
+            var a = document.createElement('button');
+            a.innerHTML = "Mature";
+            a.onclick = () => { //NOT DYNAMICs
+                window.location.assign("https://redjajappp2.pythonanywhere.com/manhtia/private/" + document.getElementById("nameget").innerText);
+            };
+            document.getElementById("tops").appendChild(a);
+
+        }
+        
         var data = csvsi;
         var moreshow = two;
         var anames = document.createElement("div");
@@ -167,7 +178,7 @@ function appenddata(data){
         if(data[i].Website == "no"){
             chapter.innerHTML = "This manhwa has no chapter and will not update.";
         }
-          
+         
     });
     var k = 0;
     const each_data = "https://docs.google.com/spreadsheets/d/1R1e93BSQ-dVmHgZadcJmINP_qDJo65CZFBJ98hhzpvk/export?format=csv";
