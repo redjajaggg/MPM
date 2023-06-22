@@ -25,6 +25,16 @@ function mature(data){
 function main(data){
 
     document.getElementById("others").style.display = "block";
+    
+    var numcontPerpage = 100;
+    var num_page = data.length / numcontPerpage;
+    var page = 1;
+    for (var a = 1; a <= num_page + 1; a++){
+        var opt = document.createElement('option');
+        opt.value = a;
+        opt.innerHTML = a;
+        document.getElementById("page").appendChild(opt);
+    }
 
     var name = [];
     for(var i = 0; i < eachMature.length; i++){
@@ -36,13 +46,113 @@ function main(data){
         }
         
     }
-    for(var i = 0; i < data.length; i++){
+    document.getElementById("all").onclick = () => {
+        document.getElementById("content").innerHTML = "";
+        for(var i = 0; i < data.length; i++){
 
-        if(name.includes(data[i].Name)){
+            if(name.includes(data[i].Name)){
 
-            create(data, eachMature, i, name);
+                create(data, eachMature, i, name);
+
+            }
 
         }
+    }
+    document.getElementById("go").onclick = () => {
+        document.getElementById("content").innerHTML = "";
+        num_page = document.getElementById("page").options[document.getElementById("page").selectedIndex].text;
+        max = (num_page * numcontPerpage);
+        min = max - numcontPerpage;
+        for(var i = min; i < max; i++){
+
+            if(name.includes(data[i].Name)){
+    
+                create(data, eachMature, i, name);
+    
+            }
+        }
+    }
+    document.getElementById("next").onclick = () => {
+        const se = document.querySelector('#page');
+        se.value = document.getElementById("page").options[document.getElementById("page").selectedIndex + 1].text;
+        document.getElementById("go").click();
+    }
+    document.getElementById("prev").onclick = () => {
+        const se = document.querySelector('#page');
+        se.value = document.getElementById("page").options[document.getElementById("page").selectedIndex - 1].text;
+        document.getElementById("go").click();
+    }
+    onc();
+
+}
+
+function onc(){
+    document.getElementById("content").innerHTML = "";
+    document.getElementById("go").click();
+}
+
+function opensearch(){
+    if(document.getElementById("data").style.display == "none"){
+        document.getElementById("data").style.display = "block";
+    }else{document.getElementById("data").style.display = "none";}
+}
+
+function search(num){
+
+    document.getElementById("data_show_search").innerHTML = "";
+        
+    if(num == 0){
+
+        var namest = [];
+        fetch(data_csv_mature).then(result=>result.text()).then(function (csvtext){return csv().fromString(csvtext);}).then(function(rt){
+            for(var i = 0; i < rt.length; i++){
+
+                namest.push(rt[i].Name);
+
+            }
+            var millisecondsToWait = 500;
+            setTimeout(function() {
+                fetch("https://docs.google.com/spreadsheets/d/1vAmEFn17c6kJMQwJ5JPYlvtWnRRweM8O-uk1mwn5xgU/export?format=csv").then(result=>result.text()).then(function (csvtext){return csv().fromString(csvtext);}).then(function(csv){
+                
+
+                    for(var i = 0; i < csv.length; i++){
+
+                        if(csv[i].Spoil.includes("mark as mature") && !(namest.includes(csv[i].Name))){
+    
+                            var datas = document.createElement("label");
+                            var br = document.createElement("br");
+                            datas.innerHTML = "Name: >>" + csv[i].Name + " (Part: " + (Math.floor(i / 5) + 1) + " Number: " + (i + 1) + ")";
+                            document.getElementById("data_show_search").appendChild(datas);
+                            document.getElementById("data_show_search").appendChild(br);
+    
+                        }
+    
+                    }
+                });
+
+            }, millisecondsToWait);
+        
+        });
+
+    }
+
+    if(num == 1){
+
+        fetch(data_csv_mature).then(result=>result.text()).then(function (csvtext){return csv().fromString(csvtext);}).then(function(csv){
+            for(var i = 0; i < csv.length; i++){
+
+                if(csv[i].Status == "Finish"){
+
+                    var datas = document.createElement("label");
+                    var br = document.createElement("br");
+                    datas.innerHTML = "Name: >>" + csv[i].Name + "<< has been Finished upload mature.";
+                    document.getElementById("data_show_search").appendChild(datas);
+                    document.getElementById("data_show_search").appendChild(br);
+
+                }
+
+            }
+        });
 
     }
 
@@ -93,7 +203,7 @@ function normal(data){
     if(data[0].Status == "yes"){document.getElementById("notificate").style.display = "block"; document.getElementById("notificate").innerHTML = "Notification: " + data[0].Info;}
     for(var i = 0; i < data.length; i++){
 
-         if(data[1].Status == "no"){
+        if(data[1].Status == "no"){
             var e = document.getElementsByTagName('html')[0];
             e.removeChild(document.body);
             e.innerHTML = "<h1 style='text-align: center;'>Manhtia is now fixing. Will open soon.</h1>";
