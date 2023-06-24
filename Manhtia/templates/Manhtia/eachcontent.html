@@ -22,8 +22,12 @@
         <div id="tops"><a href="{% url 'index'%}">Home</a> | <a href="{% url 'content'%}">Back</a> </div>
         <div id="top">
         <div id="info"><h3>Information</h3></div>
-        <div id="chapter"><h3>Chapter</h3></div>
-        </div>
+        
+    </div>
+    </div>
+    <div id="chapter">
+        Currently, <label id="chapter_name"></label> (<label id="chapter_count"></label>)<button type="button" id="more">More</button><br>
+        Choose:<select id="choose_chapter" style="width: 130px;"><option>-</option></select><button id="prev">Prev</button><button id="next">Next</button>
     </div>
 	<div id="picture"><h3>Portrayal</h3></div>
 	<br>
@@ -34,5 +38,6 @@
         <br>© 2023 Manhtia. Website source reserves to Manhtia, Contents credit to owner.<br>
     </div>
     <script src="{% static 'Manhtia/eachcontent.js'%}"></script>
+    <script src="{% static 'Manhtia/eachcontent2.js'%}"></script>
 </body>
 </html>
