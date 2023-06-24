@@ -207,40 +207,37 @@ function appenddata(data){
 
         var chapterpop = [];
 
+        if(datai[5].Info2 == "n"){chapter.innerHTML = "<h3>Chapter</h3>"; chapter.style.height = "400px";}
+
         for(var j = 9; j < datai.length; j++){
-            /*var chap = document.createElement("div");
-            var chap_but = document.createElement("button");
-            var chap2 = document.createElement("div");
-            var stae = document.createElement("div");
-            chap.innerHTML = "<a href='" + datai[j].Info1 + "'>"+ datai[j].Topic +"</a>";
-            if(datai[j].Info2 != "n"){chap2.innerHTML = "<a href='" + datai[j].Info2 + "'>" + datai[j].Topic + " Part II</a>";}
-            if(datai[j].Status != "n"){chap.innerHTML = "<a href='" + datai[j].Info1 + "'>"+ datai[j].Topic +"</a> " + datai[j].Status;}
-            chapter.appendChild(chap);
-            chapter.appendChild(chap2);*/
 
-            /*chap_but.innerHTML = datai[j].Topic;
-            chap_but.setAttribute('id', datai[j].Topic);
-            chap_but.onclick = () => {
-                document.body.innerHTML = datai[0].Info1 + " View: ";
-                var chap_name = document.createElement("div");
-                chap_name.innerHTML = chap_but.innerText;
-                document.body.appendChild(chap_name);
-                //console.log(datai[j].Topic);
-            };
-            chap.appendChild(chap_but);
-            chapter.appendChild(chap);*/
-            document.getElementById("chapter_name").innerHTML = datai[j].Topic;
-            document.getElementById("chapter_count").innerHTML = j;
-            if(!chapterpop.includes(datai[j].Topic)){
-
-                chapterpop.push(datai[j].Topic);
-                var datalist = document.getElementById("choose_chapter");
-                const option = document.createElement('option');
-                option.text = datai[j].Topic;
-                option.value = datai[j].Topic;
-                datalist.appendChild(option);
-        
+            if(datai[5].Info2 == "n"){
+                var chap = document.createElement("div");
+                var chap2 = document.createElement("div");
+                var stae = document.createElement("div");
+                chap.innerHTML = "<a href='" + datai[j].Info1 + "'>"+ datai[j].Topic +"</a>";
+                if(datai[j].Info2 != "n"){chap2.innerHTML = "<a href='" + datai[j].Info2 + "'>" + datai[j].Topic + " Part II</a>";}
+                if(datai[j].Status != "n"){chap.innerHTML = "<a href='" + datai[j].Info1 + "'>"+ datai[j].Topic +"</a> " + datai[j].Status;}
+                chapter.appendChild(chap);
+                chapter.appendChild(chap2);
             }
+
+            if(datai[5].Info2 == "yes"){
+
+                document.getElementById("chapter_name").innerHTML = datai[j].Topic;
+                document.getElementById("chapter_count").innerHTML = j;
+                if(!chapterpop.includes(datai[j].Topic)){
+
+                    chapterpop.push(datai[j].Topic);
+                    var datalist = document.getElementById("choose_chapter");
+                    const option = document.createElement('option');
+                    option.text = datai[j].Topic;
+                    option.value = datai[j].Topic;
+                    datalist.appendChild(option);
+            
+                }
+            }
+            
             
         }
         document.getElementById("next").onclick = () => {
