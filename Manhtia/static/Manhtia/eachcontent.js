@@ -205,18 +205,56 @@ function appenddata(data){
         caption.style.padding = "5px";
         info.appendChild(caption);
 
+        var chapterpop = [];
+
         for(var j = 9; j < datai.length; j++){
-            var chap = document.createElement("div");
+            /*var chap = document.createElement("div");
+            var chap_but = document.createElement("button");
             var chap2 = document.createElement("div");
             var stae = document.createElement("div");
-            console.log("d");
             chap.innerHTML = "<a href='" + datai[j].Info1 + "'>"+ datai[j].Topic +"</a>";
             if(datai[j].Info2 != "n"){chap2.innerHTML = "<a href='" + datai[j].Info2 + "'>" + datai[j].Topic + " Part II</a>";}
             if(datai[j].Status != "n"){chap.innerHTML = "<a href='" + datai[j].Info1 + "'>"+ datai[j].Topic +"</a> " + datai[j].Status;}
             chapter.appendChild(chap);
-            chapter.appendChild(chap2);
+            chapter.appendChild(chap2);*/
+
+            /*chap_but.innerHTML = datai[j].Topic;
+            chap_but.setAttribute('id', datai[j].Topic);
+            chap_but.onclick = () => {
+                document.body.innerHTML = datai[0].Info1 + " View: ";
+                var chap_name = document.createElement("div");
+                chap_name.innerHTML = chap_but.innerText;
+                document.body.appendChild(chap_name);
+                //console.log(datai[j].Topic);
+            };
+            chap.appendChild(chap_but);
+            chapter.appendChild(chap);*/
+            document.getElementById("chapter_name").innerHTML = datai[j].Topic;
+            document.getElementById("chapter_count").innerHTML = j;
+            if(!chapterpop.includes(datai[j].Topic)){
+
+                chapterpop.push(datai[j].Topic);
+                var datalist = document.getElementById("choose_chapter");
+                const option = document.createElement('option');
+                option.text = datai[j].Topic;
+                option.value = datai[j].Topic;
+                datalist.appendChild(option);
+        
+            }
             
         }
+        document.getElementById("next").onclick = () => {
+            const se = document.querySelector('#choose_chapter');
+            se.value = document.getElementById("choose_chapter").options[document.getElementById("choose_chapter").selectedIndex + 1].text;
+            display_chapter(datai[0].Info1, datai);
+        }
+        document.getElementById("prev").onclick = () => {
+            const se = document.querySelector('#choose_chapter');
+            se.value = document.getElementById("choose_chapter").options[document.getElementById("choose_chapter").selectedIndex - 1].text;
+            display_chapter(datai[0].Info1, datai);
+        }       
+        
+
         var cggdrive1 = document.createElement("div")
         var cggdrive2 = document.createElement("div")
         var cggdrive3 = document.createElement("div")
