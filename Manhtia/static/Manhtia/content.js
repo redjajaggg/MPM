@@ -373,17 +373,27 @@ function create(data, i){
                             eachi.appendChild(pdfRzip);
                         }
 
-                        for(var c = 9; c < data_each_sub.length; c++){
-                            var cd = document.createElement("div");
-                            var status_c = data_each_sub[c].Status;
-                            if(status_c == "n"){status_c = "";}
-                            if(data_each_sub[c].Info2 != "n"){cd.innerHTML = "<a href='" + data_each_sub[c].Info1 + "'>" + data_each_sub[c].Topic + "</a> <a href='" + data_each_sub[c].Info2 + "'>" + data_each_sub[c].Topic + " Part II</a> " + status_c;}
-                            else{cd.innerHTML = "<a href='" + data_each_sub[c].Info1 + "'>" + data_each_sub[c].Topic + "</a> " + status_c;}
-                            
-                            chap_data_div.appendChild(cd);
-                        }
+                        if(data_each_sub[5].Info2 == "n"){
 
-                        
+                            for(var c = 9; c < data_each_sub.length; c++){
+                                var cd = document.createElement("div");
+                                var status_c = data_each_sub[c].Status;
+                                if(status_c == "n"){status_c = "";}
+                                if(data_each_sub[c].Info2 != "n"){cd.innerHTML = "<a href='" + data_each_sub[c].Info1 + "'>" + data_each_sub[c].Topic + "</a> <a href='" + data_each_sub[c].Info2 + "'>" + data_each_sub[c].Topic + " Part II</a> " + status_c;}
+                                else{cd.innerHTML = "<a href='" + data_each_sub[c].Info1 + "'>" + data_each_sub[c].Topic + "</a> " + status_c;}
+                                
+                                chap_data_div.appendChild(cd);
+                            }
+
+                        }
+                        for(var c = 9; c < data_each_sub.length; c++){
+
+                            if(data_each_sub[5].Info2 == "yes"){
+                                chap_data_div.innerHTML = "Currently is " + data_each_sub[c].Topic + " Count: " + c;
+                            }
+
+                        }
+                                                                       
                         main_data_div.appendChild(cove_nove_img);
                         main_data_div.appendChild(capt_data_div);
                         main_data_div.appendChild(eachi);
