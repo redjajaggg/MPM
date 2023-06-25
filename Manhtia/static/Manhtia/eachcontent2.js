@@ -1,3 +1,11 @@
+function tryAgain(e){
+    setTimeout(reloadImg, 1000, e);
+}
+
+function reloadImg(e){
+    var source = e.src;
+    e.src = source;
+}
 function display_chapter(name, data){
     
     var chapter = document.getElementById("choose_chapter").value;
@@ -18,6 +26,7 @@ function display_chapter(name, data){
         if(data[i].Topic == chapter){
             var img = document.createElement('img');
             img.setAttribute('src', data[i].Info1);
+            img.addEventListener("error", tryAgain(this));
             img.style.width = "400px";
             div.appendChild(img);
             div.style.fontSize = "0px";
