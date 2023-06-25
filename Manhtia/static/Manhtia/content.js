@@ -386,12 +386,32 @@ function create(data, i){
                             }
 
                         }
+                        var cdcheck = document.createElement("div");
                         for(var c = 9; c < data_each_sub.length; c++){
 
-                            if(data_each_sub[5].Info2 == "yes"){
-                                chap_data_div.innerHTML = "Currently is " + data_each_sub[c].Topic + " Count: " + c;
-                            }
+                            var add_status = document.createElement("div");
+                            if(data_each_sub[c].Topic.substring(data_each_sub[c].Topic.length - 1) == "."){
 
+                                if(data_each_sub[5].Info2 == "yes"){
+                                    cdcheck.innerHTML = "Currently is " + data_each_sub[c].Topic + " Count: " + c;
+                                    if(data_each_sub[c].Status != "n"){add_status.innerHTML = data_each_sub[c].Topic + data_each_sub[c].Status;}
+                                    chap_data_div.appendChild(cdcheck);
+                                    chap_data_div.appendChild(add_status);
+                                }
+
+                            }
+                            if(data_each_sub[c].Topic.substring(data_each_sub[c].Topic.length - 1) != "." && data_each_sub[5].Info2 == "yes"){
+
+                                var cd = document.createElement("div");
+                                var status_c = data_each_sub[c].Status;
+                                if(status_c == "n"){status_c = "";}
+                                if(data_each_sub[c].Info2 != "n"){cd.innerHTML = "<a href='" + data_each_sub[c].Info1 + "'>" + data_each_sub[c].Topic + "</a> <a href='" + data_each_sub[c].Info2 + "'>" + data_each_sub[c].Topic + " Part II</a> " + status_c;}
+                                else{cd.innerHTML = "<a href='" + data_each_sub[c].Info1 + "'>" + data_each_sub[c].Topic + "</a> " + status_c;}
+                                
+                                chap_data_div.appendChild(cd);
+
+                            }
+                            
                         }
                                                                        
                         main_data_div.appendChild(cove_nove_img);
