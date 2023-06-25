@@ -87,18 +87,29 @@ function create(data, part){
             var img = document.createElement("img");
             if(document.querySelector('input[name = a]:checked').value == "one"){
                 img.setAttribute("src", data[i].Link1);
+                img.addEventListener("error", tryAgain(this));
             }
             if(document.querySelector('input[name = a]:checked').value == "two"){
                 img.setAttribute("src", data[i].Link2);
+                img.addEventListener("error", tryAgain(this));
             }
             if(document.querySelector('input[name = a]:checked').value == "three"){
                 img.setAttribute("src", data[i].Link3);
+                img.addEventListener("error", tryAgain(this));
             }
             img.style.width = "410px";
             document.getElementById("show").appendChild(img);
 
         }
 
+    }
+    function tryAgain(e){
+        setTimeout(reloadImg, 1000, e);
+    }
+
+    function reloadImg(e){
+        var source = e.src;
+        e.src = source;
     }
 
 
