@@ -224,18 +224,23 @@ function appenddata(data){
 
             if(datai[5].Info2 == "yes"){
 
-                document.getElementById("chapter_name").innerHTML = datai[j].Topic;
-                document.getElementById("chapter_count").innerHTML = j;
-                if(!chapterpop.includes(datai[j].Topic)){
+                if(datai[j].Topic.substring(datai[j].Topic.length - 1) == "."){
 
-                    chapterpop.push(datai[j].Topic);
-                    var datalist = document.getElementById("choose_chapter");
-                    const option = document.createElement('option');
-                    option.text = datai[j].Topic;
-                    option.value = datai[j].Topic;
-                    datalist.appendChild(option);
-            
+                    document.getElementById("chapter_name").innerHTML = datai[j].Topic;
+                    document.getElementById("chapter_count").innerHTML = j;
+                    if(!chapterpop.includes(datai[j].Topic)){
+
+                        chapterpop.push(datai[j].Topic);
+                        var datalist = document.getElementById("choose_chapter");
+                        const option = document.createElement('option');
+                        option.text = datai[j].Topic;
+                        option.value = datai[j].Topic;
+                        datalist.appendChild(option);
+                
+                    }
+
                 }
+
             }
             
             
