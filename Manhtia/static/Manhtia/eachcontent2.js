@@ -1,7 +1,13 @@
 function display_chapter(name, data){
     
     var chapter = document.getElementById("choose_chapter").value;
-    document.getElementById("content").innerHTML = "<button onclick='location.reload(true)'>Back</button> View: " + chapter + "";
+    var status = "";
+    for(var i = 9; i <= document.getElementById("chapter_count").innerText; i++){
+        if(data[i].Topic == chapter && data[i].Status != "n"){
+            status = data[i].Status;
+        }
+    }
+    document.getElementById("content").innerHTML = "<button onclick='location.reload(true)'>Back</button> View: " + chapter + " " + status;
     document.getElementById("picture").innerHTML = "";
     var div = document.createElement('div');
     document.getElementById("chapter").style.position = "sticky";
@@ -25,13 +31,21 @@ function display_chapter(name, data){
     }
     document.getElementById("more").onclick = () => {
         var chap = document.createElement("div");
-        console.log("fff");
         for(var j = 9; j < document.getElementById("chapter_count").innerText; j++){
-    
-            var each = document.createElement("div");
-            each.innerHTML = data[j].Topic + "<a href='" + data[j].Info1 + "'>here</a>" + "<a href='" + data[j].Info2 + "'>here</a> " + data[j].Status;
-            chap.appendChild(each);
-    
+
+            if(data[j].Topic.substring(data[j].Topic.length - 1) != "."){
+
+                var chapt = document.createElement("div");
+                var chap2 = document.createElement("div");
+                var stae = document.createElement("div");
+                chapt.innerHTML = "<a href='" + data[j].Info1 + "'>"+ data[j].Topic +"</a>";
+                if(data[j].Info2 != "n"){chap2.innerHTML = "<a href='" + data[j].Info2 + "'>" + data[j].Topic + " Part II</a>";}
+                if(data[j].Status != "n"){chapt.innerHTML = "<a href='" + data[j].Info1 + "'>"+ data[j].Topic +"</a> " + data[j].Status;}
+                chap.appendChild(chapt);
+                chap.appendChild(chap2);
+
+            }
+        
         }
     
         document.getElementById("chapter").appendChild(chap);
