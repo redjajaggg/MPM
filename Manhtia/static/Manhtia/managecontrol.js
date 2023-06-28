@@ -21,9 +21,10 @@ var link_main = "https://docs.google.com/spreadsheets/d/12OgnnIYoeG3oa5prcZ5Hgzj
 var link_more = "https://docs.google.com/spreadsheets/d/1vAmEFn17c6kJMQwJ5JPYlvtWnRRweM8O-uk1mwn5xgU/edit#gid=0";
 var link_alllink = "https://docs.google.com/spreadsheets/d/1R1e93BSQ-dVmHgZadcJmINP_qDJo65CZFBJ98hhzpvk/edit#gid=0";
 var link_sheetdrive = "https://drive.google.com/drive/u/9/folders/1_rZZiCUxKO7CYpr_sLq-GfRurgTOxL37";
-var link_edit = "https://script.google.com/macros/s/AKfycbwl8K6IYxw2HILIxtBlOjFG1mXPWbftlJp2h72NIQ3imlFCZ8v2y_kXQ4jK57CXh7vvqQ/exec";
+var link_edit = "https://script.google.com/macros/s/AKfycbz2XfIvFbJLz5hxEEnJluZWp0AVb11PhzER9-2YEDK0atyMWTtgcNxIY948XqkBfYIQYQ/exec";
 var link_allmature = "https://docs.google.com/spreadsheets/d/1LGJg6Jl3qV2IQfknt2xOvmvJuKtUaVWMSOcN1HrnHuc/edit?usp=sharing";
 var link_allmaturesheet = "https://drive.google.com/drive/folders/1asS9TDsAvJZESrw0qu9YMdChTWRr1C0s?usp=drive_link";
+var link_step = "https://redjajaggg.github.io/My-Private-Manhwa/step.html";
 
 function iframeLoaded(link) {
     var iframe = document.getElementById('iframe');
@@ -41,6 +42,9 @@ document.getElementById("chapter").onclick = () => {
 };
 document.getElementById("portrayal").onclick = () => {
     iframeLoaded(link_addportra);
+};
+document.getElementById("step").onclick = () => {
+    iframeLoaded(link_step);
 };
 document.getElementById("mature").onclick = () => {
     golink(link_mature);
