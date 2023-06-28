@@ -25,6 +25,8 @@ var link_edit = "https://script.google.com/macros/s/AKfycbz2XfIvFbJLz5hxEEnJluZW
 var link_allmature = "https://docs.google.com/spreadsheets/d/1LGJg6Jl3qV2IQfknt2xOvmvJuKtUaVWMSOcN1HrnHuc/edit?usp=sharing";
 var link_allmaturesheet = "https://drive.google.com/drive/folders/1asS9TDsAvJZESrw0qu9YMdChTWRr1C0s?usp=drive_link";
 var link_step = "https://redjajaggg.github.io/My-Private-Manhwa/step.html";
+var link_convert = "https://script.google.com/macros/s/AKfycbwyBNcPK2YUmm_w24oD7yjTlPtQPqTKzNXW20rJ5G5ymgjqEBHAiyxQhlJ1ptFrePA/exec";
+var link_folder = "https://script.google.com/macros/s/AKfycbxvFyvdEezHu23hMeB_lAdAl55EPKHCpi67y4AWEyJsB7Jgv9s2oKvDZxJqY8KRqymvMQ/exec";
 
 function iframeLoaded(link) {
     var iframe = document.getElementById('iframe');
@@ -45,6 +47,12 @@ document.getElementById("portrayal").onclick = () => {
 };
 document.getElementById("step").onclick = () => {
     iframeLoaded(link_step);
+};
+document.getElementById("convert").onclick = () => {
+    iframeLoaded(link_convert);
+};
+document.getElementById("folder").onclick = () => {
+    iframeLoaded(link_folder);
 };
 document.getElementById("mature").onclick = () => {
     golink(link_mature);
