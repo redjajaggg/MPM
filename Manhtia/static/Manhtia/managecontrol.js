@@ -27,6 +27,9 @@ var link_allmaturesheet = "https://drive.google.com/drive/folders/1asS9TDsAvJZES
 var link_step = "https://redjajaggg.github.io/My-Private-Manhwa/step.html";
 var link_convert = "https://script.google.com/macros/s/AKfycbwyBNcPK2YUmm_w24oD7yjTlPtQPqTKzNXW20rJ5G5ymgjqEBHAiyxQhlJ1ptFrePA/exec";
 var link_folder = "https://script.google.com/macros/s/AKfycbxvFyvdEezHu23hMeB_lAdAl55EPKHCpi67y4AWEyJsB7Jgv9s2oKvDZxJqY8KRqymvMQ/exec";
+var link_exchange = "https://redjajaggg.github.io/My-Private-Manhwa/ModernManhwaWeb/currency.html";
+var link_provision = "https://redjajaggg.github.io/My-Private-Manhwa/provision.html";
+var link_checker = "https://redjajaggg.github.io/My-Private-Manhwa/checker.html";
 
 function iframeLoaded(link) {
     var iframe = document.getElementById('iframe');
@@ -53,6 +56,15 @@ document.getElementById("convert").onclick = () => {
 };
 document.getElementById("folder").onclick = () => {
     iframeLoaded(link_folder);
+};
+document.getElementById("checker").onclick = () => {
+    iframeLoaded(link_checker);
+};
+document.getElementById("exchanges").onclick = () => {
+    iframeLoaded(link_exchange);
+};
+document.getElementById("provision").onclick = () => {
+    iframeLoaded(link_provision);
 };
 document.getElementById("mature").onclick = () => {
     golink(link_mature);
