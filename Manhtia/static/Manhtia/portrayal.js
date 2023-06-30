@@ -21,6 +21,12 @@ function main(data){
         datalist.appendChild(option);
     }
     document.getElementById("namest").onchange = () => {
+        
+        var win_width = window.innerWidth;
+        if(win_width >= 1300){document.getElementById("content").style.columns = 4;}
+        if(win_width < 1300 && win_width >= 1000){document.getElementById("content").style.columns = 3;}
+        if(win_width < 1000 && win_width >= 700){document.getElementById("content").style.columns = 2;}
+        if(win_width < 700){document.getElementById("content").style.columns = 1;}
         document.getElementById("content").innerHTML = "";
         var name = document.getElementById("namest").value;
         var filter = "";
@@ -41,6 +47,7 @@ function main(data){
         var name = document.getElementById("namest").value;
         var filter = "";
         if(document.getElementById("filter").innerText == "Main"){filter = "n";}else{filter = "e";}
+
         for(var i = 0; i < data.length; i++){
 
             if(name == data[i].Name){
