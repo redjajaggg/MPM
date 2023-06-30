@@ -19,9 +19,9 @@ input{
     width: 100px;
 }
 .eachpic{
-    border-radius: 7px;
+    border-radius: 10px;
     width: 300px;
-    border: solid black 3px;
+    border: none;
 }
 .eachpic:hover{
     -webkit-transform: scale(2.0) rotate(0.00deg);
