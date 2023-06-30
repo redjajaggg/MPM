@@ -30,6 +30,7 @@ var link_folder = "https://script.google.com/macros/s/AKfycbxvFyvdEezHu23hMeB_lA
 var link_exchange = "https://redjajaggg.github.io/My-Private-Manhwa/ModernManhwaWeb/currency.html";
 var link_provision = "https://redjajaggg.github.io/My-Private-Manhwa/provision.html";
 var link_checker = "https://redjajaggg.github.io/My-Private-Manhwa/checker.html";
+var link_append = "https://script.google.com/macros/s/AKfycbyG2edE1wsZUdHKZoI3iII-Gmp4IXMz80eQt97p_m7SS7lzTX_WodrfZO9NEwseLdkw/exec";
 
 function iframeLoaded(link) {
     var iframe = document.getElementById('iframe');
@@ -53,6 +54,9 @@ document.getElementById("step").onclick = () => {
 };
 document.getElementById("convert").onclick = () => {
     iframeLoaded(link_convert);
+};
+document.getElementById("getandappend").onclick = () => {
+    iframeLoaded(link_append);
 };
 document.getElementById("folder").onclick = () => {
     iframeLoaded(link_folder);
