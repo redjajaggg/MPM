@@ -31,6 +31,7 @@ var link_exchange = "https://redjajaggg.github.io/My-Private-Manhwa/ModernManhwa
 var link_provision = "https://redjajaggg.github.io/My-Private-Manhwa/provision.html";
 var link_checker = "https://redjajaggg.github.io/My-Private-Manhwa/checker.html";
 var link_append = "https://script.google.com/macros/s/AKfycbyG2edE1wsZUdHKZoI3iII-Gmp4IXMz80eQt97p_m7SS7lzTX_WodrfZO9NEwseLdkw/exec";
+var link_appendbest = "https://script.google.com/macros/s/AKfycbzNBAt_4sHuKuR1QhBUGqFvTz-p2LHSePyZoB-VtSvwF5uPn96Orcal2SGhwjy3yp3OzA/exec";
 
 function iframeLoaded(link) {
     var iframe = document.getElementById('iframe');
@@ -57,6 +58,9 @@ document.getElementById("convert").onclick = () => {
 };
 document.getElementById("getandappend").onclick = () => {
     iframeLoaded(link_append);
+};
+document.getElementById("getandappendbest").onclick = () => {
+    iframeLoaded(link_appendbest);
 };
 document.getElementById("folder").onclick = () => {
     iframeLoaded(link_folder);
