@@ -171,9 +171,14 @@ function create_up(data, i){
         var data_div = document.createElement("div");
         var cove_div = document.createElement("div");
         var cove_img = document.createElement("img");
+        var yes_div = document.createElement("div");
+
+        yes_div.innerHTML = "<img src='https://i.pinimg.com/564x/70/04/79/700479c6e38c5cdf852a6f8ae2a61aa5.jpg' id='website_check'>";
+        yes_div.style.width = "30px";
+        yes_div.style.float = "right";
 
         main_div.style.width = "320px";
-        name_div.innerHTML = data[i].Name;
+        name_div.innerHTML = "<div style='width: 250px; float: left;'>" + data[i].Name + "</div>";
         name_div.style.fontWeight = "700";
         name_div.setAttribute("id", "name");
 
@@ -205,8 +210,8 @@ function create_up(data, i){
         main_div.appendChild(cove_div);
         main_div.setAttribute("class", "moderndiv");
         main_div.setAttribute("id", "eachstorydiv");
-        if(data[i].Website == "yes"){main_div.style.backgroundColor = "#f7b7e2";}
-        else{main_div.style.backgroundColor = "#a5faa6";}
+        if(data[i].Website == "yes"){main_div.style.backgroundColor = "white"; name_div.appendChild(yes_div);}
+        else{main_div.style.backgroundColor = "white";}
         document.getElementById("today").appendChild(main_div);
 
     }
@@ -219,9 +224,14 @@ function create_up(data, i){
         var data_div = document.createElement("div");
         var cove_div = document.createElement("div");
         var cove_img = document.createElement("img");
+        var yes_div = document.createElement("div");
+
+        yes_div.innerHTML = "<img src='https://i.pinimg.com/564x/70/04/79/700479c6e38c5cdf852a6f8ae2a61aa5.jpg' id='website_check'>";
+        yes_div.style.width = "30px";
+        yes_div.style.float = "right";
 
         main_div.style.width = "320px";
-        name_div.innerHTML = data[i].Name;
+        name_div.innerHTML = "<div style='width: 250px; float: left;'>" + data[i].Name + "</div>";
         name_div.style.fontWeight = "700";
         name_div.setAttribute("id", "name");
 
@@ -253,8 +263,8 @@ function create_up(data, i){
         main_div.appendChild(cove_div);
         main_div.setAttribute("class", "moderndiv");
         main_div.setAttribute("id", "eachstorydiv");
-        if(data[i].Website == "yes"){main_div.style.backgroundColor = "#f7b7e2";}
-        else{main_div.style.backgroundColor = "#a5faa6";}
+        if(data[i].Website == "yes"){main_div.style.backgroundColor = "white"; name_div.appendChild(yes_div);}
+        else{main_div.style.backgroundColor = "white";}
         document.getElementById("yesterday").appendChild(main_div);
 
     }
