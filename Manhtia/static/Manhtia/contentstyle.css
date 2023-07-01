@@ -1,11 +1,14 @@
 #console{
     text-align: center;
-    background-color: bisque;
+    background-color: white;
     border-radius: 20px;
     padding: 2px;
     width: 99%;
     position: sticky;
     top: 10px;
+}
+#name{
+    background-color: #f0a6a1;
 }
 #notificate{
     animation-name: changeclour;
@@ -69,9 +72,13 @@ input{
     -webkit-transform: scale(2.0) rotate(0.00deg);
     transform: scale(1.2) rotate(0.00deg);
 }
+#more_told{
+    width: 30px;
+    border-radius: 7px;
+}
 @keyframes changeclour {
     from {background-color: red;}
-    to {background-color: ivory;}
+    to {background-color: white;}
 }
 iframe{
     border: none;
