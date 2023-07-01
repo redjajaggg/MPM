@@ -43,6 +43,10 @@ h3{
 #link{
     width: 330px;
 }
+#website_check{
+    width: 25px;
+    border-radius: 7px;
+}
 #statistic{
     float: right;
     display: grid;
