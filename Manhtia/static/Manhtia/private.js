@@ -174,7 +174,7 @@ function create(data, eachMature, i, name){
     name_div.setAttribute("id", "name");
 
     var status = "Ongoing";
-    if(eachMature[index].Status == "Finish"){status = "Finish";}
+    if(eachMature[index].Status == "Finish"){status = "<img style='width: 20px; border-radius: 7px;' src='https://i.pinimg.com/564x/f2/ef/15/f2ef15f64d2724857a6093175a72c8d8.jpg'>";}
     var link = "<a href='" + eachMature[index].Link + "'>DataBase</a>";
     var view = "<a href='" + data[i].Name + "'>Explore</a>";
     data_div.innerHTML = "View: " + view + "<br>Edit: " + link + "<br>Status: " + status;
