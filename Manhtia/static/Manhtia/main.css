@@ -60,7 +60,7 @@ button{
     border: none;
     border-radius: 20px;
     padding: 7px;
-    background-color: bisque;
+    background-color: #fc0303;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
 }
@@ -72,7 +72,7 @@ input{
     background: none;
 }
 button:hover{
-    background-color:lawngreen
+    background-color:#f0a6a1;
 }
 select{
     background: none;
@@ -81,7 +81,7 @@ select{
 a{
     text-decoration: none;
     padding: 5px;
-    color: blue;
+    color: black;
     display: inline-block;
     text-decoration: none;
     border-radius: 10px;
@@ -120,7 +120,7 @@ a:hover, a:active {
     background-color: white;
     border-radius: 30px;
     padding: 10px;
-    overflow: hidden;
+    overflow: auto;
     width: 300px;
     justify-items: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
@@ -139,15 +139,20 @@ a:hover, a:active {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #name{
-    background-color: yellow;
+    background-color: red;
     padding: 7px;
     border-radius: 30px;
     text-align: left;
+    overflow: hidden;
 }
 .top{
-    background-color: aquamarine;
+    background-color: red;
     padding: 7px;
     border-radius: 30px;
+}
+.top:hover{
+    background-color: #f0a6a1
+    ;
 }
 #exchange{
     width: 400px;
