@@ -149,6 +149,7 @@ function create(data, i){
     var up_div = document.createElement("div");
     var name_div = document.createElement("div");
     var name_link = document.createElement("a");
+    var web_check = document.createElement("div");
     var data_div = document.createElement("div");
     var cove_div = document.createElement("div");
     var cove_img = document.createElement("img");
@@ -165,12 +166,14 @@ function create(data, i){
     const today = new Date();
     var getday = today.getDay();
     if(getday == 0){getday = 7;}
-    if(getday == data[i].Date && data[i].Status !== "end"){upd = "Update!"; up_div.style.backgroundColor = "red";}
-    if(getday - 1 == data[i].Date && data[i].Status != "end"){upd = "Check Translate!"; up_div.style.backgroundColor = "blue";}
+    if(getday == data[i].Date && data[i].Status !== "end"){upd = "<img id='more_told' src='https://i.pinimg.com/564x/48/63/be/4863be978d4b93227aeb215e6bdf0739.jpg'>";}
+    if(getday - 1 == data[i].Date && data[i].Status != "end"){upd = "<img id='more_told' src='https://i.pinimg.com/564x/22/04/cc/2204cc955737d2ec1d8250a5d10d248d.jpg'>";}
     up_div.style.borderRadius = "22px";
     up_div.style.fontSize = "20px";
 
     up_div.innerHTML = upd;
+    web_check.innerHTML = "<img id='more_told' src='https://i.pinimg.com/564x/70/04/79/700479c6e38c5cdf852a6f8ae2a61aa5.jpg'>";
+    web_check.style.float = "right";
 
     main_div.style.width = "320px";
     var linkText = document.createTextNode(data[i].Name);
@@ -178,8 +181,10 @@ function create(data, i){
     name_link.appendChild(linkText);
     name_link.title = data[i].Name;
     name_link.href = data[i].Name;
+    name_link.style.width = "250px";
     name_div.setAttribute("id", "name");
     name_div.appendChild(name_link);
+    name_div.style.padding = "10px";
 
     var newtokilink = data[i].Newtoki + "";
     var newnewtokilink = domain_newtoki + newtokilink.substring(23);
@@ -189,7 +194,7 @@ function create(data, i){
     var link3 = "";
     var link4 = "";
     var status = "";
-    if(data[i].Status == "end"){status = "{END}";}
+    if(data[i].Status == "end"){status = "<br>Status: <img style='width: 17px;' id='more_told' src='https://i.pinimg.com/564x/f2/ef/15/f2ef15f64d2724857a6093175a72c8d8.jpg'>";}
     if(data[i].Rawweb != "n"){link1 = "<a class='modernlink' href='" + data[i].Rawweb + "'>RawM</a>"}
     if(data[i].Newtoki != "n"){link2 = "<a class='modernlink' href='" + newnewtokilink + "'>RawL</a>"}
     if(data[i].Translate != "n"){link3 = "<a class='modernlink' href='" + data[i].Translate + "'>English</a>"}
@@ -234,7 +239,7 @@ function create(data, i){
     pro_span.textContent = percent_.toFixed(1) + "%";
     if(data[i].Date == "n"){pro_span.textContent = "Unknown";}
     if(data[i].Status == "end"){pro_span.textContent = "END"; percent_ = 100;}
-    if(percent_.toFixed(1) == "0.0"){pro_span.textContent = "Congratulation";}
+    if(percent_.toFixed(1) == "0.0"){pro_span.textContent = "Atteint!";}
     var random_result = Math.random() * 30;
     random_result = Math.round(random_result);
     var colors = "gold";
@@ -435,8 +440,7 @@ function create(data, i){
     main_div.appendChild(more_div);
     more_div.style.textAlign = "left";
     main_div.setAttribute("class", "moderndiv");
-    if(data[i].Website == "yes"){name_div.style.backgroundColor = "rgb(161, 199, 246)";}
-    else{name_div.style.backgroundColor = "yellow";}
+    if(data[i].Website == "yes"){name_div.appendChild(web_check);}
     document.getElementById("content").appendChild(main_div);
 
 }
