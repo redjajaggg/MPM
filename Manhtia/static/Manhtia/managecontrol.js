@@ -32,6 +32,7 @@ var link_provision = "https://redjajaggg.github.io/My-Private-Manhwa/provision.h
 var link_checker = "https://redjajaggg.github.io/My-Private-Manhwa/checker.html";
 var link_append = "https://script.google.com/macros/s/AKfycbyG2edE1wsZUdHKZoI3iII-Gmp4IXMz80eQt97p_m7SS7lzTX_WodrfZO9NEwseLdkw/exec";
 var link_appendbest = "https://script.google.com/macros/s/AKfycbzNBAt_4sHuKuR1QhBUGqFvTz-p2LHSePyZoB-VtSvwF5uPn96Orcal2SGhwjy3yp3OzA/exec";
+var link_upload = "https://script.google.com/macros/s/AKfycbxzKf2_L6xSXf8bjgzn2TSYt1MgA9-63hQDmqfj1vZVXwOegMa1b3QVfHU7s-_kXIXjuQ/exec";
 
 function iframeLoaded(link) {
     var iframe = document.getElementById('iframe');
@@ -52,6 +53,9 @@ document.getElementById("portrayal").onclick = () => {
 };
 document.getElementById("step").onclick = () => {
     iframeLoaded(link_step);
+};
+document.getElementById("uploadchaptermature").onclick = () => {
+    iframeLoaded(link_upload);
 };
 document.getElementById("convert").onclick = () => {
     iframeLoaded(link_convert);
