@@ -21,7 +21,7 @@ var link_main = "https://docs.google.com/spreadsheets/d/12OgnnIYoeG3oa5prcZ5Hgzj
 var link_more = "https://docs.google.com/spreadsheets/d/1vAmEFn17c6kJMQwJ5JPYlvtWnRRweM8O-uk1mwn5xgU/edit#gid=0";
 var link_alllink = "https://docs.google.com/spreadsheets/d/1R1e93BSQ-dVmHgZadcJmINP_qDJo65CZFBJ98hhzpvk/edit#gid=0";
 var link_sheetdrive = "https://drive.google.com/drive/u/9/folders/1_rZZiCUxKO7CYpr_sLq-GfRurgTOxL37";
-var link_edit = "https://script.google.com/macros/s/AKfycbz2XfIvFbJLz5hxEEnJluZWp0AVb11PhzER9-2YEDK0atyMWTtgcNxIY948XqkBfYIQYQ/exec";
+var link_edit = "https://script.google.com/macros/s/AKfycbw9sgILRuQzJdzRtF_SpeKfUQCoLR_ezaMYt0ONIcX0hjTCbIdpfql7SLTCvy9v_CBelQ/exec";
 var link_allmature = "https://docs.google.com/spreadsheets/d/1LGJg6Jl3qV2IQfknt2xOvmvJuKtUaVWMSOcN1HrnHuc/edit?usp=sharing";
 var link_allmaturesheet = "https://drive.google.com/drive/folders/1asS9TDsAvJZESrw0qu9YMdChTWRr1C0s?usp=drive_link";
 var link_step = "https://redjajaggg.github.io/My-Private-Manhwa/step.html";
@@ -33,6 +33,8 @@ var link_checker = "https://redjajaggg.github.io/My-Private-Manhwa/checker.html"
 var link_append = "https://script.google.com/macros/s/AKfycbyG2edE1wsZUdHKZoI3iII-Gmp4IXMz80eQt97p_m7SS7lzTX_WodrfZO9NEwseLdkw/exec";
 var link_appendbest = "https://script.google.com/macros/s/AKfycbzNBAt_4sHuKuR1QhBUGqFvTz-p2LHSePyZoB-VtSvwF5uPn96Orcal2SGhwjy3yp3OzA/exec";
 var link_upload = "https://script.google.com/macros/s/AKfycbxzKf2_L6xSXf8bjgzn2TSYt1MgA9-63hQDmqfj1vZVXwOegMa1b3QVfHU7s-_kXIXjuQ/exec";
+var link_upload2 = "https://script.google.com/macros/s/AKfycbw04HikVhHdusLfGbbMGxntz99mGy9K1N-cyvwHszY-Cqye2zeJ9LxtzubRkL9tzhVf/exec";
+var link_checkerror = "https://script.google.com/macros/s/AKfycbylMInRC_cVolasNApkSusCZAlLvuCV_wWcDm_USIZ4tGLlV3fnv65USBcD82X5xdVFaQ/exec";
 
 function iframeLoaded(link) {
     var iframe = document.getElementById('iframe');
@@ -54,8 +56,14 @@ document.getElementById("portrayal").onclick = () => {
 document.getElementById("step").onclick = () => {
     iframeLoaded(link_step);
 };
+document.getElementById("error").onclick = () => {
+    iframeLoaded(link_checkerror);
+};
 document.getElementById("uploadchaptermature").onclick = () => {
     iframeLoaded(link_upload);
+};
+document.getElementById("uploadchaptermature2").onclick = () => {
+    iframeLoaded(link_upload2);
 };
 document.getElementById("convert").onclick = () => {
     iframeLoaded(link_convert);
@@ -77,9 +85,6 @@ document.getElementById("exchanges").onclick = () => {
 };
 document.getElementById("provision").onclick = () => {
     iframeLoaded(link_provision);
-};
-document.getElementById("mature").onclick = () => {
-    golink(link_mature);
 };
 document.getElementById("change").onclick = () => {
     iframeLoaded(link_edit);
