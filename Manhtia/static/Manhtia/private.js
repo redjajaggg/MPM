@@ -4,9 +4,10 @@ const data_csv_mature = "https://docs.google.com/spreadsheets/d/1LGJg6Jl3qV2IQfk
 fetch(data_csv_normal).then(result=>result.text()).then(function (csvtext){return csv().fromString(csvtext);}).then(function(csv){normal(csv);});
 fetch(data_csv_mature).then(result=>result.text()).then(function (csvtext){return csv().fromString(csvtext);}).then(function(csv){mature(csv);});
          
-document.getElementById("logbut").onclick = () => {
 
-    if(document.getElementById("check").value == "112523"){
+document.getElementById("check").value = "If Yes. Click Access.";
+document.getElementById("logbut").onclick = () => {
+    if(document.getElementById("check").value == "If Yes. Click Access."){
         document.getElementById("login").innerHTML = "Access Successfully.";
         document.getElementById("login").style.display = "none";
         fetch(data_csv_main).then(result=>result.text()).then(function (csvtext){return csv().fromString(csvtext);}).then(function(csv){main(csv);});
@@ -167,6 +168,12 @@ function create(data, eachMature, i, name){
     var data_div = document.createElement("div");
     var cove_div = document.createElement("div");
     var cove_img = document.createElement("img");
+    var views = document.createElement("label");
+    var statuss = document.createElement("label");
+    var more_data = document.createElement("label");
+    var br = document.createElement("br");
+    var br2 = document.createElement("br");
+    var br3 = document.createElement("br");
 
     main_div.style.width = "320px";
     name_div.innerHTML = data[i].Name;
@@ -175,9 +182,33 @@ function create(data, eachMature, i, name){
 
     var status = "Ongoing";
     if(eachMature[index].Status == "Finish"){status = "<img style='width: 20px; border-radius: 7px;' src='https://i.pinimg.com/564x/f2/ef/15/f2ef15f64d2724857a6093175a72c8d8.jpg'>";}
-    var link = "<a href='" + eachMature[index].Link + "'>DataBase</a>";
-    var view = "<a href='" + data[i].Name + "'>Explore</a>";
-    data_div.innerHTML = "View: " + view + "<br>Edit: " + link + "<br>Status: " + status;
+    //var link = "<a href='" + eachMature[index].Link + "'>DataBase</a>";
+    //var view = "<a href='" + data[i].Name + "'>Explore</a>";
+    var name_link = document.createElement('a');
+    var linkText = document.createTextNode("(Explore)");
+    name_link.appendChild(linkText);
+    name_link.title = data[i].Name;
+    name_link.href = data[i].Name;
+    name_link.style.width = "60px";
+
+    views.innerHTML = "View: ";
+    data_div.appendChild(views);
+    data_div.appendChild(name_link);
+    statuss.innerHTML = "Status: " + status;
+    data_div.appendChild(statuss);
+    more_data.innerHTML = "Detail: ";
+    var more_link = document.createElement('a');
+    var moreText = document.createTextNode("More...");
+    more_link.appendChild(moreText);
+    more_link.title = data[i].Name;
+    more_link.href = "https://redjajappp2.pythonanywhere.com/manhtia/content/" + data[i].Name;
+    more_link.style.width = "60px";
+    data_div.appendChild(br);
+    data_div.appendChild(br2);
+    data_div.appendChild(br3);
+    data_div.appendChild(more_data);
+    data_div.appendChild(more_link);
+
     data_div.style.width = "120px";
     data_div.style.float = "left";
 
@@ -206,7 +237,7 @@ function normal(data){
         if(data[1].Status == "no"){
             var e = document.getElementsByTagName('html')[0];
             e.removeChild(document.body);
-            e.innerHTML = "<h1 style='text-align: center;'>Manhtia is now fixing. Will open soon.</h1>";
+            e.innerHTML = "<img style='width: 200px;' src='https://i.pinimg.com/564x/68/b3/6d/68b36d7bab2ce5db6f27f1df36367d64.jpg'><h1 style='text-align: center;'>Maintenance</h1><h2 style='text-align: center;'>Manhtia is now fixing. Will open soon.<br>(Manhwa Manager)</h2>";
         }
 
         if(data[i].Status == "yes"){
@@ -229,6 +260,13 @@ function normal(data){
             }
 
             if(data[i].Group == "th"){
+
+                a.innerHTML = "<a href='" + data[i].Info + "'><img id='slink' src='" + data[i].Piclink + "'></a>" + data[i].Name;
+                app.appendChild(a);
+
+            }
+
+            if(data[i].Group == "fantrans"){
 
                 a.innerHTML = "<a href='" + data[i].Info + "'><img id='slink' src='" + data[i].Piclink + "'></a>" + data[i].Name;
                 app.appendChild(a);
