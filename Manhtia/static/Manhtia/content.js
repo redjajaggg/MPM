@@ -454,7 +454,7 @@ function normal(data){
         if(data[1].Status == "no"){
             var e = document.getElementsByTagName('html')[0];
             e.removeChild(document.body);
-            e.innerHTML = "<h1 style='text-align: center;'>Manhtia is now fixing. Will open soon.</h1>";
+            e.innerHTML = "<img style='width: 200px;' src='https://i.pinimg.com/564x/68/b3/6d/68b36d7bab2ce5db6f27f1df36367d64.jpg'><h1 style='text-align: center;'>Maintenance</h1><h2 style='text-align: center;'>Manhtia is now fixing. Will open soon.<br>(Manhwa Manager)</h2>";
         }
 
         if(data[i].Status == "yes"){
@@ -477,6 +477,13 @@ function normal(data){
             }
 
             if(data[i].Group == "th"){
+
+                a.innerHTML = "<a href='" + data[i].Info + "'><img id='slink' src='" + data[i].Piclink + "'></a>" + data[i].Name;
+                app.appendChild(a);
+
+            }
+
+            if(data[i].Group == "fantrans"){
 
                 a.innerHTML = "<a href='" + data[i].Info + "'><img id='slink' src='" + data[i].Piclink + "'></a>" + data[i].Name;
                 app.appendChild(a);
