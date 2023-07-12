@@ -35,6 +35,7 @@ var link_appendbest = "https://script.google.com/macros/s/AKfycbzNBAt_4sHuKuR1Qh
 var link_upload = "https://script.google.com/macros/s/AKfycbxzKf2_L6xSXf8bjgzn2TSYt1MgA9-63hQDmqfj1vZVXwOegMa1b3QVfHU7s-_kXIXjuQ/exec";
 var link_upload2 = "https://script.google.com/macros/s/AKfycbw04HikVhHdusLfGbbMGxntz99mGy9K1N-cyvwHszY-Cqye2zeJ9LxtzubRkL9tzhVf/exec";
 var link_checkerror = "https://script.google.com/macros/s/AKfycbylMInRC_cVolasNApkSusCZAlLvuCV_wWcDm_USIZ4tGLlV3fnv65USBcD82X5xdVFaQ/exec";
+var link_console = "https://script.google.com/macros/s/AKfycbzJOq7K2SSpXIESnfeVgae7wonrqxFM-PcpOtiqKwd9RWcYKGIDWNwR31JKyuPz59q8/exec";
 
 function iframeLoaded(link) {
     var iframe = document.getElementById('iframe');
@@ -44,6 +45,9 @@ function golink(link){
     location.href = link;
 }
 
+document.getElementById("consolewebsite").onclick = () => {
+    iframeLoaded(link_console);
+};
 document.getElementById("manhwa").onclick = () => {
     iframeLoaded(link_addnewmanhwa);
 };
