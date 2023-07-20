@@ -254,7 +254,13 @@ function appenddata(data){
             const se = document.querySelector('#choose_chapter');
             se.value = document.getElementById("choose_chapter").options[document.getElementById("choose_chapter").selectedIndex - 1].text;
             display_chapter(datai[0].Info1, datai);
-        }       
+        }
+        document.getElementById("choose_chapter").onchange = () => {
+            const se = document.querySelector('#choose_chapter');
+            se.value = document.getElementById("choose_chapter").options[document.getElementById("choose_chapter").selectedIndex].text;
+            display_chapter(datai[0].Info1, datai);
+            console.log("ff");
+        }      
         
 
         var cggdrive1 = document.createElement("div")
