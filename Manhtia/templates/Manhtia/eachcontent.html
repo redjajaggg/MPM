@@ -23,14 +23,11 @@
     <h2 id="nameget">{{ name }}</h2>
     <div id="content">
         <div id="tops"><a href="{% url 'index'%}">Home</a> | <a href="{% url 'content'%}">Back</a> </div>
-        <div id="top">
+        <div id="top"></div>
         <div id="info"><h3>Information</h3></div>
-        
-    </div>
     </div>
     <div id="chapter">
-        Currently, <label id="chapter_name"></label> (<label id="chapter_count"></label>)<button type="button" id="more">More</button><br>
-        Choose:<select id="choose_chapter" style="width: 130px;"><option>-</option></select><button id="prev">Prev</button><button id="next">Next</button>
+        Currently, <label id="chapter_name"></label> (<label id="chapter_count"></label>)<button type="button" id="more">More</button> Choose:<select id="choose_chapter" style="width: 130px;"><option>-</option></select><button id="prev">Prev</button><button id="next">Next</button>
     </div>
 	<div id="picture"><h3>Portrayal</h3></div><div style="text-align: center;"><img src="https://i.pinimg.com/564x/1d/6a/e7/1d6ae77a8750adff10e0841753fb10ab.jpg" style="width: 400px; border-radius: 5px;" id="anounce"></div>
 	<br>
