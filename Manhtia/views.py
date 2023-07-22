@@ -17,6 +17,13 @@ def each(request, name):
     })
 
 
+def chapterviewer(request, name, chapter):
+    return render(request, "Manhtia/viewchapter.html", {
+        "name": name,
+        "chapter": chapter
+    })
+
+
 def private(request):
     return render(request, "Manhtia/private.html")
 
@@ -24,6 +31,13 @@ def private(request):
 def pri_each(request, name):
     return render(request, "Manhtia/privateeach.html", {
         "name": name
+    })
+
+
+def pri_each_viewer(request, name, part):
+    return render(request, "Manhtia/viewmature.html", {
+        "name": name,
+        "part": part
     })
 
 
@@ -41,4 +55,5 @@ def georgeous(request):
 
 def search(request):
     return render(request, "Manhtia/search.html")
+
 
