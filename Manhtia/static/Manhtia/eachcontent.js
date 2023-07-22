@@ -99,7 +99,7 @@ function appenddata(data){
             var a = document.createElement('button');
             a.innerHTML = "Mature";
             a.onclick = () => { //NOT DYNAMICs
-                window.location.assign("https://redjajappp2.pythonanywhere.com/manhtia/private/" + document.getElementById("nameget").innerText);
+                window.location.assign("https://redjajappp2.pythonanywhere.com/manhtia/private/" + document.getElementById("nameget").innerText) + "/";
             };
             document.getElementById("tops").appendChild(a);
 
@@ -224,6 +224,7 @@ function appenddata(data){
 
             if(datai[5].Info2 == "yes"){
 
+
                 if(datai[j].Topic.substring(datai[j].Topic.length - 1) == "."){
 
                     document.getElementById("chapter_name").innerHTML = datai[j].Topic;
@@ -236,7 +237,8 @@ function appenddata(data){
                         option.text = datai[j].Topic;
                         option.value = datai[j].Topic;
                         datalist.appendChild(option);
-                
+                        if(datai[j].Status == "n"){datai[j].Status = "";}
+                        chapterpage(datai[j].Topic, " " + datai[j].Status);
                     }
 
                 }
@@ -245,21 +247,24 @@ function appenddata(data){
             
             
         }
+        
         document.getElementById("next").onclick = () => {
             const se = document.querySelector('#choose_chapter');
             se.value = document.getElementById("choose_chapter").options[document.getElementById("choose_chapter").selectedIndex + 1].text;
             display_chapter(datai[0].Info1, datai);
+            document.getElementById("allchap").style.display = "none";
         }
         document.getElementById("prev").onclick = () => {
             const se = document.querySelector('#choose_chapter');
             se.value = document.getElementById("choose_chapter").options[document.getElementById("choose_chapter").selectedIndex - 1].text;
             display_chapter(datai[0].Info1, datai);
+            document.getElementById("allchap").style.display = "none";
         }
         document.getElementById("choose_chapter").onchange = () => {
             const se = document.querySelector('#choose_chapter');
             se.value = document.getElementById("choose_chapter").options[document.getElementById("choose_chapter").selectedIndex].text;
             display_chapter(datai[0].Info1, datai);
-            console.log("ff");
+            document.getElementById("allchap").style.display = "none";
         }      
         
 
@@ -306,6 +311,20 @@ function appenddata(data){
             pdfRzip.innerHTML = "<a href=" + datai[1].Status + ">Download R19 Moment(.pdf in .zip file)</a><br><br>";
             info.appendChild(pdfRzip);
         }
+    }
+    function chapterpage(data, status){
+
+        document.getElementById("allchap").style.display = "block";
+        var link = document.createElement("a");
+        var linkText = document.createTextNode(data + status);
+        link.style.fontWeight = "500";
+        link.appendChild(linkText);
+        link.title = data + status;
+        link.href = data;
+        link.style.width = "270px";
+
+        document.getElementById("allchap").appendChild(link);
+
     }
     fetch(datapic).then(resultsr=>resultsr.text()).then(function (csvtextsr){return csv().fromString(csvtextsr);}).then(function(csvsr){potra(csvsr)});
     function potra(datap){
