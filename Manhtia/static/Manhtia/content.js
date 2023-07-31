@@ -9,16 +9,108 @@ fetch(data_csv_mores).then(result=>result.text()).then(function (csvtext){return
 });
 document.getElementById("opensearch").onclick = () => {
 
-    if(document.getElementById("searchdiv").style.display == "none"){
-        document.getElementById("searchdiv").style.display = "block";
+    if(document.getElementById("searchdiv").style.display == "block"){
+        document.getElementById("searchdiv").style.display = "none";
     }
     else{
-        document.getElementById("searchdiv").style.display = "none";
+        document.getElementById("searchdiv").style.display = "block";
     }
 
 };
 
 function main(data){
+
+    var datalist = document.getElementById("namestm");
+
+    for(var o = 0; o < data.length; o++){
+        const option = document.createElement('option');
+        option.text = data[o].Name;
+        option.value = data[o].Name;
+        datalist.appendChild(option);
+    }
+
+    document.getElementById("names").onchange = () => {
+
+        document.getElementById("content").innerHTML = "";
+        for(var o = 0; o < data.length; o++){
+            if(data[o].Name == document.getElementById("names").value){
+                create(data, o);
+                break;
+            }
+        }
+
+    };
+    document.getElementById("nationst").onchange = () => {
+
+        document.getElementById("content").innerHTML = "";
+        for(var o = 0; o < data.length; o++){
+            if(mores[o].Nation == document.getElementById("nationst").value){
+                create(data, o);
+            }
+        }
+
+    };
+    document.getElementById("rates").onchange = () => {
+
+        document.getElementById("content").innerHTML = "";
+        for(var o = 0; o < data.length; o++){
+            if(mores[o].Rate == document.getElementById("rates").value){
+                create(data, o);
+            }
+        }
+
+    };
+    document.getElementById("marked").onchange = () => {
+
+        document.getElementById("content").innerHTML = "";
+        for(var o = 0; o < data.length; o++){
+            if(mores[o].Spoil.includes(document.getElementById("marked").value)){
+                create(data, o);
+            }
+        }
+
+    };
+    document.getElementById("genre").onchange = () => {
+
+        document.getElementById("content").innerHTML = "";
+        for(var o = 0; o < data.length; o++){
+            if(mores[o].Type.includes(document.getElementById("genre").value)){
+                create(data, o);
+            }
+        }
+
+    };
+    document.getElementById("overall").onchange = () => {
+
+        document.getElementById("content").innerHTML = "";
+        for(var o = 0; o < data.length; o++){
+            if(mores[o].Notificate == document.getElementById("overall").value){
+                create(data, o);
+            }
+        }
+
+    };
+    document.getElementById("purchase").onchange = () => {
+
+        document.getElementById("content").innerHTML = "";
+        for(var o = 0; o < data.length; o++){
+            if(mores[o].Purchase == document.getElementById("purchase").value){
+                create(data, o);
+            }
+        }
+
+    };
+    document.getElementById("read").onchange = () => {
+
+        document.getElementById("content").innerHTML = "";
+        for(var o = 0; o < data.length; o++){
+            if(mores[o].Read == document.getElementById("read").value){
+                create(data, o);
+            }
+        }
+
+    };   
+
     var numcontPerpage = 50;
     if(window.innerWidth < 900){numcontPerpage = 25; document.getElementById("content").style.width = "330px"; document.getElementById("content").style.overflow = "auto";}
     var num_page = data.length / numcontPerpage;
@@ -136,6 +228,18 @@ function main(data){
     for(var i = 0; i < numcontPerpage; i++){
         create(data, i);
     }
+}
+
+function research(){
+    document.getElementById("names").value = "";
+    document.getElementById("genre").value = "none";
+    document.getElementById("rates").value = "none";
+    document.getElementById("nationst").value = "none";
+    document.getElementById("marked").value = "none";
+    document.getElementById("overall").value = "none";
+    document.getElementById("purchase").value = "none";
+    document.getElementById("read").value = "none";
+    clicks();
 }
 
 function clicks(){
