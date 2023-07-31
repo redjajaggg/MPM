@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
     <title>Manhtia</title>
     <link rel="icon" href="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg">
@@ -33,15 +36,17 @@
     <br><button type="button" id="opensearch" onclick="opensearch()"><img id="search" style="width: 25px; border-radius: 50%;" src="https://i.pinimg.com/564x/20/84/d5/2084d52de67b409823d500f04f7f15c3.jpg"></button> Page: <select name="page" id="page" onchange="onc()"></select> <button type="button" id="prev">Prev</button><button type="button" id="next">Next</button>|<button id="go" type="submit">Go</button><button type="button" id="all">All</button>
     </div>
     <div id="data" class="moderndiv" style="display: none; width: 99%;">
+        Name: <input id="namesg" placeholder="Search by Name..." style="width: 200px; border: none; border-radius: 5px; background-color: pink;" list="list"><datalist id="list"></datalist><br>
         Check: 
         <select id="markasmature" onchange="search(0)">
-            <option>-</option>
+            <option value="none">-</option>
             <option value="mark as mature">Not Exists(Soon)</option>
         </select> Or 
         <select id="finish" onchange="search(1)">
-            <option>-</option>
+            <option value="none">-</option>
             <option value="Finish">Finish</option>
-        </select>
+        </select><br>
+        <button onclick="reset()">Reset</button>
         <div id="data_show_search"></div>
     </div><br>
     <div id="content" class="moderndiv">
