@@ -59,6 +59,28 @@ function main(data){
 
         }
     }
+    var datalist = document.getElementById("list");
+
+    for(var o = 0; o < data.length; o++){
+        if(name.includes(data[o].Name)){
+            const option = document.createElement('option');
+            option.text = data[o].Name;
+            option.value = data[o].Name;
+            datalist.appendChild(option);
+        }
+        
+    }
+    document.getElementById("namesg").onchange = () => {
+
+        document.getElementById("content").innerHTML = "";
+        for(var o = 0; o < data.length; o++){
+            if(data[o].Name == document.getElementById("namesg").value){
+                create(data, eachMature, o, name);
+                break;
+            }
+        }
+
+    };
     document.getElementById("go").onclick = () => {
         document.getElementById("content").innerHTML = "";
         num_page = document.getElementById("page").options[document.getElementById("page").selectedIndex].text;
@@ -146,7 +168,7 @@ function search(num){
 
                     var datas = document.createElement("label");
                     var br = document.createElement("br");
-                    datas.innerHTML = "Name: >>" + csv[i].Name + "<< has been Finished upload mature.";
+                    datas.innerHTML = "Name: >>" + csv[i].Name;
                     document.getElementById("data_show_search").appendChild(datas);
                     document.getElementById("data_show_search").appendChild(br);
 
@@ -280,6 +302,14 @@ function create(data, eachMature, i, name){
     main_div.setAttribute("id", "each");
     document.getElementById("content").appendChild(main_div);
 
+}
+
+function reset(){
+    document.getElementById("namesg").value = "";
+    document.getElementById("markasmature").value = "none";
+    document.getElementById("finish").value = "none";
+    document.getElementById("data_show_search").innerHTML = "";
+    onc();
 }
 
 function normal(data){
