@@ -172,7 +172,6 @@ function appenddata(data){
         if(data[i].Spoil != "n"){
             moreshow.appendChild(butspoil);
             spoil.innerHTML = data[i].Spoil;
-            spoil.style.backgroundColor = "#f0a6a1";
             moreshow.appendChild(spoil);
         }
         spoil.style.display = "none";
