@@ -65,12 +65,16 @@ input{
     border-bottom: solid black;
 }
 .coverimg{
-    -webkit-transition: -webkit-transform 0.1s;
-    transition: transform 0.1s;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
 }
 .coverimg:hover{
     -webkit-transform: scale(2.0) rotate(0.00deg);
     transform: scale(1.2) rotate(0.00deg);
+}
+.coverimg:active{
+    -webkit-transform: scale(2.0) rotate(0.00deg);
+    transform: scale(2.0) rotate(0.00deg);
 }
 #more_told{
     width: 30px;
