@@ -107,6 +107,7 @@ function appenddata(data){
         
         var data = csvsi;
         var moreshow = two;
+        var morelink = document.createElement("div");
         var anames = document.createElement("div");
         var type = document.createElement("div");
         var noti = document.createElement("div");
@@ -121,6 +122,15 @@ function appenddata(data){
         if(data[i].Rate == "n"){rate = "";}
         if(data[i].Rate == "15"){rate = "R15 (15+)";}
         if(data[i].Rate == "18"){rate = "R18 (18+)";}
+
+        var l1 = "";
+        var l2 = "";
+        var l3 = "";
+        var spoil = "<a href='https://www.google.com/search?q=" + data[i].Name.replaceAll(" ", "+").replaceAll("'", "") + "+spoiler'>(Spoiler Link)</a>";
+        if(data[i].Morelink1 != "n"){l1 = "<a href='" + data[i].Morelink1 + "'>MoreOther I</a>"}
+        if(data[i].Morelink2 != "n"){l2 = "<a href='" + data[i].Morelink2 + "'>MoreOther II</a>"}
+        if(data[i].Morelink3 != "n"){l3 = "<a href='" + data[i].Morelink3 + "'>MoreOther III</a>"}
+        morelink.innerHTML = spoil + " " + l1 + " " + l2 + " " + l3;
                 
         var types = data[i].Type;
         types = types.replaceAll("rf", "RomanceFantacy");
@@ -141,38 +151,43 @@ function appenddata(data){
 
         if(data[i].Notificate != "n"){
             noti.innerHTML = "Notice: " + data[i].Notificate;
-            noti.style.backgroundColor = "yellow";
+            noti.style.backgroundColor = "red";
+            noti.style.borderRadius = "10px";
         }
         if(data[i].Notificate == "c"){
             noti.innerHTML = "Notice: Completely!";
-            noti.style.backgroundColor = "yellow";
+            noti.style.backgroundColor = "red";
+            noti.style.borderRadius = "10px";
         }
                 
-        moreshow.style.backgroundColor = "#a8eb34";
+        moreshow.style.backgroundColor = "#f0a6a1";
         moreshow.style.padding = "5px";
+        moreshow.style.borderRadius = "10px";
+        moreshow.appendChild(morelink);
         moreshow.appendChild(anames);
         moreshow.appendChild(type);
         moreshow.appendChild(noti);
                 
-        butspoil.innerHTML = "Spoil";
+        butspoil.innerHTML = "More Detail";
         if(data[i].Spoil != "n"){
             moreshow.appendChild(butspoil);
             spoil.innerHTML = data[i].Spoil;
-            spoil.style.backgroundColor = "#b0d9ff";
+            spoil.style.backgroundColor = "#f0a6a1";
             moreshow.appendChild(spoil);
         }
         spoil.style.display = "none";
         spoil.style.padding = "7px";
+        spoil.style.borderRadius = "5px";
         spoil.style.position = "absolute";
         butspoil.style.background = "none";
         butspoil.style.borderRadius = "10px";
         butspoil.onclick = () => {
             if(spoil.style.display == "none"){
                 spoil.style.display = "block";
-                butspoil.innerHTML = "HideSpoil"
+                butspoil.innerHTML = "Hide Detail"
             }else{
                 spoil.style.display = "none";
-                butspoil.innerHTML = "Spoil"
+                butspoil.innerHTML = "More Detail"
             }
         };
         if(data[i].Website == "no"){
