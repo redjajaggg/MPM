@@ -231,6 +231,7 @@ function main(data){
 }
 
 function research(){
+    document.getElementById("filter").value = "none";
     document.getElementById("names").value = "";
     document.getElementById("genre").value = "none";
     document.getElementById("rates").value = "none";
@@ -335,7 +336,7 @@ function create(data, i){
     pro_div.style.marginRight = "auto";
     pro_span.setAttribute("id", "value");
     pro_span.innerHTML = "Unknown";
-    alte_div.innerHTML = "Associate: ";
+    alte_div.innerHTML = "";
     genr_div.innerHTML = "Genre: ";
 
     //progress
@@ -382,7 +383,18 @@ function create(data, i){
     if(mores[i].Nation == "kr"){national = "<img src='https://i.pinimg.com/564x/26/16/8c/26168cddf75348cc28299de4daddcb5b.jpg' style='width: 30px;'>";}
     if(mores[i].Nation == "cn"){national = "<img src='https://i.pinimg.com/564x/d0/96/c0/d096c0d511574bb41a18ed61deb5a06e.jpg' style='width: 30px;'>";}
     if(mores[i].Nation == "th"){national = "<img src='https://i.pinimg.com/564x/ca/bc/d3/cabcd397c3831d374df02e52d127b9f1.jpg' style='width: 30px;'>";}
-    alte_div.innerHTML += mores[i].AssName + " " + national + "<br>" + "Rate: " + rate;
+    var overall;
+    if(mores[i].Notificate == "n"){overall = "Ongoing";}
+    if(mores[i].Notificate == "c"){overall = "Completed";}
+    var morelink1 = "";
+    var morelink2 = "";
+    var morelink3 = "";
+    if(mores[i].Morelink1 != "n"){morelink1 = "<a href='" + mores[i].Morelink1 + "'>(Other I)</a>";}
+    if(mores[i].Morelink2 != "n"){morelink2 = "<a href='" + mores[i].Morelink2 + "'>(Other II)</a>";}
+    if(mores[i].Morelink3 != "n"){morelink3 = "<a href='" + mores[i].Morelink3 + "'>(Other III)</a>";}
+
+    alte_div.innerHTML += morelink1 + morelink2 + morelink3 + "<br>Associate: " +  mores[i].AssName + " " + national + "<br>Rate: " + rate + "<a href='https://www.google.com/search?q=" + data[i].Name.replaceAll(" ", "+").replaceAll("'", "") + "+spoiler'>(Spoiler Link)</a>" + "<br>";
+    alte_div.innerHTML += "Overall in Manhtia: " + overall;
 
     if(i % 5 == 0){part_div.innerHTML = "Part " + data[i].Part; document.getElementById("content").appendChild(part_div); part_div.style.gridColumn = "1 / span 3"; part_div.style.marginLeft = "auto"; part_div.style.marginRight = "auto"; part_div.setAttribute("class", "moderndiv");}
     if(window.innerWidth < 900){part_div.style.marginLeft = "3px";}
