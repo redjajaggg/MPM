@@ -47,7 +47,7 @@ function main(data){
         }
         
     }
-    document.getElementById("all").onclick = () => {
+    /*document.getElementById("all").onclick = () => {
         document.getElementById("content").innerHTML = "";
         for(var i = 0; i < data.length; i++){
 
@@ -58,7 +58,7 @@ function main(data){
             }
 
         }
-    }
+    }*/
     var datalist = document.getElementById("list");
 
     for(var o = 0; o < data.length; o++){
