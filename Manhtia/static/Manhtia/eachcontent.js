@@ -111,7 +111,7 @@ function appenddata(data){
         var anames = document.createElement("div");
         var type = document.createElement("div");
         var noti = document.createElement("div");
-        var spoil = document.createElement("div");
+        var spoilt = document.createElement("div");
         var butspoil = document.createElement("button");
         var flagl;
         var rate;
@@ -171,21 +171,21 @@ function appenddata(data){
         butspoil.innerHTML = "More Detail";
         if(data[i].Spoil != "n"){
             moreshow.appendChild(butspoil);
-            spoil.innerHTML = data[i].Spoil;
-            moreshow.appendChild(spoil);
+            spoilt.innerHTML = data[i].Spoil;
+            spoilt.style.backgroundColor = "#f0a6a1";
+            moreshow.appendChild(spoilt);
         }
-        spoil.style.display = "none";
-        spoil.style.padding = "7px";
-        spoil.style.borderRadius = "5px";
-        spoil.style.position = "absolute";
+        spoilt.style.display = "none";
+        spoilt.style.padding = "7px";
+        spoilt.style.position = "absolute";
         butspoil.style.background = "none";
         butspoil.style.borderRadius = "10px";
         butspoil.onclick = () => {
-            if(spoil.style.display == "none"){
-                spoil.style.display = "block";
+            if(spoilt.style.display == "none"){
+                spoilt.style.display = "block";
                 butspoil.innerHTML = "Hide Detail"
             }else{
-                spoil.style.display = "none";
+                spoilt.style.display = "none";
                 butspoil.innerHTML = "More Detail"
             }
         };
