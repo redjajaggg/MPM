@@ -393,7 +393,7 @@ function create(data, i){
     if(mores[i].Morelink2 != "n"){morelink2 = "<a href='" + mores[i].Morelink2 + "'>(Other II)</a>";}
     if(mores[i].Morelink3 != "n"){morelink3 = "<a href='" + mores[i].Morelink3 + "'>(Other III)</a>";}
 
-    alte_div.innerHTML += morelink1 + morelink2 + morelink3 + "<br>Associate: " +  mores[i].AssName + " " + national + "<br>Rate: " + rate + "<a href='https://www.google.com/search?q=" + data[i].Name.replaceAll(" ", "+").replaceAll("'", "") + "+spoiler'>(Spoiler Link)</a>" + "<br>";
+    alte_div.innerHTML += morelink1 + morelink2 + morelink3 + "<br>Associate: " +  mores[i].AssName + " " + national + "<br>Rate: " + rate + "<a href='https://www.google.com/search?q=" + data[i].Name.replaceAll(" ", "+").replaceAll("'", "") + "+spoiler'>(Spoiler)</a> " + "<a href='https://www.google.com/search?q=" + data[i].Name.replaceAll(" ", "+").replaceAll("'", "") + "+baka'>(Detail)</a>" + "<br>";
     alte_div.innerHTML += "Overall in Manhtia: " + overall;
 
     if(i % 5 == 0){part_div.innerHTML = "Part " + data[i].Part; document.getElementById("content").appendChild(part_div); part_div.style.gridColumn = "1 / span 3"; part_div.style.marginLeft = "auto"; part_div.style.marginRight = "auto"; part_div.setAttribute("class", "moderndiv");}
