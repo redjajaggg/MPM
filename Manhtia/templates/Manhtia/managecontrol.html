@@ -28,37 +28,48 @@
                 <button id="logbut" type="submit">Access</button><br><a href="https://docs.google.com/forms/d/e/1FAIpQLSdaCP9AUgrroG45f8uz9SPU2sOXBZ8roxQ7mqXhKG1BsleVuA/viewform?usp=sf_link">Help / Request for Access</a>
             </form>
         </div><br>
-        <div id="choose">
-            <button id="consolewebsite">Website Controller</button>
-            <h2>General</h2>
-            <button id="manhwa">New Story</button>
-            <button id="chapter">New Chapter(PDF)</button>
-            <button id="portrayal">New Portrayal</button>
-            <button id="change">Edit</button><br>
-            <h2>Upload Data</h2>
-            <label>Create Folder: </label>
-            <button id="folder">Create Folder in Drive</button><br><br>
-            <label>Upload File: </label>
-            <button id="uploadchaptermature">Upload Chapter/Mature</button>
-            <button id="uploadchaptermature2">Upload Chapter/Mature(BEST)</button>
-            <button id="error">Check Error</button><br><br>
-            <label>Append Link: </label>
-            <button id="convert">Get Data and Download</button>
-            <button id="getandappend">Get Data and Append</button>
-            <button id="getandappendbest">Get Data and Append Auto(BEST)</button><br>
-            <br>*Append Link use Coding gmail to access.<br>**Create Folder and Upload will use email that convey on page.<br>***How to use Explore 'Step for Uploading Data' below.
-            <h2>Database</h2>
-            <button id="checker">Checker</button>
-            <button id="maindata">Main data</button>
-            <button id="moredata">More data</button><br><br>
-            <button id="eachpage">Each Story All Link</button>
-            <button id="drive">Each Story Drive Sheet Link</button><br><br>
-            <button id="eachma">Each Story Mature All Link</button>
-            <button id="eachmadrive">Each Story Mature Drive Sheet Link</button>
-            <h3>Help</h3>
-            <button id="step">Step for Uploading data</button>
-            <button id="provision">Provision</button>
-            <button id="exchanges">Exchange Rate</button>
+        <div id="choose" class="moderndiv" style="width: 99%;">
+            <h2>Manage Data</h2>
+            <div id="general"><button id="consolewebsite">Manhtia Controller</button></div><br>
+            <div id="add" style="text-align: left; border-top: solid black;">
+                <label>Add / Edit:</label><br>
+                <button id="manhwa">New Story</button>
+                <button id="chapter">New Chapter(PDF)</button>
+                <button id="portrayal">New Portrayal</button> | 
+                <button id="change">Edit</button><br>
+            </div><br>
+            <div id="upload" style="text-align: left; border-top: solid black;">
+                <label>Upload:</label><br>
+                Create Folder: <button id="folder">Create Folder(GoogleDrive)</button> | Create folders before uploading.<br><br>
+                Upload File(version I): <button id="uploadchaptermature">Upload Chapter/Mature</button> | Seperate(self) upload each chapter after create folder.<br><br>
+                Upload File(version II): <button id="uploadchaptermature2">Upload Chapter/Mature(Faster)</button> | Separate(Semi-self) upload by drag and drop files from local folder.<br><br>
+                Check Upload error: <button id="error">Check Error</button> | Check after Upload file.<br><br>
+                ***If page gets reject from access, Please log in email on brower or use brower which logged in only 1 email account.
+                <br>***Create Folder and Upload will use email that convey on page.<br>***How to use Explore 'Step for Uploading Data' below.
+            </div><br>
+            <div id="append" style="text-align: left; border-top: solid black;">
+                <label>Append Link:</label><br>
+                Get Link: <button id="convert">Get Data and Download</button> | Get link and self Paste in google sheet.<br><br>
+                Append Link: <button id="getandappend">Get Data and Append</button> | Auto append to google sheet(Best for uploading Mature content.)<br><br>
+                Append Link: <button id="getandappendbest">Get Data and Append Auto(BEST)</button> | Auto append to google sheet(Upload chapter only.)<br><br>
+                ***If page gets reject from access, Please log in email on brower or use brower which logged in only 1 email account.<br>***Append Link use Coding gmail to access.<br>***How to use Explore 'Step for Uploading Data' below.
+            </div><br>
+            <div id="database" style="text-align: left; border-top: solid black;">
+                <label>Database:</label><br>
+                Check Data: <button id="checker">Checker</button> | Data each story in all databases.<br><br>
+                Main Database: <button id="maindata">Main data</button><br><br>
+                Additional Database: <button id="moredata">More data</button><br><br>
+                Chapter Database: <button id="eachpage">Each Story All Link</button> | 
+                Drive stores Database: <button id="drive">Each Story Drive Sheet Link</button><br><br>
+                Mature Database: <button id="eachma">Each Story Mature All Link</button> | 
+                Drive stores Database: <button id="eachmadrive">Each Story Mature Drive Sheet Link</button><br><br>
+            </div><br>
+            <div id="help" style="text-align: left; border-top: solid black;">
+                <label>Help:</label><br>
+                <button id="step">Step for Uploading data</button>
+                <button id="provision">Provision</button>
+                <button id="exchanges">Exchange Rate</button>
+            </div>
         </div>
         <div id="show">
             <iframe id="iframe">
