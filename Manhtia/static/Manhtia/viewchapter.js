@@ -14,6 +14,8 @@ function reloadImg(e){
     e.src = source;
 }
 
+document.getElementById("backs").innerHTML = "<a href='https://redjajappp2.pythonanywhere.com/manhtia/content/" + document.getElementById("nameget").innerText + "'>Back</a>";
+
 function main(data){
 
     var name = document.getElementById("nameget").innerText;
