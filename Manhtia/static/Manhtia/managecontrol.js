@@ -13,6 +13,8 @@ document.getElementById("logbut").onclick = () => {
         document.getElementById("loginform").appendChild(label);
     }
 };
+/*document.getElementById("check").value = "112523";
+document.getElementById("logbut").click();*/
 var link_addnewmanhwa = "https://script.google.com/macros/s/AKfycbyjXlxulQSuKGrx13Uj7sD410mkOKUiliRsLV76ULgafntFXdeBLg3I1U65ed1G4yUg/exec";
 var link_addchapter = "https://script.google.com/macros/s/AKfycbzIB-AHzNGbovLXCqDtdCUhwGOjYp2A_Vvtsfq1TonRyClyr4eAN0fcaprVHsXGW5Bu-w/exec";
 var link_addportra = "https://script.google.com/macros/s/AKfycbxe-UwltBf-6KidfxiEpycQdasLgoZhZFFOudQUUsTuVopxa-Gfj7oTtSid07A8fy9nrg/exec";
