@@ -375,7 +375,7 @@ function create(data, i){
     types = types.replaceAll("fm", "Family");
     genr_div.innerHTML += types;
     var rate;
-    if(mores[i].Rate == "n"){rate = "Normal";}
+    if(mores[i].Rate == "n"){rate = "All age";}
     if(mores[i].Rate == "15"){rate = "R15";}
     if(mores[i].Rate == "18"){rate = "R18";}
     if(mores[i].AssName == "n"){mores[i].AssName = "Unknown";}
