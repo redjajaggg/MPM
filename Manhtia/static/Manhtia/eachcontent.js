@@ -15,6 +15,7 @@ function appenddata(data){
         }
 
     }
+    
     var info = document.getElementById("info");
     var chapter = document.getElementById("chapter");
     var pic = document.getElementById("picture");
@@ -101,6 +102,13 @@ function appenddata(data){
             a.onclick = () => { //NOT DYNAMICs
                 window.location.assign("https://redjajappp2.pythonanywhere.com/manhtia/private/" + document.getElementById("nameget").innerText) + "/";
             };
+            document.getElementById("tops").appendChild(a);
+            
+        }
+        if(csvsi[i].Spoil.includes("uncensored")){
+
+            var a = document.createElement('label');
+            a.innerHTML = " (Uncensored)";
             document.getElementById("tops").appendChild(a);
 
         }
