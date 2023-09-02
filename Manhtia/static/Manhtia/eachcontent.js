@@ -153,6 +153,12 @@ function appenddata(data){
         types = types.replaceAll("sf", "Sci-Fi");
         types = types.replaceAll("at", "Action");
         types = types.replaceAll("fm", "Family");
+        types = types.replaceAll("cv", "CakeVerse");
+        types = types.replaceAll("gv", "GuideVerse");
+        types = types.replaceAll("nv", "NameVerse");
+        types = types.replaceAll("av", "AnimalVerse");
+        types = types.replaceAll("ot", "OtherVerse");
+        types = types.replaceAll("mp", "Male Pregnancy");
         types = types.trim();
         anames.innerHTML = "Alternative: " + data[i].AssName + "  <img src='" + flagl + "' style='width: 30px; border-radius: 2px;'>" + rate;
         type.innerHTML = "Type: " + types;
