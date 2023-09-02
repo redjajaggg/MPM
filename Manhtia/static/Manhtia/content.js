@@ -373,6 +373,12 @@ function create(data, i){
     types = types.replaceAll("sf", "Sci-Fi");
     types = types.replaceAll("at", "Action");
     types = types.replaceAll("fm", "Family");
+    types = types.replaceAll("cv", "CakeVerse");
+    types = types.replaceAll("gv", "GuideVerse");
+    types = types.replaceAll("nv", "NameVerse");
+    types = types.replaceAll("av", "AnimalVerse");
+    types = types.replaceAll("ot", "OtherVerse");
+    types = types.replaceAll("mp", "Male Pregnancy");
     genr_div.innerHTML += types;
     var rate;
     if(mores[i].Rate == "n"){rate = "All age";}
