@@ -1,0 +1,48 @@
+h2{
+    background-color: red;
+    padding: 7px;
+    border-radius: 22px;
+    text-align: center;
+}
+h3{
+    background-color: red;
+    border-radius: 22px;
+    padding: 7px;
+}
+#content{
+    overflow: hidden;
+    width: 99%;
+    height: fit-content;
+    padding: 7px;
+}
+#info{
+    background-color: white;
+    padding: 7px;
+    border-radius: 22px;
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#chapter{
+    background-color: white;
+    padding: 7px;
+    border-radius: 22px;
+    text-align: center;
+    width: 99%;
+    overflow: auto;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#picture{
+    background-color: white;
+    padding: 7px;
+    border-radius: 22px;
+    text-align: center;
+    width: 99%;
+}
+#cover{
+    width: 300px;
+    border-radius: 5px;
+}
