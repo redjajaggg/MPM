@@ -40,7 +40,14 @@ function main(data){
             }
 
         }
-        document.getElementById("viewers").innerHTML = "Viewer: <a href='" + name +"'>" + name + "</a>";
+        var ass = document.createElement('a');
+        var moreText = document.createTextNode(name);
+        ass.appendChild(moreText);
+        ass.title = name;
+        ass.href = "https://redjajappp2.pythonanywhere.com/manhtia/portrayal/" + name;
+        document.getElementById("viewers").innerHTML = "Viewer: ";
+        document.getElementById("viewers").appendChild(ass);
+
     };
 
     document.getElementById("searchs").onclick = () => {
