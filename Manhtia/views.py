@@ -45,6 +45,12 @@ def portrayal(request):
     return render(request, "Manhtia/portrayal.html")
 
 
+def portrayal_each(request, name):
+    return render(request, "Manhtia/eachportrayal.html", {
+        "name": name
+    })
+
+
 def manager(request):
     return render(request, "Manhtia/managecontrol.html")
 
@@ -55,5 +61,7 @@ def georgeous(request):
 
 def search(request):
     return render(request, "Manhtia/search.html")
+
+
 
 
