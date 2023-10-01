@@ -40,6 +40,7 @@ var link_checkerror = "https://script.google.com/macros/s/AKfycbylMInRC_cVolasNA
 var link_console = "https://script.google.com/macros/s/AKfycbzJOq7K2SSpXIESnfeVgae7wonrqxFM-PcpOtiqKwd9RWcYKGIDWNwR31JKyuPz59q8/exec";
 var link_change1 = "https://script.google.com/macros/s/AKfycbzCYYdoJa5Aw6z--Xs46bYa6QDTbuFC9udUDMVrB5lk-sdErlcZxutV6H9a48K_BLuG/exec";
 var link_chaptertomature = "https://script.google.com/macros/s/AKfycbxRq0ghbVZbk0Es7NaMhI05M4T1uAxOfpbhx9EVodQpmA8YlWv6k6nR3B11n9Jd-vuK/exec";
+var link_create_database = "https://script.google.com/macros/s/AKfycbzDwQdvKvEX-hOPNzjR-pt7IRLp05HNdcJgh7coJoYHFFwUv_Fk4luroYw7bX7ZvjYu/exec";
 
 
 function iframeLoaded(link) {
@@ -61,6 +62,9 @@ document.getElementById("change1").onclick = () => {
 };
 document.getElementById("chapter").onclick = () => {
     iframeLoaded(link_addchapter);
+};
+document.getElementById("createdatabases").onclick = () => {
+    iframeLoaded(link_create_database);
 };
 document.getElementById("portrayal").onclick = () => {
     iframeLoaded(link_addportra);
