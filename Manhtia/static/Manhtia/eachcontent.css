@@ -46,3 +46,14 @@ h3{
     width: 300px;
     border-radius: 5px;
 }
+.coverschapter{
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    object-fit: cover;
+    vertical-align: middle;
+}
+.coverschapter:hover{
+    -webkit-transform: scale(1.0) rotate(0.00deg);
+    transform: scale(1.5) rotate(0.00deg);
+}
