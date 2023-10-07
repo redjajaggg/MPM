@@ -1,6 +1,5 @@
 const data_csv_format = "https://docs.google.com/spreadsheets/d/12OgnnIYoeG3oa5prcZ5HgzjuECPCk4FmBhCf_ecV_TY/export?format=csv";
 const datadark = "https://docs.google.com/spreadsheets/d/1HsH40yVrlcWrSLXn0qEG06BR7X_YS4YUQyFbEzaEf7Y/export?format=csv";
-const datapic = "https://docs.google.com/spreadsheets/d/1IYfYPLlBbq8Qw4Q7drtAH8stgHQpLqgfg_ZcWtK6U5M/export?format=csv";
 const datamore = "https://docs.google.com/spreadsheets/d/1vAmEFn17c6kJMQwJ5JPYlvtWnRRweM8O-uk1mwn5xgU/export?format=csv";
 
 fetch(data_csv_format).then(result=>result.text()).then(function (csvtext){return csv().fromString(csvtext);}).then(function(csv){appenddata(csv);});
@@ -266,7 +265,9 @@ function appenddata(data){
                         option.value = datai[j].Topic;
                         datalist.appendChild(option);
                         if(datai[j].Status == "n"){datai[j].Status = "";}
-                        chapterpage(datai[j].Topic, " " + datai[j].Status);
+                        chapterpage(datai[j].Topic, " " + datai[j].Status, datai[j + 1].Info1);
+
+                        
                     }
 
                 }
@@ -340,7 +341,8 @@ function appenddata(data){
             info.appendChild(pdfRzip);
         }
     }
-    function chapterpage(data, status){
+    
+    function chapterpage(data, status, picture){
 
         document.getElementById("allchap").style.display = "block";
         var link = document.createElement("a");
@@ -353,22 +355,7 @@ function appenddata(data){
 
         document.getElementById("allchap").appendChild(link);
 
-    }
-    fetch(datapic).then(resultsr=>resultsr.text()).then(function (csvtextsr){return csv().fromString(csvtextsr);}).then(function(csvsr){potra(csvsr)});
-    function potra(datap){
-        
-        for(var i = 0; i < datap.length; i++){
-            if(datap[i].Name == document.getElementById("nameget").innerText){
-                var pics = document.createElement("img");
-                pics.setAttribute('src', datap[i].Link);
-                pics.style.width = "300px";
-                pics.style.border = "3px solid";
-                pics.style.borderRadius = "5px";
-                pic.appendChild(pics);
-            }
-        }
-    }
-    
+    }    
 
     info.appendChild(each_upt)
     info.appendChild(cover);
