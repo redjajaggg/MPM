@@ -17,6 +17,12 @@ def each(request, name):
     })
 
 
+def full(request, name):
+    return render(request, "Manhtia/eachcontent2.html", {
+        "name": name
+    })
+
+
 def chapterviewer(request, name, chapter):
     return render(request, "Manhtia/viewchapter.html", {
         "name": name,
