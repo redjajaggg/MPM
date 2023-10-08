@@ -11,6 +11,7 @@ urlpatterns = [
     path("content/<str:name>/", views.each, name="each"),
     path("content2/<str:name>/", views.full, name="fulls"),
     path("content/<str:name>/<str:chapter>", views.chapterviewer, name="chapterviewer"),
+    path("content2/<str:name>/<str:chapter>", views.chapterviewer, name="chapterviewers"),
     path("portrayal/", views.portrayal, name="portrayal"),
     path("portrayal/<str:name>", views.portrayal_each, name="portrayalviwer"),
     path("manager", views.manager, name="manager"),
