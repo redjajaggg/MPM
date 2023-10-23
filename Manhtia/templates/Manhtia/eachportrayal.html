@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+    <title>{{ name }}</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg">
+    <link rel="stylesheet" href="{% static 'Manhtia/main.css' %}">
+    <link rel="stylesheet" href="{% static 'Manhtia/portrayal.css' %}">
+</head>
+<body>
+    <div id="head">
+        <img id="icon" src="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg">
+        <label id="appname">Manhtia</label>
+        <div id="linker"><a class="linkeachpage" href="{% url 'index'%}">Home</a> <a class="linkeachpage" href="{% url 'content'%}">Content</a> <a class="linkeachpage" href="{% url 'portrayal'%}">Portrayal</a> <a class="linkeachpage" href="{% url 'private'%}">Private</a> <a class="linkeachpage" href="{% url 'manager'%}">Manager</a></div>
+    </div><br>
+    <a href="{% url 'portrayal' %}">Back</a> | <a href="{% url 'content' %}{{ name }}">Detail</a>
+    <div class="moderndiv" style="width: 99%;"><h2 id="namest" style="text-align: center;">{{ name }}</h2></div><br>
+    <div style="text-align: center;">Filter: 
+        <select id="filter" style="width: 100px;">
+            <option value="a">All</option>
+            <option value="n">Main</option>
+            <option value="e">Sub</option>
+        </select>
+    </div><br>
+    <div id="content" class="moderndiv" style="width: 99%; overflow: hidden; height: fit-content; padding: 10px;"></div>
+    <br>
+    <div id="bottom">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdaCP9AUgrroG45f8uz9SPU2sOXBZ8roxQ7mqXhKG1BsleVuA/viewform?usp=sf_link">Report / Help</a>
+        <br>© 2023 Manhtia. Website source reserves to Manhtia, Contents credit to owner.<br>
+    </div>
+</body>
+
+<script src="{% static 'Manhtia/eachportrayal.js'%}"></script>
+</html>
