@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+    <title>AdvanceManager</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/68/b3/6d/68b36d7bab2ce5db6f27f1df36367d64.jpg">
+    <link rel="stylesheet" href="{% static 'Manhtia/main.css' %}">
+    <link rel="stylesheet" href="{% static 'Manhtia/managecontrol.css' %}">
+</head>
+<body>
+    <section id="co" class="section_connector">
+        <div id="connector" class="moderndiv">
+            <img id="icon" src="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg">
+            <label id="appname">Manhtia</label><br><label id="time"></label>
+            <div id="connectors">
+                <a href="{% url 'index'%}">Home</a>
+                <a href="{% url 'content'%}">Library</a>
+                <a href="{% url 'portrayal'%}">Portrayal</a>
+                <a href="{% url 'private'%}">Mature</a>
+                <a href="{% url 'manager'%}">Manager</a>
+            </div>
+        </div>
+    </section>
+    <div id="contrainer">
+        <img src="https://i.pinimg.com/564x/68/b3/6d/68b36d7bab2ce5db6f27f1df36367d64.jpg" style="width: 70px; border-radius: 5px;">
+        <div id="log">
+            <form id="loginform">
+                <h2>Please type Password for Manage data.</h2><br>
+                <label>Password: </label>
+                <input id="check" type="password"><br><br>
+                <button id="logbut" type="submit">Access</button><br><a href="https://docs.google.com/forms/d/e/1FAIpQLSdaCP9AUgrroG45f8uz9SPU2sOXBZ8roxQ7mqXhKG1BsleVuA/viewform?usp=sf_link">Help / Request for Access</a>
+            </form>
+        </div><br>
+        <div id="choose" class="moderndiv" style="width: 99%;">
+            <h2>Manage Data</h2>
+            <div id="general"><button id="consolewebsite">Manhtia Controller</button></div><br>
+            <div id="add" style="text-align: left; border-top: solid black;">
+                <label>Add / Edit:</label><br>
+                <button id="manhwa">New Story</button>
+                <button id="chapter">New Chapter(PDF)</button>
+                <button id="portrayal">New Portrayal</button> | 
+                <button id="change">Edit Separate</button>
+                <button id="change1">Edit by Attribule</button><br>
+            </div><br>
+            <div id="upload" style="text-align: left; border-top: solid black;">
+                <label>Upload:</label><br>
+                Create Folder: <button id="folder">Create Folder(GoogleDrive)</button> | Create folders before uploading.<br><br>
+                Upload File(version I): <button id="uploadchaptermature">Upload Chapter/Mature</button> | Seperate(self) upload each chapter after create folder.<br><br>
+                Upload File(version II): <button id="uploadchaptermature2">Upload Chapter/Mature(Faster)</button> | Separate(Semi-self) upload by drag and drop files from local folder.<br><br>
+                Check Upload error: <button id="error">Check Error</button> | Check after Upload file.<br><br>
+                Upload Chapter to Mature: <button id="chaptomat">Copy Chapter to Mature</button><br><br>
+                ***If page gets reject from access, Please log in email on brower or use brower which logged in only 1 email account.
+                <br>***Create Folder and Upload will use email that convey on page.<br>***How to use Explore 'Step for Uploading Data' below.
+            </div><br>
+            <div id="append" style="text-align: left; border-top: solid black;">
+                <label>Append Link:</label><br>
+                Get Link: <button id="convert">Get Data and Download</button> | Get link and self Paste in google sheet.<br><br>
+                Append Link: <button id="getandappend">Get Data and Append</button> | Auto append to google sheet(Best for uploading Mature content.)<br><br>
+                Append Link: <button id="getandappendbest">Get Data and Append Auto(BEST)</button> | Auto append to google sheet(Upload chapter only.)<br><br>
+                ***If page gets reject from access, Please log in email on brower or use brower which logged in only 1 email account.<br>***Append Link use Coding gmail to access.<br>***How to use Explore 'Step for Uploading Data' below.
+            </div><br>
+            <div id="database" style="text-align: left; border-top: solid black;">
+                <label>Database:</label><br>
+                Check Data: <button id="checker">Checker</button> | Data each story in all databases.<br><br>
+                Create Database: <button id="createdatabases">Create</button> | To create Chapter and Mature database.<br><br>
+                Main Database: <button id="maindata">Main data</button><br><br>
+                Additional Database: <button id="moredata">More data</button><br><br>
+                Chapter Database: <button id="eachpage">Each Story All Link</button> | 
+                Drive stores Database: <button id="drive">Each Story Drive Sheet Link</button><br><br>
+                Mature Database: <button id="eachma">Each Story Mature All Link</button> | 
+                Drive stores Database: <button id="eachmadrive">Each Story Mature Drive Sheet Link</button><br><br>
+            </div><br>
+            <div id="help" style="text-align: left; border-top: solid black;">
+                <label>Help:</label><br>
+                <button id="step">Step for Uploading data</button>
+                <button id="provision">Provision</button>
+                <button id="exchanges">Exchange Rate</button>
+            </div>
+        </div>
+        <div id="show">
+            <iframe id="iframe">
+
+            </iframe>
+        </div><br>
+        This website exists for adding updating deleting managing data in My Private Manhwa and Manhtia.
+        <br>
+        © 2022 Manhtia. Website source reserves to Manhtia.  
+    </div>    
+</body>
+<script src="{% static 'Manhtia/managecontrol.js'%}"></script>
+</html>
