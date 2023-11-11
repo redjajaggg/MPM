@@ -37,13 +37,12 @@ function main(data){
         datalist.appendChild(option);
     }
 
-    document.getElementById("names").onchange = () => {
+    document.getElementById("names").oninput = () => {
 
         document.getElementById("content").innerHTML = "";
         for(var o = 0; o < data.length; o++){
-            if(data[o].Name == document.getElementById("names").value){
+            if(data[o].Name.toLowerCase().includes(document.getElementById("names").value.toLowerCase())){
                 create(data, o);
-                break;
             }
         }
 
@@ -120,7 +119,7 @@ function main(data){
     };   
 
     var numcontPerpage = 50;
-    if(window.innerWidth < 900){numcontPerpage = 25; document.getElementById("content").style.width = "330px"; document.getElementById("content").style.overflow = "auto";}
+    if(window.innerWidth < 900){numcontPerpage = 25; document.getElementById("content").style.overflow = "auto";}
     var num_page = data.length / numcontPerpage;
     var page = 1;
     for (var a = 1; a <= num_page + 1; a++){
