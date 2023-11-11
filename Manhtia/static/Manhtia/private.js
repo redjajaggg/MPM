@@ -77,13 +77,12 @@ function main(data){
         }
         
     }
-    document.getElementById("namesg").onchange = () => {
+    document.getElementById("namesg").oninput = () => {
 
         document.getElementById("content").innerHTML = "";
         for(var o = 0; o < data.length; o++){
-            if(data[o].Name == document.getElementById("namesg").value){
+            if(data[o].Name.toLowerCase().includes(document.getElementById("namesg").value.toLowerCase())){
                 create(data, eachMature, o, name);
-                break;
             }
         }
 
