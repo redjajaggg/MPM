@@ -5,6 +5,14 @@ window.setInterval(function(){
     document.getElementById("time").innerHTML = "S.Korea: " + eastCoastTime + " Almost Chapters will update 10.00PM everyday.";
 }, 1000);
 
+document.getElementById("check").oninput = () => {
+    if(document.getElementById("check").value.length === 6){
+
+        document.getElementById("logbut").click();
+
+    }
+}
+
 document.getElementById("logbut").onclick = () => {
 
     var password = document.getElementById("check").value;
