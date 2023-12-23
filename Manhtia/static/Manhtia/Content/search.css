@@ -1,0 +1,20 @@
+#console{
+    text-align: center;
+}
+#search{
+    display: flex;
+    white-space: nowrap;
+    width: 100%;
+    overflow: auto;
+}
+.controlpane{
+    width: 320px;
+    padding: 10px;
+}
+.searchtype{
+    border-bottom: solid 2px;
+    font-weight: bold;
+}
+#resultis{
+    color: red;
+}

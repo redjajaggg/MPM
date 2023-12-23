@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+    <title>{{ name }}-{{ chapter }}</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg">
+    <style>
+        body{
+            font-family: Tahoma, Verdana, Segoe, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="head">
+        <label id="nameget">{{ name }}</label> <a href="{% url 'content'%}{{ name }}">Back</a> | <a href="https://docs.google.com/forms/d/e/1FAIpQLSdaCP9AUgrroG45f8uz9SPU2sOXBZ8roxQ7mqXhKG1BsleVuA/viewform?usp=sf_link">Report</a> Zoom:
+        <select id="zoom" style="width: 50px;" onchange="start()">
+            <option value="400">Default</option>
+            <option value="600">Zoom in</option>
+            <option value="270">Zoom out</option>
+            <option value="200">200px</option>
+            <option value="300">300px</option>
+            <option value="350">350px</option>
+            <option value="700">700px</option>
+            <option value="750">750px</option>
+            <option value="900">900px</option>
+        </select> Quality: 
+        <select id="quality" style="width: 50px;" onchange="start()">
+            <option value="6000">Default</option>
+            <option value="4000">Very Low</option>
+            <option value="5000">Low</option>
+            <option value="12000">High</option>
+            <option value="15000">Extreme High</option>
+        </select> Layout: 
+        <select  id="layout" style="width: 50px;" onchange="layout()">
+            <option value="ver">Veritical</option>
+            <option value="hor">Horizontal</option>
+        </select>
+    <div id="content" style="border: solid black; position: sticky; top: 0px; background-color: white; text-align: center;">
+        View: <label style="font-size: 20px;" id="chapterget">{{ chapter }}</label> <label id="status"></label> <select onchange="goto()" style="width: 100px;" id="allchapters"></select><button id="prev">Prev</button><button id="next">Next</button>
+    </div>
+    <br><div id="show" style="width: 310px; font-size:0; margin-left: auto; margin-right: auto;"></div>
+    <div style="text-align: center;">Please support artist(s) of {{ name }} on official site.<br><img style="width: 300px;" src="https://i.pinimg.com/564x/1d/6a/e7/1d6ae77a8750adff10e0841753fb10ab.jpg"></div>
+    <div id="bottom">
+        <br>© 2023 Manhtia. Website source reserves to Manhtia, Contents credit to owner.<br>
+    </div>
+</body>
+<script src="{% static 'Manhtia/Content/viewchapter.js'%}"></script>
+</html>
