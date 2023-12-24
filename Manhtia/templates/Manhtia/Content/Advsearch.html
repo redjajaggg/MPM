@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+    <title>Manhtia-Search</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/20/84/d5/2084d52de67b409823d500f04f7f15c3.jpg">
+    <link rel="stylesheet" href="{% static 'Manhtia/Main/main.css' %}">
+    <link rel="stylesheet" href="{% static 'Manhtia/Content/search.css' %}">
+</head>
+<body>
+    <section id="co" class="section_connector">
+        <div id="connector" class="moderndiv">
+            <img id="icon" src="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg">
+            <label id="appname">Manhtia</label><br><label id="time"></label>
+            <div id="connectors">
+                <a href="{% url 'index'%}">Home</a>
+                <a href="{% url 'content'%}">Library</a>
+                <a href="{% url 'portrayal'%}">Portrayal</a>
+                <a href="{% url 'private'%}">Mature</a>
+                <a href="{% url 'manager'%}">Manager</a>
+            </div>
+        </div>
+    </section><br>
+    <section id="notification" class="section_notification">
+        <div id="notificate_pane" class="moderndiv">
+            <label id="notificate">-Notification-</label>
+        </div>
+    </section><br>
+    <div id="search" class="moderndiv">
+        <span id="mainsearch" class="controlpane">
+            <label class="searchtype">Common Search</label><br>
+            Name: <input id="sname" list="ssname"><datalist id="ssname"></datalist><br>
+            AssName: <input id="sassname" list="ssassname"><datalist id="ssassname"></datalist><br>
+            Part: <select id="spart" class="s"><option value="none">-</option></select><br>
+            Status: <select id="sstatus" class="s"><option value="none">-</option></select><br>
+            Date: <select id="sdate" class="s">
+                <option value="none">-</option>
+            </select><br>
+            Website: <select id="swebsite" class="s"><option value="none">-</option><option value="yes">Yes</option><option value="no">No</option></select><br>
+            Timeline: <select id="shistotime" class="s"><option value="none">-</option></select><br>
+        </span>
+        <span id="moresearch" class="controlpane">
+            <label class="searchtype">Additonal Search</label><br>
+            Overall: <select id="soverall" class="s"><option value="none">-</option></select><br>
+            Nation: <select id="snation" class="s">
+                <option value="none">-</option>
+            </select><br>
+            Rate: <select id="srate" class="s">
+                <option value="none">-</option>
+            </select><br>
+            Mark: <select id="smark" class="s">
+                <option value="none">-</option>
+            </select><br>
+            Genre: <select id="sgenre" class="s">
+                <option value="none">-</option>
+            </select>
+        </span>
+        <span id="chaptersearch" class="controlpane">
+            <label class="searchtype">Chapter Search</label><br>
+            Existed: <select id="schapexist" class="s"><option value="none">-</option><option value="checkchapterexist">Existed</option><option value="checkchapternotexist">Not Existed</option></select><br>
+            Status: <select id="schapstatus" class="s">
+                <option value="none">-</option>
+                <option value="n">Ongoing</option>
+                <option value="Finish">Finished</option>
+                <option value="Cancelled">Cancelled</option>
+            </select><br>
+        </span>
+        <span id="maturesearch" class="controlpane">
+            <label class="searchtype">Mature Search</label><br>
+            Existed: <select id="smatureexist" class="s"><option value="none">-</option><option value="checkmatureexist">Existed</option><option value="checkmaturenotexist">Not Existed</option></select><br>
+            Status: <select id="smaturestatus" class="s">
+                <option value="none">-</option>
+                <option value="n">Ongoing</option>
+                <option value="Finish">Finished</option>
+            </select><br>
+        </span>
+    </div>*Each Search can has only one value. Unless program might not accurate(base on 'Or').<br>
+    <div class="moderndiv">
+        <label class="searchtype">Search Control</label> | Developer mode<input type="checkbox" id="developer"><br>
+        Common <input id="includecommon" type="checkbox" class="logic">|Additional <input id="includeaddtional" type="checkbox" class="logic">|Chapter <input id="includechapter" type="checkbox" class="logic">|Mature <input id="includemature" type="checkbox" class="logic"><br>
+        Connect with <select id="logical" class="s"><option value="none">-</option><option value="and">And (&)</option><option value="or">Or (|)</option></select>.<br>
+        <div id="ministatistic">Found: <label id="found">0</label> out of <label id="number">0</label>(<label id="percent">0</label>%).</div>
+        <div style="text-align: right;"><button id="searchAll" onclick="search()" style="font-weight: bold;">Search</button> <button id="reset" onclick="reset()">Reset</button></div>
+    </div>
+    <br>
+    <div id="console" class="moderndiv">Page: <select name="page" id="page" onchange="clicks()"></select> <button type="button" id="prev">Prev</button><button type="button" id="next">Next</button>|<button id="go" type="submit">Go</button>
+    </div><br>
+    <div id="content" class="moderndiv" style="width: 100%;">
+        Waiting to Convey...
+    </div><br>
+    <section id="sources" class="section_sources">
+
+        <h2>Includes Sources</h2>
+        <div id="app" class="moderndiv"></div>
+
+    </section><br>
+    <section id="about_website" class="section_about">
+        <div id="about">
+            contract: <a href="https://discordapp.com/users/1055326431804137504/"><img style="width: 30px; border-radius: 10px;" src="https://i.pinimg.com/564x/66/1e/cf/661ecf66bda49150b44d25e4440e2bb8.jpg"></a> : Bangkok, Thailand<br>
+            About:<label id="version"></label> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdaCP9AUgrroG45f8uz9SPU2sOXBZ8roxQ7mqXhKG1BsleVuA/viewform?usp=sf_link">Report / Help</a> | <a href="">Provision / Symbol meaning</a>
+            <br>Notice: Attention! This website(Manhtia) is a personal collection, Existing is not for commercial.
+            <br>© 2023 Manhtia All Rights are reserved. Website source reserves to Manhtia, Contents credit to owner.<br>
+        </div>
+    </section>
+</body>
+<script src="{% static 'Manhtia/Main/common.js'%}"></script>
+<script src="{% static 'Manhtia/Content/search.js'%}"></script>
+</html>
