@@ -90,7 +90,7 @@
         <div style="text-align: right;"><button id="searchAll" onclick="search()" style="font-weight: bold;">Search</button> <button id="reset" onclick="reset()">Reset</button></div>
     </div>
     <br>
-    <div id="console" class="moderndiv">Page: <select name="page" id="page" onchange="clicks()"></select> <button type="button" id="prev">Prev</button><button type="button" id="next">Next</button>|<button id="go" type="submit">Go</button>
+    <div id="console" class="moderndiv">Page: <select name="page" id="page" onchange="document.getElementById('go').click()"></select> <button type="button" id="prev">Prev</button><button type="button" id="next">Next</button>|<button id="go" type="submit">Go</button>
     </div><br>
     <div id="content" class="moderndiv" style="width: 100%;">
         Waiting to Convey...
