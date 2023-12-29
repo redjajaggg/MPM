@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+    <title>Manhtia-Portrayal</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg">
+    <link rel="stylesheet" href="{% static 'Manhtia/Main/main.css' %}">
+    <link rel="stylesheet" href="{% static 'Manhtia/Portrayal/portrayal.css' %}">
+</head>
+<body>
+    <section id="co" class="section_connector">
+        <div id="connector" class="moderndiv">
+            <img id="icon" src="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg">
+            <label id="appname">Manhtia</label><br><label id="time"></label>
+            <div id="connectors">
+                <a href="{% url 'index'%}">Home</a>
+                <a href="{% url 'content'%}">Library</a>
+                <a href="{% url 'portrayal'%}">Portrayal</a>
+                <a href="{% url 'private'%}">Mature</a>
+                <a href="{% url 'manager'%}">Manager</a>
+            </div>
+        </div>
+    </section><br>
+    <section id="notification" class="section_notification">
+        <div id="notificate_pane" class="moderndiv">
+            <label id="notificate">-Notification-</label>
+        </div>
+    </section><br>
+    <div id="search_pic" class="moderndiv">
+        <button id="filter">Main</button> Name: <select id="namest" style="width: 100px;"><option>-</option></select> <button id="searchs">Search</button>
+    </div><br><div id="viewers" style="text-align: center;">Viewer: Manhtia</div><br>
+    <div id="content" class="moderndiv">
+        <img src="https://i.pinimg.com/564x/ee/ad/e6/eeade6c5f72368dcd7404f6cdf9896ee.jpg" style="width: 300px; border-radius: 15px;"><br>
+        <h1 style="font-family: 'Brush Script MT', cursive;">Manhwa Portrayal Collection</h1>
+    </div><br>
+    <section id="sources" class="section_sources">
+
+        <h2>Includes Sources</h2>
+        <div id="app" class="moderndiv"></div><br>
+        <div class="moderndiv" id="filterhashtag">
+            <a href="{% url 'content' %}?common=uptoday">#Update_today</a>
+            <a href="{% url 'content' %}?common=yes">#has_Website</a>
+            <a href="{% url 'content' %}?common=upyesterday">#Check_translate</a>
+            <a href="{% url 'content' %}?rate=18">#18+</a>
+            <a href="{% url 'content' %}?nation=cn">#Chinese</a>
+            <a href="{% url 'content' %}?mark=mark as mature content">#Mark_as_mature</a>
+            <a href="{% url 'content' %}?mark=uncensored">#Uncensored</a>
+            <a href="{% url 'content' %}?overall=c">#Completed</a>
+            <a href="{% url 'content' %}?genre=bl">#bl</a>
+            <a href="{% url 'content' %}?genre=mt">#mature</a>
+            <a href="{% url 'content' %}?genre=ov">#omegaverse</a>
+            <a href="{% url 'content' %}?read=y">#admin_favorite</a>
+        </div><br>
+
+    </section><br>
+    <section id="about_website" class="section_about">
+        <div id="about">
+            contract: <a href="https://discordapp.com/users/1055326431804137504/"><img style="width: 30px; border-radius: 10px;" src="https://i.pinimg.com/564x/66/1e/cf/661ecf66bda49150b44d25e4440e2bb8.jpg"></a> : Bangkok, Thailand<br>
+            About:<label id="version"></label> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdaCP9AUgrroG45f8uz9SPU2sOXBZ8roxQ7mqXhKG1BsleVuA/viewform?usp=sf_link">Report / Help</a> | <a href="">Provision / Symbol meaning</a>
+            <br>Notice: Attention! This website(Manhtia) is a personal collection, Existing is not for commercial.
+            <br>© 2023 Manhtia All Rights are reserved. Website source reserves to Manhtia, Contents credit to owner.<br>
+        </div>
+    </section>
+    <div id="showbig">
+        <div><button id="closebig" onclick="closebig()">X</button></div>
+        <img id="bigimage">
+    </div>
+</body>
+<script src="{% static 'Manhtia/Portrayal/portrayal.js'%}"></script>
+</html>
