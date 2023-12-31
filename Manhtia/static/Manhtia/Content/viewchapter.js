@@ -1,6 +1,25 @@
 //const chapterAllData = "https://docs.google.com/spreadsheets/d/1R1e93BSQ-dVmHgZadcJmINP_qDJo65CZFBJ98hhzpvk/export?format=csv";
 //Load data
 const database = "https://script.google.com/macros/s/AKfycbwPyo50dXb4y5r4H2B0fLEVqpWKhWo58g_YmKna1cnlesJ96RhixlmQiwItAuLcuF0XbQ/exec?q=1R1e93BSQ-dVmHgZadcJmINP_qDJo65CZFBJ98hhzpvk&p=Sheet1";
+
+const widthselect = document.getElementById('zoom');
+//get width from url ?width=
+const queryString = window.location.search;
+const parameters = new URLSearchParams(queryString);
+const width = parseInt(parameters.get('width'));
+for(var i = 0; i < widthselect.length; i++){
+    if(widthselect.options[i].value <= width){
+        widthselect.value = widthselect.options[i].value;
+    }
+}console.log(width);
+//get width from window offsetwidth
+const windowwidth = window.innerWidth;
+for(var i = 0; i < widthselect.length; i++){
+    if(widthselect.options[i].value < windowwidth && widthselect.options[i].value < 750 && isNaN(width)){
+        widthselect.value = widthselect.options[i].value;
+    }
+}
+
 start();
 function start(){
    //fetch(chapterAllData).then(result=>result.text()).then(function (csvtext){return csv().fromString(csvtext);}).then(function(csv){main(csv);});
@@ -30,29 +49,11 @@ function main(data){
 
     filterlist = [];
 
-    const widthselect = document.getElementById('zoom');
-    //get width from window offsetwidth
-    const windowwidth = window.innerWidth;
-    for(var i = 0; i < widthselect.length; i++){
-        if(widthselect.options[i].value < windowwidth && widthselect.options[i].value < 750){
-            widthselect.value = widthselect.options[i].value;
-        }
-    }
-
-    //get width from url ?width=
-    const queryString = window.location.search;
-    const parameters = new URLSearchParams(queryString);
-    const width = parseInt(parameters.get('width'));
-    for(var i = 0; i < widthselect.length; i++){
-        if(widthselect.options[i].value < width){
-            widthselect.value = widthselect.options[i].value;
-        }
-    }
     //filter from url filter?filter=
     var filter = "";
     const queryfilter = window.location.search;
-    const parametersfilter = new URLSearchParams(queryString);
-    filter = parameters.get('filter');
+    const parametersfilter = new URLSearchParams(queryfilter);
+    filter = parametersfilter.get('filter');
     if(filter === undefined){filter = "";}
     fils = filter;
     //if(filter.includes(" ")){filterlist = filter.split(" ");}
