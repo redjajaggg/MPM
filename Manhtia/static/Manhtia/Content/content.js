@@ -149,7 +149,7 @@ function filters(){
                 var getday = today.getDay();
                 var getdate = today.getDate();
                 if(getday == 0){getday = 7;}
-                //if(mains[i].Date.includes(getday) && mains[i].Status != "end"){create(mains, i);}
+                if(mains[i].Date.includes(getday) && mains[i].Status != "end"){create(mains, i);}
                 /*if(mains[i].Date == "n"){
                     var dates = mores[i].Spoil.split(" ");
                     for(var j = 0; j < dates.length; j++){
