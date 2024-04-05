@@ -1,0 +1,47 @@
+#name{
+    background-color: red;
+}
+#content{
+    overflow: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px 10px;
+    width: 100%;
+}
+#login{
+    width: 100%;
+    text-align: center;
+}
+#each{
+    border-radius: 30px;
+    width: 300px;
+    padding: 5px;
+    height: fit-content;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#each:hover{
+    -webkit-transform: scale(2.0) rotate(0.00deg);
+    transform: scale(1.1) rotate(0.00deg);
+}
+.exbig{
+    width: 100%;
+}
+.exbigiframe{
+    width: 99%;
+    height: 230px;
+    border: none;
+    border-radius: 22px;
+}
+#prev{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    box-shadow: none;
+    border-right: 1px solid black;
+}
+#next{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    box-shadow: none;
+    border-left: 1px solid black;
+}
