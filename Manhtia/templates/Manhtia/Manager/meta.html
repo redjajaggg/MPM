@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+    <title>Manager-Meta</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/68/b3/6d/68b36d7bab2ce5db6f27f1df36367d64.jpg">
+    <link rel="stylesheet" href="{% static 'Manhtia/Main/main.css' %}">
+    <link rel="stylesheet" href="{% static 'Manhtia/Home/mainstyle.css' %}">
+</head>
+<body>
+    <section id="co" class="section_connector">
+        <div id="connector" class="moderndiv">
+            <img id="icon" src="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg">
+            <label id="appname">Manhtia</label><br><label id="time"></label>
+            <div id="connectors">
+                <a href="{% url 'index'%}">Home</a>
+                <a href="{% url 'content'%}">Library</a>
+                <a href="{% url 'portrayal'%}">Portrayal</a>
+                <a href="{% url 'private'%}">Mature</a>
+                <a href="{% url 'manager'%}">Manager</a>
+            </div>
+        </div>
+    </section><br>
+    <section id="notification" class="section_notification">
+        <div id="notificate_pane" class="moderndiv">
+            <label id="notificate">-Notification-</label>
+        </div>
+    </section><br>
+    <div class="moderndiv">
+
+        <label>Search by...</label> Page: <select id="page" onchange="valueit()"></select><br>
+        - Name: <input id="nameq" list="names" onchange="nameit()"><datalist id="names"></datalist><br>
+        - Type: <select id="meta" style="width: 220px;" onchange="valueit()">
+            <option value="-1">-</option>
+            <option value="0">Quality level</option>
+        </select> Value: <select id="value" onchange="valueit()"><option value="-1">-</option>
+            <option value="0">0 (No, Low)</option>
+            <option value="1">1 (Yes, Normal)</option>
+            <option value="2">2 (High from Other)</option>
+            <option value="3">3 (High some from Other)</option>
+            <option value="4">4 (High)</option>
+            <option value="5">5 (Mixed)</option>
+        </select>
+
+    </div><br>
+    <div id="content" class="moderndiv">
+
+        Waiting...
+
+    </div><br>
+    <section id="sources" class="section_sources">
+
+        <h2>Includes Sources</h2>
+        <div id="app" class="moderndiv"></div>
+
+    </section><br>
+    <section id="about_website" class="section_about">
+        <div id="about">
+            This website exists for adding updating deleting managing data in My Private Manhwa and Manhtia.
+        <br>
+            Service: Manhwa Manager<br>
+            © 2022 Manhtia. Website source reserves to Manhtia.
+        </div>
+    </section>
+</body>
+<script src="{% static 'Manhtia/Main/template.js'%}"></script>
+<script src="{% static 'Manhtia/Main/common.js'%}"></script>
+<script src="{% static 'Manhtia/Manager/meta.js'%}"></script>
+</html>
