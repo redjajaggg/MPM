@@ -1,0 +1,43 @@
+Manhtia URL-PARAMS
+-Main
+	URLS
+	/manhtia/
+	PARAMS
+	none
+-content(main)
+	URLS
+	/manhtia/content/
+	PARAMS
+	developer=(allow)
+	page=(number)
+	common=()
+	rate=(n,15,18)
+	nation=(kr,cn,th,n)
+	mark=(mark as mature content)
+	overall=(c,n)
+	genre=()
+	purchase=(y,n,s,w)
+	read=(y,n)
+-content(each)
+	URLS
+	/manhtia/content/<name>/
+	PARAMS
+	none
+-content(viewer)
+	URLS
+	/manhtia/content/<name>/viewer
+	/manhtia/content/<name>/filter
+	PARAMS
+	chapter=()
+	filter=(status)
+-portrayal(main)
+	URLS
+	/manhtia/portrayal/
+	PARAMS
+	none
+-portrayal(each)
+	URLS
+	/manhtia/portrayal/<name>
+	PARAMS
+	none
+
