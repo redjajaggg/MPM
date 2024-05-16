@@ -192,8 +192,8 @@ function create_up(data, i){
     }
 
     //yesterday
-    if(getday == 0){getday = 6;}
-    if(getday == data[i].Date - 1 && data[i].Status != "end"){
+    if(getday == 0){getday = 7;}
+    if(getday - 1 == data[i].Date && data[i].Status != "end"){
 
         normalcreateyesterday(data, i);
 
