@@ -1,0 +1,153 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+    <title>Manhtia.Home</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg">
+    <link rel="stylesheet" href="{% static 'Manhtia/Main/main.css' %}">
+    <link rel="stylesheet" href="{% static 'Manhtia/Home/mainstyle.css' %}">
+</head>
+<body>
+    <!--Header of pages-->
+    <section id="co" class="section_connector">
+        <div id="connector" class="moderndiv">
+            <div><img src="https://i.pinimg.com/736x/91/a8/40/91a84051e7506a7a89dbc0cff3fce636.jpg" style="width: 30px; float: right; border-radius: 50%;" onclick="search_floater()"><span><img id="icon" src="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg"> <label id="appname">Manhtia</label><br><label id="time"></label></span></div>
+            <div id="connectors">
+                <a href="{% url 'index'%}" style="font-weight: bold;">Home</a>
+                <a href="{% url 'content'%}" style="font-weight: bold;">Library</a>
+                <a href="{% url 'portrayal'%}" style="font-weight: bold;">Portrayal</a>
+                <a href="{% url 'private'%}" style="font-weight: bold;">Mature</a>
+                <a href="{% url 'manager'%}" style="font-weight: bold;">Manager</a>
+            </div>
+        </div>
+    </section><br>
+    <div id="quicksearch">
+        <button id="closesearch" onclick="closesearch()">X</button>
+        <div id="avdsearchpane">
+            <a href="{% url 'advsearch' %}">Advance Search</a>
+            <h3>Quick Search</h3><div style="width: 300px; height: fit-content;">
+                EngName: <input id="name_quicks" oninput="eng_name()" style="width: 200px;" list="eng_name"><datalist id="eng_name"></datalist>
+                AssName: <input id="assname_quicks" oninput="ass_name()" style="width: 200px;" list="ass_name"><datalist id="ass_name"></datalist>
+                <button onclick="reset_float_name()">Reset</button><br>
+                <div id="name_shows"></div>
+            <br><br>
+            <div style="border-bottom: 2px solid; font-weight: bold;">Common hashtag</div>
+                <a href="{% url 'content' %}?common=uptoday">#Update_today</a>
+                <a href="{% url 'content' %}?common=yes">#has_Website</a>
+                <a href="{% url 'content' %}?common=upyesterday">#Check_translate</a>
+                <a href="{% url 'content' %}?common=1">#mon</a>
+                <a href="{% url 'content' %}?common=2">#tue</a>
+                <a href="{% url 'content' %}?common=3">#wed</a>
+                <a href="{% url 'content' %}?common=4">#thu</a>
+                <a href="{% url 'content' %}?common=5">#fri</a>
+                <a href="{% url 'content' %}?common=6">#sat</a>
+                <a href="{% url 'content' %}?common=0">#sun</a>
+                <a href="{% url 'content' %}?common=n">#unknown_date</a>
+                <a href="{% url 'content' %}?rate=n">#all_age</a>
+                <a href="{% url 'content' %}?rate=15">#15+</a>
+                <a href="{% url 'content' %}?rate=18">#18+</a>
+                <a href="{% url 'content' %}?nation=cn">#Chinese</a>
+                <a href="{% url 'content' %}?nation=th">#Thai</a>
+                <a href="{% url 'content' %}?mark=mark as mature content">#Mark_as_mature</a>
+                <a href="{% url 'content' %}?mark=uncensored">#Uncensored</a>
+                <a href="{% url 'content' %}?overall=c">#Completed</a>
+                <a href="{% url 'content' %}?genre=bl">#bl</a>
+                <a href="{% url 'content' %}?genre=mt">#mature</a>
+                <a href="{% url 'content' %}?genre=ov">#omegaverse</a>
+                <a href="{% url 'content' %}?read=y">#admin_favorite</a>
+            </div><br>
+        </div>
+    </div>
+    <!--/Header of pages-->
+    <section id="notification" class="section_notification">
+        <div id="notificate_pane" class="moderndiv">
+            <label id="notificate">-Notification-</label>
+        </div>
+    </section><br>
+    <div id="content">
+
+        <div id="recomend" class="moderndiv"></div><br>
+        <div id="connect" class="moderndiv">
+            <div id="link">
+                <h2>Manhtia's Topics</h2>
+                <a href="{% url 'georgeous'%}"><img style="width: 270px; border-radius: 20px;" src="https://i.pinimg.com/564x/5c/dc/93/5cdc93af868b501a52050321ac62a0f9.jpg"></a>
+                <h1>Manhtia Collection</h1>
+                <a href="{% url 'manager'%}"><img src="https://i.pinimg.com/564x/68/b3/6d/68b36d7bab2ce5db6f27f1df36367d64.jpg" style="width: 30px; border-radius: 5px;";></a>
+                <a id="eachpagelink" href="{% url 'content'%}?developer=allow">Library</a>
+                <a id="eachpagelink" href="{% url 'portrayal'%}">Portrayal</a>
+                <a id="eachpagelink" href="{% url 'private'%}">Mature</a>
+                <a id="eachpagelink" onclick="offtopic()">Other>></a>
+            </div>
+            <div>
+                <h2>Statistic of Manhtia <label class="info" onclick="stats()">See more</label></h2>
+                <div id="statistic">
+                    <div><div id="todaysup" class="sta"><span id="value1">0%</span></div><br><label id="todays">Today's Update</label></div>
+                    <div><div id="hasoffline" class="sta"><span id="value2">0%</span></div><br><label id="offs">Offline</label></div>
+                    <div><div id="endstatus" class="sta"><span id="value3">0%</span></div><br><label id="ends">End Status</label></div>
+                    <div><div id="unknowndate" class="sta"><span id="value4">0%</span></div><br><label id="unknowns">Unknown Date</label></div>
+                    <div><div id="rmature" class="sta"><span id="value5">0%</span></div><br><label id="matures">Rate Mature</label></div>
+                    <div><div id="complete" class="sta"><span id="value6">0%</span></div><br><label id="completes">Completed</label></div>
+                    <div><div id="history" class="sta"><span id="value7">0%</span></div><br><label id="historys">Historical time Story</label></div>
+                    <div id="conteach" style="text-align: left;" class="sta">
+                        <label id="parts"></label><br>
+                        <label id="number"></label><br>
+                    </div>
+                </div>
+            </div>
+            <div id="exchange">
+                <iframe id="exshow" src="https://redjajaggg.github.io/My-Private-Manhwa/ModernManhwaWeb/currency.html"></iframe>
+            </div>
+        </div><br>
+        <div  class="moderndiv">
+            <label style="font-weight: bold;">Count Down <label class="info" onclick="process('Start count down at 08.00AM(KR) everyday/Celebrate 10.00PM-07.59AM.')">(i)</label> : </label>
+            <label style="text-align: center;"><label id="countdown" style="font-size: 20px;"></label> <label id="word"></label></label>
+        </div><br>
+        <div class="moderndiv" id="filterhashtag">
+            <a href="{% url 'content' %}?common=uptoday&developer=allow">#Update_today</a>
+            <a href="{% url 'content' %}?common=yes&developer=allow">#has_Website</a>
+            <a href="{% url 'content' %}?common=upyesterday&developer=allow">#Check_translate</a>
+            <a href="{% url 'content' %}?rate=18&developer=allow">#18+</a>
+            <a href="{% url 'content' %}?nation=cn&developer=allow">#Chinese</a>
+            <a href="{% url 'content' %}?mark=mark as mature content&developer=allow">#Mark_as_mature</a>
+            <a href="{% url 'content' %}?mark=uncensored&developer=allow">#Uncensored</a>
+            <a href="{% url 'content' %}?overall=c&developer=allow">#Completed</a>
+            <a href="{% url 'content' %}?genre=bl&developer=allow">#bl</a>
+            <a href="{% url 'content' %}?genre=mt&developer=allow">#mature</a>
+            <a href="{% url 'content' %}?genre=ov&developer=allow">#omegaverse</a>
+            <a href="{% url 'content' %}?read=y&developer=allow">#admin_favorite</a>
+        </div><br>
+        <div id="update" class="moderndiv">
+            <h3>Update! <label class="info" onclick="process('Convey only weekly updates')">(i)</label> <a style="font-size: xx-small;" href="{% url 'content' %}?common=uptoday&developer=clear">See more</a></h3>
+            <div id="today" class="up" style="justify-items: center;"></div>
+            <h3>Check Translate! <label class="info" onclick="process('Convey only weekly updates')">(i)</label> <a style="font-size: xx-small;" href="{% url 'content' %}?common=upyesterday&developer=clear">See more</a></h3>
+            <div id="yesterday" class="up" style="justify-items: center;"></div>
+        </div>
+    </div><br>
+    <div class="moderndiv">
+        <h3>Lastest Upload Chapter <label class="info" onclick="process('Lastest upload by admin show only lastest 14 up to 15 stories.')">(i)</label></h3><br>
+        <div id="lastestupload"></div>
+    </div><br>
+    <section id="sources" class="section_sources">
+
+        <h2>Includes Sources</h2>
+        <div id="app" class="moderndiv"></div>
+
+    </section><br>
+    <a id="lite">(Manhtia Lite)</a>
+    <section id="about_website" class="section_about">
+        <div id="about">
+            contract: <a href="https://discordapp.com/users/1055326431804137504/"><img style="width: 30px; border-radius: 10px;" src="https://i.pinimg.com/564x/66/1e/cf/661ecf66bda49150b44d25e4440e2bb8.jpg"></a> : Bangkok, Thailand<br>
+            About:<label id="version"></label> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdaCP9AUgrroG45f8uz9SPU2sOXBZ8roxQ7mqXhKG1BsleVuA/viewform?usp=sf_link">Report / Help</a> | <a href="">Provision / Symbol meaning</a>
+            <br>Notice: Attention! This website(Manhtia) is a personal collection, Existing is not for commercial.
+            <br>© 2023 Manhtia All Rights are reserved. Website source reserves to Manhtia, Contents credit to owner.<br>
+        </div>
+    </section>
+</body>
+<script src="{% static 'Manhtia/Main/template.js'%}"></script>
+<script src="{% static 'Manhtia/Main/common.js'%}"></script>
+<script src="{% static 'Manhtia/Home/main.js'%}"></script>
+</html>

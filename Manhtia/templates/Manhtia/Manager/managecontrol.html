@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+    <title>Manager-Manhtia</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/68/b3/6d/68b36d7bab2ce5db6f27f1df36367d64.jpg">
+    <link rel="stylesheet" href="{% static 'Manhtia/Main/main.css' %}">
+    <link rel="stylesheet" href="{% static 'Manhtia/Manager/managecontrol.css' %}">
+</head>
+<body>
+    <!--Header of pages-->
+    <section id="co" class="section_connector">
+        <div id="connector" class="moderndiv">
+            <div><img src="https://i.pinimg.com/736x/91/a8/40/91a84051e7506a7a89dbc0cff3fce636.jpg" style="width: 30px; float: right; border-radius: 50%;" onclick="search_floater()"><span><img id="icon" src="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg"> <label id="appname">Manhtia</label><br><label id="time"></label></span></div>
+            <div id="connectors">
+                <a href="{% url 'index'%}" style="font-weight: bold;">Home</a>
+                <a href="{% url 'content'%}" style="font-weight: bold;">Library</a>
+                <a href="{% url 'portrayal'%}" style="font-weight: bold;">Portrayal</a>
+                <a href="{% url 'private'%}" style="font-weight: bold;">Mature</a>
+                <a href="{% url 'manager'%}" style="font-weight: bold;">Manager</a>
+            </div>
+        </div>
+    </section><br>
+    <div id="quicksearch">
+        <button id="closesearch" onclick="closesearch()">X</button>
+        <div id="avdsearchpane">
+            <a href="{% url 'advsearch' %}?developer=allow">Advance Search</a>
+            <h3>Quick Search</h3><div style="width: 300px; height: fit-content;">
+                EngName: <input id="name_quicks" oninput="eng_name()" style="width: 200px;" list="eng_name"><datalist id="eng_name"></datalist>
+                AssName: <input id="assname_quicks" oninput="ass_name()" style="width: 200px;" list="ass_name"><datalist id="ass_name"></datalist>
+                <button onclick="reset_float_name()">Reset</button><br>
+                <div id="name_shows"></div>
+            <br><br>
+            <div style="border-bottom: 2px solid; font-weight: bold;">Common hashtag</div>
+                <a href="{% url 'content' %}?common=uptoday">#Update_today</a>
+                <a href="{% url 'content' %}?common=yes">#has_Website</a>
+                <a href="{% url 'content' %}?common=upyesterday">#Check_translate</a>
+                <a href="{% url 'content' %}?common=1">#mon</a>
+                <a href="{% url 'content' %}?common=2">#tue</a>
+                <a href="{% url 'content' %}?common=3">#wed</a>
+                <a href="{% url 'content' %}?common=4">#thu</a>
+                <a href="{% url 'content' %}?common=5">#fri</a>
+                <a href="{% url 'content' %}?common=6">#sat</a>
+                <a href="{% url 'content' %}?common=0">#sun</a>
+                <a href="{% url 'content' %}?common=n">#unknown_date</a>
+                <a href="{% url 'content' %}?rate=n">#all_age</a>
+                <a href="{% url 'content' %}?rate=15">#15+</a>
+                <a href="{% url 'content' %}?rate=18">#18+</a>
+                <a href="{% url 'content' %}?nation=cn">#Chinese</a>
+                <a href="{% url 'content' %}?nation=th">#Thai</a>
+                <a href="{% url 'content' %}?mark=mark as mature content">#Mark_as_mature</a>
+                <a href="{% url 'content' %}?mark=uncensored">#Uncensored</a>
+                <a href="{% url 'content' %}?overall=c">#Completed</a>
+                <a href="{% url 'content' %}?genre=bl">#bl</a>
+                <a href="{% url 'content' %}?genre=mt">#mature</a>
+                <a href="{% url 'content' %}?genre=ov">#omegaverse</a>
+                <a href="{% url 'content' %}?read=y">#admin_favorite</a>
+            </div><br>
+        </div>
+    </div>
+    <!--/Header of pages-->
+    <div id="contrainer">
+        <img src="https://i.pinimg.com/564x/68/b3/6d/68b36d7bab2ce5db6f27f1df36367d64.jpg" style="width: 70px; border-radius: 5px;">
+        <div id="log">
+            <form id="loginform">
+                <h2>Please type Password for Manage data.</h2><br>
+                <label>Password: </label>
+                <input id="check" type="password" autofocus><br><br>
+                <button id="logbut" type="submit">Access</button><br><a href="https://docs.google.com/forms/d/e/1FAIpQLSdaCP9AUgrroG45f8uz9SPU2sOXBZ8roxQ7mqXhKG1BsleVuA/viewform?usp=sf_link">Help / Request for Access</a>
+            </form>
+        </div><br>
+        <div id="choose" class="moderndiv" style="width: 99%;">
+            <h2>Manage Data</h2>
+            <div id="general"><button id="consolewebsite">Manhtia Controller</button></div><br>
+            <div id="add" style="text-align: left; border-top: solid black;">
+                <label>Add / Edit:</label><br>
+                <button id="manhwa">New Story</button>
+                <button id="chapter">New Chapter(PDF)</button>
+                <button id="portrayal">New Portrayal</button> | 
+                <button id="change">Edit Separate</button>
+                <button id="change1">Edit by Attribule</button> | 
+                <button id="change2">Edit each Story</button><br>
+            </div><br>
+            <div id="upload" style="text-align: left; border-top: solid black;">
+                <label>Upload:</label><br>
+                <button id="folder">Create Folder(GoogleDrive)</button>
+                <button id="uploadchaptermature">Upload Chapter/Mature</button>
+                <button id="uploadchaptermature2">Upload Chapter/Mature(Drag and Drop)</button>
+                <button id="error">Check Upload Error</button>
+                <button id="chaptomat">Copy Chapter to Mature</button><br>
+                ***If page gets reject from access, Please log in email on brower or use brower which logged in only 1 email account.
+                <br>***Create Folder and Upload will use email that convey on page.<br>***How to use Explore 'Step for Uploading Data' below.
+            </div><br>
+            <div id="append" style="text-align: left; border-top: solid black;">
+                <label>Append Link:</label><br>
+                <button id="convert">Get Data and Download CSV</button>
+                <button id="getandappend">Get Data and Append(Mature)</button>
+                <button id="getandappendbest">Get Data and Append Auto(Chapter)</button><br>
+                ***If page gets reject from access, Please log in email on brower or use brower which logged in only 1 email account.<br>***Append Link use Coding gmail to access.<br>***How to use Explore 'Step for Uploading Data' below.
+            </div><br>
+            <div id="database" style="text-align: left; border-top: solid black;">
+                <label>Database:</label><br>
+                <button id="checker">Data Checker</button>
+                <button id="createdatabases">Create Database</button><br><br>
+                <button id="maindata">Main data</button>
+                <button id="moredata">More data</button>
+                <button id="eachpage">Each Story All Link</button> | 
+                <button id="drive">Each Story Drive Sheet Link</button>
+                <button id="eachma">Each Story Mature All Link</button> | 
+                <button id="eachmadrive">Each Story Mature Drive Sheet Link</button>
+            </div><br>
+            <div id="help" style="text-align: left; border-top: solid black;">
+                <label>Help:</label><br>
+                <button id="step">Step for Uploading data</button>
+                <button id="provision">Provision</button>
+                <button id="exchanges">Exchange Rate</button>
+            </div>
+        </div>
+        <div id="show">
+            <iframe id="iframe">
+
+            </iframe>
+        </div><br>
+        This website exists for adding updating deleting managing data in My Private Manhwa and Manhtia.
+        <br>
+        Service: Manhwa Manager<br>
+        © 2022 Manhtia. Website source reserves to Manhtia.  
+    </div> 
+</body>
+<script src="{% static 'Manhtia/Main/common.js'%}"></script>
+<script src="{% static 'Manhtia/Manager/managecontrol.js'%}"></script>
+</html>
