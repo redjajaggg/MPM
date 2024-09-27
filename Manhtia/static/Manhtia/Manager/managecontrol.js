@@ -48,6 +48,7 @@ var link_change1 = "https://script.google.com/macros/s/AKfycbzCYYdoJa5Aw6z--Xs46
 var link_chaptertomature = "https://script.google.com/macros/s/AKfycbxRq0ghbVZbk0Es7NaMhI05M4T1uAxOfpbhx9EVodQpmA8YlWv6k6nR3B11n9Jd-vuK/exec";
 var link_create_database = "https://script.google.com/macros/s/AKfycbzDwQdvKvEX-hOPNzjR-pt7IRLp05HNdcJgh7coJoYHFFwUv_Fk4luroYw7bX7ZvjYu/exec";
 var link_change_each_story = "https://script.google.com/macros/s/AKfycbxjda7dUInnCc_8V65NCkir8JbV3lY1kKHWy7NN-pL6p_HdN5Au4czhhA15FuXuIiup/exec";
+var link_webtoontask = "https://script.google.com/macros/s/AKfycbwfLdeFFQuc9_U_8aPcyIHg-Qio9c8GAek_7EfMqs-gpqpJWS0Hvv0f0aoRvUldavnb/exec";
 
 function iframeLoaded(link) {
     var iframe = document.getElementById('iframe');
@@ -56,6 +57,13 @@ function iframeLoaded(link) {
 function golink(link){
     location.href = link;
 }
+/*function iframeclick(id, link){
+
+    document.getElementById(id).onclick = () => {
+        iframeLoaded(link);
+    };
+
+}*/
 
 document.getElementById("consolewebsite").onclick = () => {
     iframeLoaded(link_console);
@@ -74,6 +82,9 @@ document.getElementById("chapter").onclick = () => {
 };
 document.getElementById("createdatabases").onclick = () => {
     iframeLoaded(link_create_database);
+};
+document.getElementById("webtoondatabase").onclick = () => {
+    iframeLoaded(link_webtoontask);
 };
 document.getElementById("portrayal").onclick = () => {
     iframeLoaded(link_addportra);
