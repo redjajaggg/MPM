@@ -351,6 +351,7 @@ function normalcreate(data, i){
         var pane = document.createElement('span');
         pane.innerHTML = `
             <div class="card">
+                <img id='verify${i}' style='display: none; width: 25px; position: absolute; border-bottom-right-radius: 10px;' src='https://i.pinimg.com/736x/c1/b1/39/c1b1393272d4ff7bb4ffebf6a20061b8.jpg'>
                 <img class="imgcard" src="${data[i].Cover}" style="width:150px; height: 200px;">
                 <div class="container">
                     <a href="/manhtia/content/${data[i].Name}" style="font-weight: bold;">${data[i].Name}</a><br>
@@ -359,6 +360,7 @@ function normalcreate(data, i){
             </div>
         `;
         document.getElementById("normalcontent2").appendChild(pane);
+        if(data_more[i].Purchase == "y"){document.getElementById("verify" + i).style.display = "block";}
 
     }
     else{
@@ -380,6 +382,7 @@ function normalcreate(data, i){
 
         console_all.innerHTML = `
 
+            <img id='verify${i}' style='display: none; width: 25px; position: absolute; border-bottom-right-radius: 10px;' src='https://i.pinimg.com/736x/c1/b1/39/c1b1393272d4ff7bb4ffebf6a20061b8.jpg'>
             <img src='${data[i].Cover}' style='width: 120px; height: 170px; border-radius: 5px;' onclick="open_cover('${data_story[i].Cover}')">
             <span style='vertical-align: top; float: right; border-left: 1px dashed; padding: 5px;'>
                 <label>${update_of_story(i)}</label><br>
@@ -400,6 +403,7 @@ function normalcreate(data, i){
 
         `;
         document.getElementById("normalcontent").appendChild(console_all);
+        if(data_more[i].Purchase == "y"){document.getElementById("verify" + i).style.display = "block";}
 
     }
 
