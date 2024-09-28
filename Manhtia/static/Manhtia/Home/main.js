@@ -44,7 +44,7 @@ function random(data){
             </div>
         `;
         document.getElementById("recomend").appendChild(pane);
-
+      
     }
 
 }
@@ -163,6 +163,7 @@ function normalcreatetoday(data, i){
     var pane = document.createElement('span');
     pane.innerHTML = `
         <div class="card">
+            <img id='verify${i}' style='display: none; width: 25px; position: absolute; border-bottom-right-radius: 10px;' src='https://i.pinimg.com/736x/c1/b1/39/c1b1393272d4ff7bb4ffebf6a20061b8.jpg'>
             <img class="imgcard" src="${data[i].Cover}" style="width:150px; height: 200px;">
             <div class="container">
                 <a href="/manhtia/content/${data[i].Name}" style="font-weight: bold;">${data[i].Name}</a><br>
@@ -171,6 +172,7 @@ function normalcreatetoday(data, i){
         </div>
     `;
     document.getElementById("today").appendChild(pane);
+    if(data_more[i].Purchase == "y"){document.getElementById("verify" + i).style.display = "block";}
 
 }
 //create yesterday update
@@ -179,6 +181,7 @@ function normalcreateyesterday(data, i){
     var pane = document.createElement('span');
     pane.innerHTML = `
         <div class="card">
+            <img id='verify${i}' style='display: none; width: 25px; position: absolute; border-bottom-right-radius: 10px;' src='https://i.pinimg.com/736x/c1/b1/39/c1b1393272d4ff7bb4ffebf6a20061b8.jpg'>
             <img class="imgcard" src="${data[i].Cover}" style="width:150px; height: 200px;">
             <div class="container">
                 <a href="/manhtia/content/${data[i].Name}" style="font-weight: bold;">${data[i].Name}</a><br>
@@ -187,6 +190,7 @@ function normalcreateyesterday(data, i){
         </div>
     `;
     document.getElementById("yesterday").appendChild(pane);
+    if(data_more[i].Purchase == "y"){document.getElementById("verify" + i).style.display = "block";}
 
 }
 //create developer
@@ -252,6 +256,7 @@ function lastestupload(){
             var pane = document.createElement('span');
             pane.innerHTML = `
                 <div class="card">
+                    <img id='verify${i}' style='display: none; width: 25px; position: absolute; border-bottom-right-radius: 10px;' src='https://i.pinimg.com/736x/c1/b1/39/c1b1393272d4ff7bb4ffebf6a20061b8.jpg'>
                     <img class="imgcard" src="${data_story[i].Cover}" style="width:150px; height: 200px;">
                     <div class="container">
                         <a href="/manhtia/content/${data_story[i].Name}" style="font-weight: bold;">${data_story[i].Name}</a><br>
@@ -260,6 +265,7 @@ function lastestupload(){
                 </div>
             `;
             document.getElementById("lastestupload").appendChild(pane);
+            if(data_more[i].Purchase == "y"){document.getElementById("verify" + i).style.display = "block";}
 
         }
 
