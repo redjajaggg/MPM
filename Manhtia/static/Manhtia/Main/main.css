@@ -116,7 +116,7 @@ a:hover, a:active {
     border-radius: var(--borderraiusdiv-main);
     padding: var(--paddingdiv-main);
     overflow: auto;
-    justify-items: center;
+    /*justify-items: center;*/
     box-shadow: var(--shadow);    
 }
 .moderndiv:hover{
