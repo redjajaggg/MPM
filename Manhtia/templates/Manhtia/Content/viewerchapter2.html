@@ -14,6 +14,8 @@
     <style>
         body{
             font-family: Tahoma, Verdana, Segoe, sans-serif;
+            background-color: #121212;
+            color: white;
         }
         .chapterimage{
             width: 100%;
@@ -50,9 +52,9 @@
             <option value="hor">Horizontal</option>
         </select> Theme: 
         <select id="theme" style="width: 50px;" onchange="changetheme()">
-            <option value="0">Auto</option>
-            <option value="1">Light mode</option>
             <option value="2">Dark mode</option>
+            <option value="1">Light mode</option>
+            <option value="0">Auto</option>
         </select>
     <div id="content" style="border-bottom: solid black; position: sticky; top: 0px; background-color: white; text-align: center; margin-left: auto; margin-right: auto;">
         <label onclick="window.location.reload();">↻</label><select onchange="goto()" style="width: 200px;" id="allchapters"></select><button id="prev">Prev</button><button id="next">Next</button>
