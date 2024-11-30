@@ -35,7 +35,7 @@ function appenddata(data){
     }
     //If website = no
     if(data[i].Website == "no"){
-        document.getElementById("chapter").innerHTML = data[i].Name + ", This story has no chapter and will not update.";
+        document.getElementById("chapter").innerHTML = data[i].Name + ", This story has no chapter and will not upload.";
     }
     if(document.getElementById("nameget").innerText.includes("[ES]") || document.getElementById("nameget").innerText.includes("[KR]") || document.getElementById("nameget").innerText.includes("[FR]") || document.getElementById("nameget").innerText.includes("[OTH]")){
         document.getElementById("info").style.display = "none";
@@ -68,7 +68,7 @@ function appenddata(data){
     cover.setAttribute("id", "cover");
     var newtoki = data[data.length - 1].Newtoki;
     var domain = newtoki.substring(0, 31);
-    var go = domain + data[i].Newtoki.substring(31);
+    var go = /*domain + */data[i].Newtoki/*.substring(31)*/;
     var raw;
     var newto;
     var eng;
@@ -394,7 +394,7 @@ function appenddata(data){
         link.appendChild(linkText);
         link.title = data + status;
         //link.href = data; //old
-        link.href = `/manhtia/content.viewer/${document.getElementById("nameget").innerHTML}/?p=${data}&t=0&q=6000`;
+        link.href = `/manhtia/content.viewer/${document.getElementById("nameget").innerHTML}/?p=${data}&t=2&q=6000`;
         link.style.width = "270px";
 
         if(data == book){link.style.fontWeight = "bold";}
