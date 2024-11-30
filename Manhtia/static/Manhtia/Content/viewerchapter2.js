@@ -231,6 +231,7 @@ function theme(){
         document.getElementById("content").style.backgroundColor = "#121212";
         document.getElementById("content").style.color = "white";
         document.getElementById("nameget").style.color = "white";
+        document.body.style.color = "white";
     }
     
 }
