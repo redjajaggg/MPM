@@ -79,7 +79,9 @@ function normal(data){
         if(data[1].Status == "no" && !window.location.pathname.includes("manager")){
             var e = document.getElementsByTagName('html')[0];
             e.removeChild(document.body);
-            e.innerHTML = "<img style='width: 200px;' src='https://i.pinimg.com/736x/58/8f/75/588f75cdd0b80e674421edd1b587ed89.jpg'><h1 style='text-align: center;'>Maintenance</h1><h2 style='text-align: center;'>Manhtia is now fixing. Will open soon.<br>(Manhwa Manager)</h2>";
+            e.style.backgroundColor = "#121212";
+            e.style.color = "white";
+            e.innerHTML = "<h1 style='text-align: center; font-family: Tahoma;'><img style='width: 100px; border-radius: 10px;' src='https://i.pinimg.com/736x/58/8f/75/588f75cdd0b80e674421edd1b587ed89.jpg'><br>Maintenance</h1><h2 style='text-align: center; font-family: Tahoma;'>Manhtia is now fixing. Will open soon.<br>(Manhtia Manager)</h2>";
         }
 
         //for allow to convey elements
