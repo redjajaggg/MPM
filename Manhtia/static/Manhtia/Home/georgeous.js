@@ -105,9 +105,9 @@ function main(main_datas, each_datas){
             name_pane.innerHTML = name[text];
             cover_pane.setAttribute('src', cove[text]);
             cover_pane.setAttribute('width', 270);
-            cut1_pane.setAttribute('src', "https://drive.google.com/uc?id=1KbgQ1nlbKQESI4keqrmrGLNM52GB_-E8&export=download");
+            cut1_pane.setAttribute('src', "https://lh5.googleusercontent.com/d/1KbgQ1nlbKQESI4keqrmrGLNM52GB_-E8=s8000");
             cut1_pane.setAttribute('width', 320);
-            cut2_pane.setAttribute('src', "https://drive.google.com/uc?id=1KbgQ1nlbKQESI4keqrmrGLNM52GB_-E8&export=download");
+            cut2_pane.setAttribute('src', "https://lh5.googleusercontent.com/d/1KbgQ1nlbKQESI4keqrmrGLNM52GB_-E8=s8000");
             cut2_pane.setAttribute('width', 320);
             part_pane.innerHTML = "Part: " + part[text];
             numb_pane.innerHTML = "Number: " + numb[text];
