@@ -157,3 +157,16 @@ function closesearch(){
     document.getElementById("quicksearch").style.display = "none";
     document.getElementById("qsearchbutton").style.display = "block";
 }
+
+//to login without typing in input
+try{
+    const queryfilter = window.location.search;
+    const parametersfilter = new URLSearchParams(queryfilter);
+
+    //parameter by using
+    var password = parametersfilter.get('password');
+    
+    //common / set value in password pane
+    if(password !== null){document.getElementById("check").value = password; document.getElementById("logbut").click();}
+
+}catch(error){}
