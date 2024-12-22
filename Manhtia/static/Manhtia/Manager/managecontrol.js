@@ -49,6 +49,7 @@ var link_chaptertomature = "https://script.google.com/macros/s/AKfycbxRq0ghbVZbk
 var link_create_database = "https://script.google.com/macros/s/AKfycbzDwQdvKvEX-hOPNzjR-pt7IRLp05HNdcJgh7coJoYHFFwUv_Fk4luroYw7bX7ZvjYu/exec";
 var link_change_each_story = "https://script.google.com/macros/s/AKfycbxjda7dUInnCc_8V65NCkir8JbV3lY1kKHWy7NN-pL6p_HdN5Au4czhhA15FuXuIiup/exec";
 var link_webtoontask = "https://script.google.com/macros/s/AKfycbwfLdeFFQuc9_U_8aPcyIHg-Qio9c8GAek_7EfMqs-gpqpJWS0Hvv0f0aoRvUldavnb/exec";
+var link_help = "https://redjajaggg.github.io/My-Private-Manhwa/manhtiaHelpGuide.html";
 
 function iframeLoaded(link) {
     var iframe = document.getElementById('iframe');
@@ -121,6 +122,9 @@ document.getElementById("checker").onclick = () => {
 };
 document.getElementById("exchanges").onclick = () => {
     iframeLoaded(link_exchange);
+};
+document.getElementById("helpguide").onclick = () => {
+    iframeLoaded(link_help);
 };
 document.getElementById("provision").onclick = () => {
     iframeLoaded(link_provision);
