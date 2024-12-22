@@ -8,13 +8,32 @@ def custom_page_not_found_view(request, exception):
     return render(request, 'errors/404.html')
 
 
+# login page
+def login(request):
+    request.session['is_logged_in'] = False
+    return render(request, 'Manhtia/Home/login.html')
+
+
+def logged_in(request, username):
+    request.session['is_logged_in'] = True
+    return render(request, 'Manhtia/Home/logged_in.html', {
+        "username": username
+    })
+
+
 # Create your views here.
 def index(request):
-    return render(request, "Manhtia/Home/index.html")
+    is_logged_in = request.session.get('is_logged_in', False)
+    return render(request, "Manhtia/Home/index.html", {
+        "is_logged_in": is_logged_in
+    })
 
 
 def content(request):
-    return render(request, "Manhtia/Content/content.html")
+    is_logged_in = request.session.get('is_logged_in', False)
+    return render(request, "Manhtia/Content/content.html", {
+        "is_logged_in": is_logged_in
+    })
 
 
 def lang(request):
@@ -54,11 +73,17 @@ def chapterviewer2(request, name):
 
 
 def advsearch(request):
-    return render(request, "Manhtia/Content/Advsearch.html")
+    is_logged_in = request.session.get('is_logged_in', False)
+    return render(request, "Manhtia/Content/Advsearch.html", {
+        "is_logged_in": is_logged_in
+    })
 
 
 def private(request):
-    return render(request, "Manhtia/Private/private.html")
+    is_logged_in = request.session.get('is_logged_in', False)
+    return render(request, "Manhtia/Private/private.html", {
+        "is_logged_in": is_logged_in
+    })
 
 
 def pri_each(request, name):
@@ -75,7 +100,10 @@ def pri_each_viewer(request, name, part):
 
 
 def portrayal(request):
-    return render(request, "Manhtia/Portrayal/portrayal.html")
+    is_logged_in = request.session.get('is_logged_in', False)
+    return render(request, "Manhtia/Portrayal/portrayal.html", {
+        "is_logged_in": is_logged_in
+    })
 
 
 def portrayal_each(request, name):
@@ -85,11 +113,17 @@ def portrayal_each(request, name):
 
 
 def manager(request):
-    return render(request, "Manhtia/Manager/managecontrol.html")
+    is_logged_in = request.session.get('is_logged_in', False)
+    return render(request, "Manhtia/Manager/managecontrol.html", {
+        "is_logged_in": is_logged_in
+    })
 
 
 def meta(request):
-    return render(request, "Manhtia/Manager/meta.html")
+    is_logged_in = request.session.get('is_logged_in', False)
+    return render(request, "Manhtia/Manager/meta.html", {
+        "is_logged_in": is_logged_in
+    })
 
 
 def georgeous(request):
