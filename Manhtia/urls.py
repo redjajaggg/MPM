@@ -4,6 +4,8 @@ from . import views
 
 # 0=success/finish, 1=developing
 urlpatterns = [
+    path("login", views.login, name="login"),#login
+    path("logged_in/<str:username>", views.logged_in, name="loggedin"),#login
     path("", views.index, name="index"),#home
     path("content/", views.content, name="content"),# show all availiable story
     path("content/<str:name>/", views.each, name="each"),# show only one story
