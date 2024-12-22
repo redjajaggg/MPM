@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+    <title>Manhtia.Login</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg">
+    <link rel="stylesheet" href="{% static 'Manhtia/Main/main.css' %}">
+    <link rel="stylesheet" href="{% static 'Manhtia/Home/mainstyle.css' %}">
+</head>
+<body>
+    <!--Header of pages-->
+    <h1 style="text-align: center;">Welcome to Manhtia {{ username }}</h1>
+    <h2>Logged in. Redirecting...</h2>
+</body>
+<script>
+    window.onload = function () {
+        setTimeout(function () {
+            window.location.href = "/manhtia/"; // Replace with your target URL
+        }, 2000); // 2000 milliseconds = 2 seconds
+    };
+</script>
+</html>
