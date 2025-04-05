@@ -394,7 +394,7 @@ function appenddata(data){
         link.appendChild(linkText);
         link.title = data + status;
         //link.href = data; //old
-        link.href = `/manhtia/content.viewer/${document.getElementById("nameget").innerHTML}/?p=${data}&t=2&q=12000`;
+        link.href = `/manhtia/content.viewer/${document.getElementById("nameget").innerHTML}/?p=${data}&t=2&q=15000`;
         link.style.width = "270px";
 
         if(data == book){link.style.fontWeight = "bold";}
