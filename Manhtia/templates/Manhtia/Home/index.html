@@ -21,7 +21,6 @@
                 <a href="{% url 'index'%}" style="font-weight: bold;">Home</a>
                 <a href="{% url 'content'%}" style="font-weight: bold;">Library</a>
                 <a href="{% url 'portrayal'%}" style="font-weight: bold;">Portrayal</a>
-                <a href="{% url 'private'%}" style="font-weight: bold;">Mature</a>
                 <a href="{% url 'manager'%}" style="font-weight: bold;">Manager</a>
             </div>
         </div>
@@ -79,7 +78,6 @@
                 <a href="{% url 'manager'%}"><img src="https://i.pinimg.com/736x/58/8f/75/588f75cdd0b80e674421edd1b587ed89.jpg" style="width: 30px; border-radius: 5px;";></a>
                 <a id="eachpagelink" href="{% url 'content'%}?developer=allow">Library</a>
                 <a id="eachpagelink" href="{% url 'portrayal'%}">Portrayal</a>
-                <a id="eachpagelink" href="{% url 'private'%}">Mature</a>
                 <a id="eachpagelink" onclick="offtopic()">More>></a>
             </div>
             <div>
@@ -141,7 +139,7 @@
         <h3>Appointment To-Do Calendar <label class="info" onclick="process('To-Do list of admin, Reminder, Appointment, and more.<br>Time-zone: Bangkok(+7)')">(i)</label></h3>
         <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FBangkok&showPrint=0&showTz=0&hl=en_GB&src=Y2JiZjQ4NGQzMWMxMWJlNTJlMGM1NWY2MmNhNGQ4NjY2N2U4YWNhNzI5YTk0ZDk3YmE3ODYwM2I3MmU1MGFmY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E" style="border-width:0; border-radius: 10px;" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
     </section>
-    <a id="lite">(Manhtia Lite)</a>
+    <a id="lite">(Manhtia Lite)</a> <a id="eachpagelink" href="{% url 'private'%}">(Mature)</a>
     <section id="about_website" class="section_about">
         <div id="about">
             contract: <a href="https://discordapp.com/users/1055326431804137504/"><img style="width: 30px; border-radius: 10px;" src="https://i.pinimg.com/564x/66/1e/cf/661ecf66bda49150b44d25e4440e2bb8.jpg"></a> : Bangkok, Thailand<br>
@@ -151,7 +149,7 @@
         </div>
     </section>
 </body>
+<script src="{% static 'Manhtia/Home/main.js'%}"></script>
 <script src="{% static 'Manhtia/Main/template.js'%}"></script>
 <script src="{% static 'Manhtia/Main/common.js'%}"></script>
-<script src="{% static 'Manhtia/Home/main.js'%}"></script>
 </html>
