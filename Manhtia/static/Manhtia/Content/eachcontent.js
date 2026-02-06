@@ -179,7 +179,7 @@ function appenddata(data){
         types = types.replaceAll("ot", "OtherVerse");
         types = types.replaceAll("mp", "Male Pregnancy");
         types = types.trim();
-        anames.innerHTML = "<label style='font-weight: bold;'>Associate:</label> " + data[i].AssName + "  <img src='" + flagl + "' style='width: 30px; border-radius: 2px;'>" + rate;
+        anames.innerHTML = "<label style='font-weight: bold;'>Associate:</label> " + data[i].AssName + "  <img src='" + flagl + "' style='width: 30px; border-radius: 2px;'>" + rate +  "<a style='font-size: 10px;' href='https://redjajaggg.github.io/My-Private-Manhwa/ReleaseData.html?assname=" + data[i].AssName + "'>Release↗</a>";
         type.innerHTML = "<label style='font-weight: bold;'>Genre:</label> " + types;
 
         if(data[i].Notificate == "c"){
