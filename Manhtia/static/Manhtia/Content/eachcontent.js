@@ -361,25 +361,25 @@ function appenddata(data){
         var cggdrive5 = document.createElement("div")
         var cggdrive6 = document.createElement("div")
         info.appendChild(cggdrive1);
-        cggdrive1.innerHTML = "<br><a href=" + datai[6].Info1 + ">Google Drive I</a><br><br>";
+        cggdrive1.innerHTML = "<br><a href=" + datai[6].Info1 + ">Google Drive I</a> - <a href='"+ getOnlyID(datai[6].Info1) + "' style='font-size: 12px;'>Viewer</a><br><br>";
         if(datai[7].Info1 != "n"){
-            cggdrive2.innerHTML = "<a href=" + datai[7].Info1 + ">Google Drive II</a><br><br>";
+            cggdrive2.innerHTML = "<a href=" + datai[7].Info1 + ">Google Drive II</a> - <a href='"+ getOnlyID(datai[7].Info1) + "' style='font-size: 12px;'>Viewer</a><br><br>";
             info.appendChild(cggdrive2);
         }
         if(datai[8].Info1 != "n"){
-            cggdrive3.innerHTML = "<a href=" + datai[8].Info1 + ">Google Drive III</a><br><br>";
+            cggdrive3.innerHTML = "<a href=" + datai[8].Info1 + ">Google Drive III</a> - <a href='"+ getOnlyID(datai[8].Info1) + "' style='font-size: 12px;'>Viewer</a><br><br>";
             info.appendChild(cggdrive3);
         }
         if(datai[6].Info2 != "n"){
-            cggdrive4.innerHTML = "<a href=" + datai[6].Info2 + ">Google Drive IV</a><br><br>";
+            cggdrive4.innerHTML = "<a href=" + datai[6].Info2 + ">Google Drive IV</a> - <a href='"+ getOnlyID(datai[6].Info2) + "' style='font-size: 12px;'>Viewer</a><br><br>";
             info.appendChild(cggdrive4);
         }
         if(datai[7].Info2 != "n"){
-            cggdrive5.innerHTML = "<a href=" + datai[7].Info2 + ">Google Drive V</a><br><br>";
+            cggdrive5.innerHTML = "<a href=" + datai[7].Info2 + ">Google Drive V</a> - <a href='"+ getOnlyID(datai[7].Info2) + "' style='font-size: 12px;'>Viewer</a><br><br>";
             info.appendChild(cggdrive5);
         }
         if(datai[8].Info2 != "n"){
-            cggdrive6.innerHTML = "<a href=" + datai[8].Info2 + ">Google Drive VI</a><br><br>";
+            cggdrive6.innerHTML = "<a href=" + datai[8].Info2 + ">Google Drive VI</a> - <a href='"+ getOnlyID(datai[8].Info2) + "' style='font-size: 12px;'>Viewer</a><br><br>";
             info.appendChild(cggdrive6);
         }
     }
@@ -487,4 +487,19 @@ function book_other(){
 function append_special(){
     var data = document.getElementById("special_chapter").value.replaceAll("/", "-");
     fetch(`https://script.google.com/macros/s/AKfycbxEumvDiRpV_2c2OWPsy5eKeRzu6RRGbNoSupU__1FG6tn_nXLAQq-kxZNruWNyjtSd/exec?nm=${document.getElementById("nameget").innerText}&bm=${data}`).then()
+}
+
+function getOnlyID(link){
+
+    const urlString = link;
+
+    // Create a URL object
+    const url = new URL(urlString);
+
+    // url.pathname is "/drive/folders/1saSuH2NaqYQ1N6FLg8iRlq5HlYCIzVTp"
+    // split('/') turns it into an array, and pop() gets the last item
+    const id = url.pathname.split('/').pop(); 
+
+    return "https://redjajaggg.github.io/My-Private-Manhwa/Manhtia.Viewer-Dynamics.html?p=" + id;
+
 }
