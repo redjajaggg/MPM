@@ -66,18 +66,14 @@ function appenddata(data){
 
     cover.setAttribute('src', data[i].Cover);
     cover.setAttribute("id", "cover");
-    var newtoki = data[data.length - 1].Newtoki;
-    var domain = newtoki.substring(0, 31);
-    var go = /*domain + */data[i].Newtoki/*.substring(31)*/;
+    var creatorName = (data[i].Newtoki != "n") ? data[i].Newtoki : "N/A";
     var raw;
-    var newto;
     var eng;
     var other;
     if(data[i].Rawweb != "n"){raw = "<a href='"+ data[i].Rawweb + "'>RawM</a> |";}
-    if(data[i].Newtoki != "n"){newto = "<a href='" + go + "'>RawL</a> |"}
-    if(data[i].Translate != "n"){eng = "<a href='" + data[i].Translate + "'>English</a> |";}
+    if(data[i].Translate != "n"){eng = "<a href='" + data[i].Translate + "'>Translation</a> |";}
     if(data[i].Otherweb != "n"){other = "<a href='" + data[i].Otherweb + "'>Other</a>";}
-    one.innerHTML = raw + newto + eng + other;
+    one.innerHTML = raw + eng + other;
 
     three.innerHTML = "<label style='font-weight: bold;'>Number:</label> " + data[i].Number + " <label style='font-weight: bold;'>Date:</label> <label id='tendays'>" + covertdate(data[i].Date) + "</label>";
 
@@ -180,7 +176,7 @@ function appenddata(data){
         types = types.replaceAll("mp", "Male Pregnancy");
         types = types.trim();
         anames.innerHTML = "<label style='font-weight: bold;'>Associate:</label> " + data[i].AssName + "  <img src='" + flagl + "' style='width: 30px; border-radius: 2px;'>" + rate +  "<a style='font-size: 10px;' href='https://redjajaggg.github.io/My-Private-Manhwa/ReleaseData.html?assname=" + data[i].AssName + "'>Release↗</a>";
-        type.innerHTML = "<label style='font-weight: bold;'>Genre:</label> " + types;
+        type.innerHTML = "<label style='font-weight: bold;'>Genre:</label> " + types + "<br><label style='font-weight: bold;'>Creator:</label> <a href='/manhtia/creator?creator=" + creatorName + "' style='font-size: 12px;'>" + creatorName + "</a>";
 
         if(data[i].Notificate == "c"){
             noti.innerHTML = "<label style='font-weight: bold;'>Overall:</label> Completed!";
