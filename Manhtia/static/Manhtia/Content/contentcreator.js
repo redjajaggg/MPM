@@ -37,7 +37,7 @@ function loadCreatorPage() {
     // 3. Loop through all stories and find matches
     for(let i = 0; i < data_story.length; i++) {
         // If Newtoki matches the creator name, build a card
-        if(String(data_story[i].Newtoki).trim() === creatorName.trim()) {
+        if(String(data_story[i].Newtoki).trim().includes(creatorName.trim())) {
             titleCount++;
             
             let cardSpan = document.createElement('span');
