@@ -176,7 +176,13 @@ function appenddata(data){
         types = types.replaceAll("mp", "Male Pregnancy");
         types = types.trim();
         anames.innerHTML = "<label style='font-weight: bold;'>Associate:</label> " + data[i].AssName + "  <img src='" + flagl + "' style='width: 30px; border-radius: 2px;'>" + rate +  "<a style='font-size: 10px;' href='https://redjajaggg.github.io/My-Private-Manhwa/ReleaseData.html?assname=" + data[i].AssName + "'>Release↗</a>";
-        type.innerHTML = "<label style='font-weight: bold;'>Genre:</label> " + types + "<br><label style='font-weight: bold;'>Creator:</label> <a href='/manhtia/creator?creator=" + creatorName + "' style='font-size: 12px;'>" + creatorName + "</a>";
+        const creatorLinks = creatorName
+            .split(",")
+            .map(name => name.trim())
+            .filter(Boolean)
+            .map(name => `<a href="/manhtia/creator?creator=${encodeURIComponent(name)}" style="font-size: 12px;">${name}</a>`)
+            .join(", ");
+        type.innerHTML = `<label style="font-weight: bold;">Genre:</label> ${types}<br><label style="font-weight: bold;">Creator:</label> ${creatorLinks}`;
 
         if(data[i].Notificate == "c"){
             noti.innerHTML = "<label style='font-weight: bold;'>Overall:</label> Completed!";
