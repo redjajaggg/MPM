@@ -392,7 +392,7 @@ function normalcreate(data, i){
             </span>
             <span style='vertical-align: top; display: inline-block;'>
                 <a href="/manhtia/content/${data[i].Name}" style='font-weight: 700; font-size: 20px;'>${data[i].Name}</a><br>
-                <label style='font-weight: 200; font-size: 11px;'>  (${n_to_unknown(data_more[i].AssName)})</label><br>
+                <label style='font-weight: 200; font-size: 11px;'>  ${n_to_unknown(data_more[i].AssName)}</label><br>
                 <label style='font-weight: 700;'>  Date: </label>${check_unknown(data[i].Date, i)} | 
                 <label style='font-weight: 700;'>  Status: </label>${status_of_story(data[i].Status)} <br><br>
                 <label style='font-weight: 700;'>  Source: </label> <a href='${data[i].Rawweb}'>Official</a> <a href='${data[i].Translate}'>Translation</a> <a href='${data[i].Otherweb}'>Other</a><br>
