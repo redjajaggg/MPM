@@ -36,6 +36,20 @@ def content(request):
     })
 
 
+def archived(request):
+    is_logged_in = request.session.get('is_logged_in', False)
+    return render(request, "Manhtia/Content/contentarchived.html", {
+        "is_logged_in": is_logged_in
+    })
+
+
+def creator(request):
+    is_logged_in = request.session.get('is_logged_in', False)
+    return render(request, "Manhtia/Content/contentcreator.html", {
+        "is_logged_in": is_logged_in
+    })
+
+
 def lang(request):
     return render(request, "Manhtia/contentlang.html")
 
