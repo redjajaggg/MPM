@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manhtia.Creator</title>
+    <link rel="icon" href="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg">
+    <link rel="stylesheet" href="{% static 'Manhtia/Main/main.css' %}">
+    <link rel="stylesheet" href="{% static 'Manhtia/Content/contentstyle.css' %}">
+</head>
+<body>
+    <!-- Header -->
+    <section id="co" class="section_connector">
+        <div id="connector" class="moderndiv">
+            <div><img src="https://i.pinimg.com/736x/91/a8/40/91a84051e7506a7a89dbc0cff3fce636.jpg" style="width: 30px; float: right; border-radius: 50%;" onclick="search_floater()"><span><img id="icon" src="https://i.pinimg.com/564x/6f/b1/fa/6fb1fa3c16a2aa37a4ab3d7e192b7c2d.jpg"> <label id="appname">Manhtia</label><br><label id="time"></label></span></div>
+            <div id="connectors">
+                <a href="{% url 'index'%}" style="font-weight: bold;">Home</a>
+                <a href="{% url 'content'%}" style="font-weight: bold;">Library</a>
+                <a href="{% url 'portrayal'%}" style="font-weight: bold;">Portrayal</a>
+                <a href="{% url 'manager'%}" style="font-weight: bold;">Manager</a>
+            </div>
+        </div>
+    </section><br>
+    <section id="notification" class="section_notification">
+        <div id="notificate_pane" class="moderndiv">
+            <label id="notificate">-Notification-</label>
+        </div>
+    </section><br>
+
+    <!-- Creator Info & Content -->
+    <div id="console" class="moderndiv" style="text-align: center; font-size: 16px;">
+        Creator: <span id="creator-name-display" style="font-size: 20px; font-weight: bold;">Loading...</span> 
+        <span id="creator-count" style="font-size: 14px; font-weight: normal; color: gray;"></span>
+    </div>
+
+    <div id="content" class="moderndiv" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 20px;">
+        <!-- Stories will inject here -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="{% static 'Manhtia/Main/template.js'%}"></script>
+    <script src="{% static 'Manhtia/Main/common.js'%}"></script>
+    <script src="{% static 'Manhtia/Content/contenttype.js'%}"></script>
+    <script src="{% static 'Manhtia/Content/contentcreator.js'%}"></script>
+</body>
+</html>
